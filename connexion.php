@@ -7,7 +7,7 @@ include('inc/header.php');
         <form action="" method="post" class="box-boite" novalidate>
         <h2>Connexion</h2>  
                 <label for="login">E-mail</label>
-                <input type="text" id="login" name="login" value="" placeholder="Entrez votre email">
+                <input type="text" id="login" name="login" vaglue="" placeholder="Entrez votre email">
                
                 <label for="password">Mot de passe *</label>
                 <input type="password" id="password" name="password" value="" placeholder="Entrez votre mot de passe">

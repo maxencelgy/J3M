@@ -10,5 +10,6 @@
 </head>
 <body>
     <h1>BOnjour Jody</h1>
+    <h2>Salut Maxence</h2>
 </body>
 </html>

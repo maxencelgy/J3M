@@ -1,5 +1,6 @@
 <?php
 require "inc/fonction/pdo.php";
+require "inc/fonction/toolbox.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -12,6 +13,8 @@ require "inc/fonction/pdo.php";
 </head>
 <body>
 <?php
+
+
 include('inc/header_b.php');
 include('inc/footer_b.php');
 ?>

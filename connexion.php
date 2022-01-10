@@ -1,5 +1,5 @@
 <?php
-include('inc/header_b.php');
+include('inc/header.php');
 ?>
 
 <section id="connexion">
@@ -19,4 +19,4 @@ include('inc/header_b.php');
             </form>
 </section>
 
-<?php include('inc/footer_b.php');
+<?php include('inc/footer.php');

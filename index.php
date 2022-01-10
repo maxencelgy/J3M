@@ -1,8 +1,10 @@
 <?php
-require "inc/fonction/pdo.php";
-?>
 
-<?php include('inc/header.php');?>
+require "inc/fonction/pdo.php";
+
+
+include('inc/header.php');?>
+
 <section id="acceuil">
     <div class="wrap">
         <div class="text">
@@ -14,10 +16,12 @@ require "inc/fonction/pdo.php";
         </div>
         <div>
             <img src="asset/img/network.jpg" alt="">
-        </div>
     </div>
 </section>
 
+
 <?php include('inc/footer.php');
+
+
 
 

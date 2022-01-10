@@ -11,12 +11,13 @@
 <body>
 
 <header id="header">
-    <nav id="navigation">
+    <nav id="wrap1">
         <div class="logo_nav">
             <img src="asset/img/logo.svg" alt="logo du site">
         </div>
 
         <div class="header_btn">
+            <a href="">Inscription</a>
             <a href="connexion.php">Connexion</a>
         </div>
     </nav>

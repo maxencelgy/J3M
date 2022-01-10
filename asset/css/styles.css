@@ -1,6 +1,4 @@
 @charset "UTF-8";
-/*REPONSIVE*/
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 .wrap {
   max-width: 1600px;
@@ -89,6 +87,11 @@ textarea:focus, input:focus {
 
 #wrap1 {
   max-width: 1350px;
+  margin: 0 auto;
+}
+
+.wrap2 {
+  max-width: 1050px;
   margin: 0 auto;
 }
 
@@ -142,95 +145,87 @@ textarea:focus, input:focus {
   text-align: center;
 }
 
-/*REPONSIVE*/
-.wrap {
-  max-width: 1600px;
+#inscription {
+  padding: 3rem 0;
+  background-color: #F1F1F1;
 }
-
-/*REPONSIVE*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.clear:before, .clear:after {
-  content: " ";
-  display: table;
-}
-
-.clear:after {
-  clear: both;
-}
-
-.clear {
-  *zoom: 1;
-}
-
-body {
-  overflow-x: hidden;
-  font-size: 2vw;
-  font-family: "Roboto", sans-serif;
-}
-
-/*BALISE DE BASE*/
-ul, ol, li, nav {
-  list-style: none;
-}
-
-img {
-  width: 100%;
-  vertical-align: bottom;
-}
-
-a {
-  color: var(--noir);
-  text-decoration: none;
-}
-
-em {
-  font-style: normal;
-}
-
-strong {
-  font-style: normal;
-  font-size: 3em;
-}
-
-/*CLASS*/
-.uppercase {
-  text-transform: uppercase;
-}
-
-.capitalize {
-  text-transform: capitalize;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.shadow {
-  -webkit-box-shadow: 1.25vw 1.25vw 1.25vw -0.625vw lightgray;
-  -moz-box-shadow: 1.25vw 1.25vw 0.625vw -0.625vw lightgray;
-  box-shadow: 1.25vw 1.25vw 0.625vw -0.625vw lightgray;
-}
-
-.cover {
-  background-size: cover;
-}
-
-input {
-  border: none;
-}
-
-textarea:focus, input:focus {
-  outline: none;
-}
-
-#wrap1 {
-  max-width: 1350px;
+#inscription .wrap2 h1 {
+  text-align: center;
+  background-color: #050B4F;
+  color: white;
+  width: 50%;
   margin: 0 auto;
+  padding: 0.5rem 0;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+#inscription .wrap2 form {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1rem 1rem;
+  width: 50%;
+  margin: 0 auto;
+  gap: 1rem;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 1.4rem;
+}
+#inscription .wrap2 form input {
+  width: 100%;
+}
+#inscription .wrap2 form label {
+  width: 15rem;
+}
+#inscription .wrap2 form .form_separator {
+  height: 1px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #050B4F;
+}
+#inscription .wrap2 form input[type=submit] {
+  width: 7rem;
+  padding: 0.7rem;
+  border-radius: 15px;
+  font-size: 1rem;
+}
+#inscription .wrap2 form input[type=submit]:hover {
+  cursor: pointer;
+  background-color: #050B4F;
+  color: white;
+}
+
+#connexion {
+  background-color: #050B4F;
+  padding: 2rem;
+}
+#connexion .logo {
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+}
+#connexion .logo img {
+  width: 20%;
+}
+#connexion form {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+#connexion form h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  background-color: #050B4F;
+}
+#connexion form input {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #cfcccc;
+  border-radius: 0.3rem;
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */

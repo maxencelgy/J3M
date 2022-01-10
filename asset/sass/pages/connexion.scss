@@ -1,0 +1,35 @@
+#connexion {
+    background-color: #050B4F;
+    padding: 2rem;
+    .logo {
+        margin-bottom: 4rem;
+        display: flex;
+        justify-content: center;
+        
+        img{
+            width: 20%;
+            
+        }
+    }
+    form{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        width: 800px;
+        max-width: 100%;
+        margin: 0 auto;
+        
+        h2{
+            margin-bottom: 1rem;
+            text-align: center;
+            background-color: #050B4F;
+        }
+        input{
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: rgb(207, 204, 204);
+            border-radius: .3rem;
+            color: white;
+        }
+    }
+}

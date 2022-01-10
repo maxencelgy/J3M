@@ -6,13 +6,16 @@ require "inc/fonction/pdo.php";
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="stylesheet" href="asset/sass/style.scss"> 
     <title>J3M</title>
 </head>
 <body>
-    
+<?php
+include('inc/header_b.php');
+include('inc/footer_b.php');
+?>
 </body>
 </html>
 <?php
+

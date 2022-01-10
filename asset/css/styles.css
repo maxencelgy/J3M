@@ -86,6 +86,12 @@ textarea:focus, input:focus {
   outline: none;
 }
 
+#header nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
 /*REPONSIVE*/
 .wrap {
   max-width: 1600px;

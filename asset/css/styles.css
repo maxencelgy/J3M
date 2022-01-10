@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*REPONSIVE*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
@@ -115,6 +116,30 @@ textarea:focus, input:focus {
 #header nav .header_btn a:hover {
   cursor: pointer;
   opacity: 0.7;
+}
+
+#acceuil {
+  background-color: #001242;
+}
+#acceuil .wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  text-align: center;
+}
+#acceuil .wrap div img {
+  position: relative;
+  filter: grayscale(60%) blur(5px);
+}
+#acceuil .wrap div.text {
+  position: absolute;
+  margin-top: 60vh;
+  /* poussé de la moitié de hauteur de viewport */
+  transform: translateY(-50%);
+  /* tiré de la moitié de sa propre hauteur */
+  color: white;
+  font-size: 25px;
+  text-align: center;
 }
 
 /*REPONSIVE*/

@@ -1,0 +1,20 @@
+/*REPONSIVE*/
+@mixin breakpoints($size) {
+    @if $size == litlePhone {
+        @media (max-width: 280px){ @content;}
+    }@else if $size == Phone {
+        @media (max-width: 350px){ @content;}
+    }@else if $size == bigPhone {
+        @media (max-width: 480px){ @content;}
+    }@else if $size == tablette {
+        @media (max-width: 700px){ @content;}
+    }@else if $size == litleLaptop {
+        @media (max-width: 900px){ @content;}
+    }@else if $size == laptop {
+        @media (max-width: 1200px){ @content;}
+    }@else if $size == MidScreen {
+        @media (max-width: 1600px){ @content;}
+    }@else if $size == bigScreen {
+        @media (max-width: 2000px){ @content;}
+    }
+}

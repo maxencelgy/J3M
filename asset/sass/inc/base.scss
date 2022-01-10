@@ -1,0 +1,65 @@
+// reset CSS
+@import "variable";
+@import "responsive";
+// @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+.clear:before, .clear:after {content: ' ';display: table}
+.clear:after { clear : both }
+.clear {*zoom: 1;}
+
+body {    
+    // font-family: 'Nunito Sans', sans-serif;
+    overflow-x: hidden;
+    font-size: 2vw;
+    font-family: 'Arvo', serif;
+}
+
+/*BALISE DE BASE*/
+ul, ol, li, nav {
+    list-style: none;
+}
+img{
+    width: 100%;
+    vertical-align: bottom;
+}
+a {
+    color: var(--noir);
+    text-decoration: none;
+}
+em{
+    font-style: normal;
+}
+strong{
+    font-style: normal;
+    font-size: 3em;
+}
+
+/*CLASS*/
+
+.uppercase{
+    text-transform: uppercase;
+}
+.capitalize{
+    text-transform: capitalize;
+}
+.bold{
+    font-weight: bold;
+}
+.shadow{
+    -webkit-box-shadow: 1.25vw 1.25vw 1.25vw -0.625vw lightgray;
+    -moz-box-shadow:    1.25vw 1.25vw 0.625vw -0.625vw lightgray;
+    box-shadow:         1.25vw 1.25vw 0.625vw -0.625vw lightgray;
+}
+
+.cover{
+    background-size: cover;
+}
+input{
+    border: none;
+}
+textarea:focus, input:focus{
+    outline: none;
+}

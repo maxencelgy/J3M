@@ -3,6 +3,29 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    align-items: center;
+    .logo_nav{
+      img{
+        width: 8rem;
+      }
+    }
+
+    .header_btn{
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 2rem;
+      font-size: 1.2rem;
+        a{
+          padding: .7rem;
+          background-color: $dark_blue;
+          color: white;
+          border-radius: 5px;
+        }
+        a:hover{
+          cursor: pointer;
+          opacity: .7;
+      }
+    }
   }
 }
 

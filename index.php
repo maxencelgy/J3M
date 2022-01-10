@@ -16,3 +16,4 @@ include('inc/header_b.php'); ?>
 </section>
 
 <?php include('inc/footer_b.php');
+

@@ -1,8 +1,6 @@
 <?php
-
 require "inc/fonction/pdo.php";
-
-
+require "inc/fonction/toolbox.php";
 include('inc/header.php');?>
 
 <section id="acceuil">
@@ -18,10 +16,7 @@ include('inc/header.php');?>
             <img src="asset/img/network.jpg" alt="">
     </div>
 </section>
-
-
 <?php include('inc/footer.php');
-
 
 
 

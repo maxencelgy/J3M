@@ -17,7 +17,7 @@
         </div>
 
         <div class="header_btn">
-            <a href="">Connexion</a>
+            <a href="connexion.php">Connexion</a>
         </div>
     </nav>
 </header>

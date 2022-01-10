@@ -1,21 +1,22 @@
 <?php
 require "inc/fonction/pdo.php";
-?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <link rel="stylesheet" href="asset/sass/style.scss"> 
-    <title>J3M</title>
-</head>
-<body>
-<?php
-include('inc/header_b.php');
-include('inc/footer_b.php');
-?>
-</body>
-</html>
-<?php
+require "inc/fonction/toolbox.php";
+include('inc/header.php');?>
+
+<section id="acceuil">
+    <div class="wrap">
+        <div class="text">
+            <h2>Bienvenu sur notre site</h2>
+            <p>Bonjours, bienvenue sur notre site web, qui vous permettras d’analyse les trames réseaux de vos clients afin de détecter d’éventuelles attaque DdoS.
+                Grâce a notre site vous pourrais accéder à vos information réseaux avec des graphique simples a lire et a utilisé selon vos résultats.
+                Plusieurs graphiques seront proposés pour un aspect plus moderne.
+            </p>
+        </div>
+        <div>
+            <img src="asset/img/network.jpg" alt="">
+    </div>
+</section>
+<?php include('inc/footer.php');
+
+
 

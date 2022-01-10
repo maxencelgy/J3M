@@ -1,5 +1,5 @@
 <?php
-include('inc/header_b.php');
+include('inc/header.php');
 ?>
 
 <section id="inscription">

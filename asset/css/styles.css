@@ -146,7 +146,7 @@ textarea:focus, input:focus {
 }
 
 #inscription {
-  padding: 3rem 0;
+  padding: 5rem 0;
   background-color: #F1F1F1;
 }
 #inscription .wrap2 {
@@ -210,7 +210,7 @@ textarea:focus, input:focus {
 }
 
 #connexion {
-  padding: 3rem 0;
+  padding: 5rem 0;
   background-color: #F1F1F1;
 }
 #connexion .wrap2 {
@@ -269,8 +269,44 @@ textarea:focus, input:focus {
 }
 #connexion .wrap2 .cadre_right form input[type=submit]:hover {
   cursor: pointer;
-  background-color: #050B4F;
+  background-color: #FB9D2C;
   color: white;
+}
+
+footer {
+  background-color: #242A2E;
+  padding: 3.5rem 2rem;
+  color: white;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+}
+footer h2 {
+  font-size: 1.7rem;
+  margin-bottom: 0.8rem;
+}
+footer p {
+  font-size: 1rem;
+}
+footer .div_foot {
+  width: 20%;
+}
+footer .footer_logo img {
+  width: 50%;
+}
+footer .horraires {
+  display: flex;
+}
+footer .horraires .fa-times {
+  color: red;
+}
+footer .horraires .fa-check {
+  color: green;
+}
+footer .horraires .horraires_left {
+  margin-right: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

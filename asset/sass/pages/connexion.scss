@@ -1,5 +1,5 @@
 #connexion {
-    padding: 3rem 0;
+    padding: 5rem 0;
     background-color: $gris;
   .wrap2{
     display: flex;
@@ -55,7 +55,7 @@
         }
         input[type=submit]:hover{
           cursor: pointer;
-          background-color: $dark_blue;
+          background-color: $orange;
           color: white;
         }
       }

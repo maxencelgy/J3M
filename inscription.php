@@ -84,7 +84,9 @@ include('inc/header.php');
             <input type="password" name="password2" id="password2" placeholder="*******">
             <span class="error"><?= viewError($errors,'password2'); ?></span>
 
-            <input type="submit" name="submitted" id="submitted" value="S'inscrire">
+            <button class="btn btn-1 hover-filled-slide-down">
+                <input type="submit" name="submitted" id="submitted" value="S'inscrire">
+            </button>
         </form>
 </div>
         <?php } else {echo'<div class="info_box_success"><h2>Bienvenue ! Votre compte a bien été créé !</h2><h4>Vous allez être redirigé...</h4></div>';} ?>

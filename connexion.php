@@ -58,7 +58,9 @@ if(!empty($_POST['submitted'])){
             <input type="password" name="password1" id="password1" placeholder="*****">
             <span class="error"><?= viewError($errors,'password1'); ?></span>
 
-            <input type="submit" name="submitted" id="submitted" value="Se connecter">
+            <button class="btn btn-1 hover-filled-slide-down">
+                <input type="submit" name="submitted" id="submitted" value="Se connecter">
+            </button>
         </form>
     </div>
        

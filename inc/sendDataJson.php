@@ -1,6 +1,10 @@
 <?php
-require "fonction/toolbox.php";
-require "fonction/request.php";
+include "../config.php";
+require(ROOTDIR.'/inc/fonction/pdo.php');
+require(ROOTDIR.'/inc/fonction/request.php');
+require(ROOTDIR.'/inc/fonction/toolbox.php');
+
+
 $json_url = "http://51.255.160.47:8282/resources/frames.json";
 $json = file_get_contents($json_url);
 echo $json;

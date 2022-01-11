@@ -4,7 +4,9 @@ VANTA.NET({
     el: ".main",
     color: 0x5b30e8,
     backgroundColor: 0xb133d,
+    points: 5,
     points: 10
+
   });
 
 

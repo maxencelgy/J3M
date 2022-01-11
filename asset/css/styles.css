@@ -175,9 +175,11 @@ input {
 }
 
 #header nav {
-  padding: 0 1rem;
+  padding: 0 4rem;
   width: 100%;
-  margin: 0 auto;
+  position: fixed;
+  background: transparent;
+  z-index: 2;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -193,14 +195,23 @@ input {
   font-size: 1.2rem;
 }
 #header nav .header_btn a {
-  padding: 0.7rem;
-  background-color: #050B4F;
   color: white;
-  border-radius: 5px;
+  position: relative;
+  text-transform: uppercase;
 }
-#header nav .header_btn a:hover {
-  cursor: pointer;
-  opacity: 0.7;
+#header nav .header_btn a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -0.4rem;
+  width: 0;
+  left: 0;
+  height: 2px;
+  transition: 0.5s cubic-bezier(0.42, 0, 1, 1);
+  background: #FB9D2C;
+}
+#header nav .header_btn a:hover:after {
+  width: 90%;
 }
 
 #acceuil img {
@@ -215,7 +226,7 @@ input {
   background-color: #142540;
   text-align: center;
   color: white;
-  padding: 5rem;
+  padding: 10rem;
 }
 #acceuil .main a {
   border-style: solid;

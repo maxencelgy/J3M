@@ -1,8 +1,9 @@
 <?php
-session_start();
-require('inc/fonction/pdo.php');
-require('inc/fonction/request.php');
-require('inc/fonction/toolbox.php');
+require_once('inc/fonction/pdo.php');
+require_once('inc/fonction/request.php');
+require_once('inc/fonction/toolbox.php');
+
+include('inc/header.php');
 
 verifUserAlreadyConnected();
 $success=false;
@@ -38,7 +39,6 @@ if(!empty($_POST['submitted'])){
     }
 }
 
-include('inc/header.php');
 ?>
 
 <section id="connexion">
@@ -54,13 +54,10 @@ include('inc/header.php');
             <input type="text" name="email" id="email" placeholder="exemple@gmail.com" value="<?= recupInputValue('email'); ?>">
             <span class="error"><?= viewError($errors,'email'); ?></span>
 
-            <div class="form_separator"></div>
-
             <label for="password1">Mot de passe :</label>
             <input type="password" name="password1" id="password1" placeholder="*****">
             <span class="error"><?= viewError($errors,'password1'); ?></span>
 
-            <div class="form_separator"></div>
             <input type="submit" name="submitted" id="submitted" value="Se connecter">
         </form>
     </div>

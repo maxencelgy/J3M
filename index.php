@@ -1,7 +1,7 @@
 <?php
-require "inc/fonction/pdo.php";
-require "inc/fonction/toolbox.php";
-include('inc/header.php');?>
+
+include('inc/header.php');
+?>
 
 <section id="acceuil">
         <div class="main">

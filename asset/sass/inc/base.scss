@@ -57,9 +57,7 @@ strong{
 .cover{
     background-size: cover;
 }
-input{
-    border: none;
-}
+
 textarea:focus, input:focus{
     outline: none;
 }
@@ -72,4 +70,24 @@ textarea:focus, input:focus{
 .wrap2{
     max-width: 1050px;
     margin: 0 auto;
+}
+
+.error {
+    font-size: 1rem;
+    color: red;
+    margin-top: -.2rem;
+    margin-bottom: .5rem;
+}
+input{
+    border: none;
+    border-bottom: 1px solid $dark_blue;
+    width: 100%;
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+}
+
+.info_box_success{
+    text-align: center;
+    color: $vert_success;
+    padding: 10rem 0;
 }

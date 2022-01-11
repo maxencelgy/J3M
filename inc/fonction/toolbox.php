@@ -78,4 +78,10 @@ function viewError($errors,$key){
     }
 }
 
+function recupInputValue($key){
+    if (!empty($_POST[$key])) {
+        echo $_POST[$key];
+    }
+}
+
 

@@ -51,7 +51,7 @@ include('inc/header.php');
     <h1>Connexion</h1>
         <form action="" method="post">
             <label for="email">Votre email :</label>
-            <input type="text" name="email" id="email" placeholder="exemple@gmail.com">
+            <input type="text" name="email" id="email" placeholder="exemple@gmail.com" value="<?= recupInputValue('email'); ?>">
             <span class="error"><?= viewError($errors,'email'); ?></span>
 
             <div class="form_separator"></div>

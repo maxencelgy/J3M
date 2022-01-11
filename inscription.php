@@ -26,6 +26,8 @@ if(!empty($_POST['submitted'])){
         if(mb_strlen($pseudo)<3){
             $errors['pseudo'] = "Le pseudo doit comporter au moins 3 caractères.";
         }
+    }else{
+        $errors['pseudo'] = "Le champ ne doit pas être vide.";
     }
 
     //Verif Password
@@ -68,13 +70,13 @@ include('inc/header.php');
     <h1>Inscription</h1>
         <form action="" method="post">
             <label for="pseudo">Votre pseudo :</label>
-            <input type="text" name="pseudo" id="pseudo" placeholder="ex : Doe">
+            <input type="text" name="pseudo" id="pseudo" placeholder="ex : Doe" value="<?= recupInputValue('pseudo'); ?>">
             <span class="error"><?= viewError($errors,'pseudo'); ?></span>
 
             <div class="form_separator"></div>
 
             <label for="email">Votre email :</label>
-            <input type="text" name="email" id="email" placeholder="exemple@gmail.com">
+            <input type="text" name="email" id="email" placeholder="exemple@gmail.com" value="<?= recupInputValue('email'); ?>">
             <span class="error"><?= viewError($errors,'email'); ?></span>
 
             <div class="form_separator"></div>

@@ -4,15 +4,14 @@ include('inc/header.php');
 
 <section id="inscription">
     <div class="wrap2">
-        <h1>Inscription</h1>
+    <div class="cadre_left">
+    <img src="asset/img/wing.png" alt="">
+</div>
+<div class="cadre_right">
+    <h1>Inscription</h1>
         <form action="" method="post">
-            <label for="nom">Votre nom :</label>
-            <input type="text" name="nom" id="nom" placeholder="ex : Doe">
-
-            <div class="form_separator"></div>
-
-            <label for="prenom">Votre prénom :</label>
-            <input type="text" name="prenom" id="prenom" placeholder="ex : John">
+            <label for="pseudo">Votre pseudo :</label>
+            <input type="text" name="pseudo" id="pseudo" placeholder="ex : Doe">
 
             <div class="form_separator"></div>
 
@@ -33,6 +32,8 @@ include('inc/header.php');
 
             <input type="submit" name="submitted" id="submitted" value="S'inscrire">
         </form>
+</div>
+        
     </div>
 </section>
 

@@ -62,7 +62,6 @@ include('inc/header.php');
         <form action="" method="post">
             <label for="pseudo">Votre pseudo :</label>
             <input type="text" name="pseudo" id="pseudo" placeholder="ex : Doe">
-
             <div class="form_separator"></div>
 
             <label for="email">Votre email :</label>

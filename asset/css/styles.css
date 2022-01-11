@@ -111,6 +111,69 @@ input {
   padding: 10rem 0;
 }
 
+/*Bouton hover vers le haut*/
+::before,
+::after {
+  position: absolute;
+  content: "";
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  background-color: #050B4F;
+  border-radius: 15px;
+  border: none;
+}
+
+.btn input[type=submit] {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  transition: 0.3s;
+  background-color: transparent;
+  border-radius: 15px;
+}
+
+.btn-1::before {
+  background-color: #FB9D2C;
+  transition: 0.3s ease-out;
+  border: none;
+  border-radius: 15px;
+}
+
+.btn-1 input[type=submit] {
+  color: black;
+  transition: 0.2s 0.1s;
+  border: none;
+}
+
+.btn-1 input[type=submit]:hover {
+  color: white;
+  transition: 0.2s 0.1s;
+}
+
+.btn.hover-filled-slide-down::before {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.btn.hover-filled-slide-down:hover::before {
+  height: 0;
+}
+
 #header nav {
   padding: 0 1rem;
   max-width: 1600px;
@@ -236,17 +299,6 @@ input {
   font-weight: 400;
   margin-bottom: 0.8rem;
 }
-#inscription .wrap2 .cadre_right form input[type=submit] {
-  width: 7rem;
-  padding: 0.7rem;
-  border-radius: 15px;
-  font-size: 1rem;
-}
-#inscription .wrap2 .cadre_right form input[type=submit]:hover {
-  cursor: pointer;
-  background-color: #050B4F;
-  color: white;
-}
 
 #connexion {
   padding: 5rem 0;
@@ -290,17 +342,6 @@ input {
 }
 #connexion .wrap2 .cadre_right form label {
   width: 15rem;
-}
-#connexion .wrap2 .cadre_right form input[type=submit] {
-  width: 7rem;
-  padding: 0.7rem;
-  border-radius: 15px;
-  font-size: 1rem;
-}
-#connexion .wrap2 .cadre_right form input[type=submit]:hover {
-  cursor: pointer;
-  background-color: #FB9D2C;
-  color: white;
 }
 
 footer {

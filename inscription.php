@@ -21,6 +21,13 @@ if(!empty($_POST['submitted'])){
         requestVerifMailRegister($email);
     }
 
+    //Verif pseudo
+    if(!empty($pseudo)){
+        if(mb_strlen($pseudo)<3){
+            $errors['pseudo'] = "Le pseudo doit comporter au moins 3 caractères.";
+        }
+    }
+
     //Verif Password
     if (!empty($password1) && !empty($password2)){
         if ($password1 != $password2){
@@ -62,6 +69,7 @@ include('inc/header.php');
         <form action="" method="post">
             <label for="pseudo">Votre pseudo :</label>
             <input type="text" name="pseudo" id="pseudo" placeholder="ex : Doe">
+            <span class="error"><?= viewError($errors,'pseudo'); ?></span>
 
             <div class="form_separator"></div>
 

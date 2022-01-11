@@ -12,6 +12,15 @@ function requestVerifMailRegister($email){
     }
 }
 
+function requestVerifLogin($email){
+    global $pdo;
+    $sql = "SELECT * FROM user WHERE email = :email";
+    $query = $pdo->prepare($sql);
+    $query->bindValue(':email',$email,PDO::PARAM_STR);
+    $query->execute();
+    return $query->fetch();
+}
+
 // insert
 function addUser($email, $pseudo, $hashPassword, $token){
     global $pdo;

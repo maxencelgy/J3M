@@ -95,6 +95,10 @@ textarea:focus, input:focus {
 }
 
 #header nav {
+  padding: 0 1rem;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -205,23 +209,33 @@ textarea:focus, input:focus {
   padding: 1rem 1rem;
   width: 50%;
   margin: 0 auto;
-  gap: 1rem;
   background-color: white;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   font-size: 1.4rem;
 }
+#inscription .wrap2 .cadre_right form .error {
+  font-size: 1rem;
+  color: red;
+  margin-top: -0.2rem;
+  margin-bottom: 0.5rem;
+}
 #inscription .wrap2 .cadre_right form input {
   width: 100%;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 #inscription .wrap2 .cadre_right form label {
-  width: 15rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.8rem;
 }
 #inscription .wrap2 .cadre_right form .form_separator {
-  height: 1px;
+  height: 0.1rem;
   width: 100%;
   margin: 0 auto;
   background-color: #050B4F;
+  margin-bottom: 1.5rem;
 }
 #inscription .wrap2 .cadre_right form input[type=submit] {
   width: 7rem;

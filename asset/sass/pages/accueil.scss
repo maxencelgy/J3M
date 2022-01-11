@@ -15,11 +15,14 @@
       a{
         border-style: solid;
         padding: .5rem;
-        border-radius: 10% 25%;
+        border-radius: 15% 25%;
       }
       a:hover{
-        transition: 0.50s;
+        background-color: #000069;
+        color: white;
+        transition: 0.30s;
       }
-    }
+  }
+
 
 }

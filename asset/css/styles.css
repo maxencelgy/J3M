@@ -157,10 +157,12 @@ input {
 #acceuil .main a {
   border-style: solid;
   padding: 0.5rem;
-  border-radius: 10% 25%;
+  border-radius: 15% 25%;
 }
 #acceuil .main a:hover {
-  transition: 0.5s;
+  background-color: #000069;
+  color: white;
+  transition: 0.3s;
 }
 
 #inscription {

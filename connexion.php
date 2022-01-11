@@ -3,19 +3,23 @@ include('inc/header.php');
 ?>
 
 <section id="connexion">
-    <div class="logo"><img src="asset/img/logo.svg" alt=""></div>
-        <form action="" method="post" class="box-boite" novalidate>
-        <h2>Connexion</h2>  
-                <label for="login">E-mail</label>
-                <input type="text" id="login" name="login" value="" placeholder="Entrez votre email">
-               
-                <label for="password">Mot de passe *</label>
-                <input type="password" id="password" name="password" value="" placeholder="Entrez votre mot de passe">
-                
-                <input type="submit" name="submitted" value="Connexion">
-                <a href="">Mot de passe oublié ?</a>
-                <p class="inscription">Si vous n'avez pas de compte <a href="inscription.php">inscrivez vous-ici</a></p>
-            </form>
+<div class="wrap2">
+        <h1>Connexion</h1>
+        <form action="" method="post">
+
+
+            <label for="email">Votre email :</label>
+            <input type="email" name="email" id="email" placeholder="exemple@gmail.com">
+
+            <div class="form_separator"></div>
+
+            <label for="password1">Mot de passe :</label>
+            <input type="password" name="password1" id="password1">
+
+            <div class="form_separator"></div>
+            <input type="submit" name="submitted" id="submitted" value="Se connecter">
+        </form>
+    </div>
 </section>
 
 <?php include('inc/footer.php');

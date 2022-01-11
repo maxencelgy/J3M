@@ -149,7 +149,21 @@ textarea:focus, input:focus {
   padding: 3rem 0;
   background-color: #F1F1F1;
 }
-#inscription .wrap2 h1 {
+#inscription .wrap2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#inscription .wrap2 .cadre_left {
+  width: 20%;
+}
+#inscription .wrap2 .cadre_left img {
+  width: 150%;
+}
+#inscription .wrap2 .cadre_right {
+  width: 80%;
+}
+#inscription .wrap2 .cadre_right h1 {
   text-align: center;
   background-color: #050B4F;
   color: white;
@@ -159,7 +173,7 @@ textarea:focus, input:focus {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
-#inscription .wrap2 form {
+#inscription .wrap2 .cadre_right form {
   display: flex;
   flex-flow: column nowrap;
   padding: 1rem 1rem;
@@ -171,60 +185,91 @@ textarea:focus, input:focus {
   border-bottom-left-radius: 10px;
   font-size: 1.4rem;
 }
-#inscription .wrap2 form input {
+#inscription .wrap2 .cadre_right form input {
   width: 100%;
 }
-#inscription .wrap2 form label {
+#inscription .wrap2 .cadre_right form label {
   width: 15rem;
 }
-#inscription .wrap2 form .form_separator {
+#inscription .wrap2 .cadre_right form .form_separator {
   height: 1px;
   width: 100%;
   margin: 0 auto;
   background-color: #050B4F;
 }
-#inscription .wrap2 form input[type=submit] {
+#inscription .wrap2 .cadre_right form input[type=submit] {
   width: 7rem;
   padding: 0.7rem;
   border-radius: 15px;
   font-size: 1rem;
 }
-#inscription .wrap2 form input[type=submit]:hover {
+#inscription .wrap2 .cadre_right form input[type=submit]:hover {
   cursor: pointer;
   background-color: #050B4F;
   color: white;
 }
 
 #connexion {
-  background-color: #050B4F;
-  padding: 2rem;
+  padding: 3rem 0;
+  background-color: #F1F1F1;
 }
-#connexion .logo {
-  margin-bottom: 4rem;
+#connexion .wrap2 {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
-#connexion .logo img {
+#connexion .wrap2 .cadre_left {
   width: 20%;
 }
-#connexion form {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  width: 800px;
-  max-width: 100%;
-  margin: 0 auto;
+#connexion .wrap2 .cadre_left img {
+  width: 150%;
 }
-#connexion form h2 {
-  margin-bottom: 1rem;
+#connexion .wrap2 .cadre_right {
+  width: 80%;
+}
+#connexion .wrap2 .cadre_right h1 {
   text-align: center;
   background-color: #050B4F;
+  color: white;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
-#connexion form input {
-  margin-bottom: 1rem;
-  padding: 1rem;
-  background-color: #cfcccc;
-  border-radius: 0.3rem;
+#connexion .wrap2 .cadre_right form {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1rem 1rem;
+  width: 50%;
+  margin: 0 auto;
+  gap: 1rem;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 1.4rem;
+}
+#connexion .wrap2 .cadre_right form input {
+  width: 100%;
+}
+#connexion .wrap2 .cadre_right form label {
+  width: 15rem;
+}
+#connexion .wrap2 .cadre_right form .form_separator {
+  height: 1px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #050B4F;
+}
+#connexion .wrap2 .cadre_right form input[type=submit] {
+  width: 7rem;
+  padding: 0.7rem;
+  border-radius: 15px;
+  font-size: 1rem;
+}
+#connexion .wrap2 .cadre_right form input[type=submit]:hover {
+  cursor: pointer;
+  background-color: #050B4F;
   color: white;
 }
 

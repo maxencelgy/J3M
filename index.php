@@ -7,7 +7,7 @@ include('inc/header.php');?>
     <div class="wrap">
         <div class="title">
             <img src="asset/img/logo white.svg" style="color: white" alt="">
-            <p>les meilleurs analyste reseaux </p>
+            <h1>Les meilleurs analyste reseaux de Normandie</h1>
             <a href="">voir plus</a>
         </div>
         <div class="text">

@@ -125,6 +125,13 @@ textarea:focus, input:focus {
   width: 100%;
   margin: 0 auto;
 }
+#acceuil .wrap img {
+  margin-bottom: -2rem;
+}
+#acceuil .wrap h1 {
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
 #acceuil .wrap .title {
   background-color: #142540;
   text-align: center;
@@ -133,6 +140,7 @@ textarea:focus, input:focus {
 }
 #acceuil .wrap .title a {
   border-style: solid;
+  padding: 0.5rem;
   border-radius: 10% 25%;
 }
 #acceuil .wrap .title a:hover {
@@ -143,7 +151,7 @@ textarea:focus, input:focus {
 }
 #acceuil .wrap .text {
   font-size: 20px;
-  padding: 2rem;
+  padding: 6rem;
   text-align: center;
 }
 #acceuil .wrap .text h2 {

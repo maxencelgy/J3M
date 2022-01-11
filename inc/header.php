@@ -23,6 +23,8 @@ require_once('inc/fonction/toolbox.php');
         </div>
 
         <div class="header_btn">
+            <a href="#infos">Qui</a>
+            <a href="#where">Où</a>
             <?php if(isLogged()){ ?>
             <a href="deconnexion.php">Déconnexion</a>
             <?php }else{ ?>

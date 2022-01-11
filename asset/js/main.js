@@ -7,6 +7,7 @@ VANTA.NET({
     points: 10
   });
 
+
 //   VANTA.NET({
 //     el: "#inscription",
 //     color: 0xf50000,

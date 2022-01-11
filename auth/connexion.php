@@ -1,8 +1,9 @@
 <?php
 session_start();
-require('inc/fonction/pdo.php');
-require('inc/fonction/request.php');
-require('inc/fonction/toolbox.php');
+require_once "../config.php";
+require_once('../inc/fonction/pdo.php');
+require_once('../inc/fonction/request.php');
+require_once('../inc/fonction/toolbox.php');
 
 verifUserAlreadyConnected();
 $success=false;
@@ -38,13 +39,13 @@ if(!empty($_POST['submitted'])){
     }
 }
 
-include('inc/header.php');
+include('../inc/header.php');
 ?>
 
 <section id="connexion">
 <div class="wrap2">
     <div class="cadre_left">
-    <img src="asset/img/wing.png" alt="illustration éclair bleu">
+    <img src="../asset/img/wing.png" alt="illustration éclair bleu">
 </div>
 
     <div class="cadre_right">
@@ -68,4 +69,4 @@ include('inc/header.php');
     </div>
 </section>
 
-<?php include('inc/footer.php');
+<?php include('../inc/footer.php');

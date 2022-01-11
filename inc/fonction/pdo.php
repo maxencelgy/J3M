@@ -1,8 +1,5 @@
 <?php
 
-// if()
-include "config.php";
-
 try {
     $pdo = new PDO('mysql:host='.$serveur.';dbname='.$bdd.'', ''.$username.'', ''.$password.'', array(
         PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",

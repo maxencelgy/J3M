@@ -1,35 +1,65 @@
 #connexion {
-    background-color: #050B4F;
-    padding: 2rem;
-    .logo {
-        margin-bottom: 4rem;
-        display: flex;
-        justify-content: center;
-        
-        img{
-            width: 20%;
-            
-        }
+    padding: 5rem 0;
+    background-color: $gris;
+  .wrap2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .cadre_left {
+      width: 20%;
+      img {
+        width: 150%;
+      }
     }
-    form{
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        width: 800px;
-        max-width: 100%;
+    .cadre_right{
+      width: 80%;
+      h1{
+        text-align: center;
+        background-color: $dark_blue;
+        color: white;
+        width: 50%;
         margin: 0 auto;
-        
-        h2{
-            margin-bottom: 1rem;
-            text-align: center;
-            background-color: #050B4F;
-        }
+        padding: .5rem 0;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+      }
+      form{
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 1rem 1rem;
+        width: 50%;
+        margin: 0 auto;
+        gap: 1rem;
+        background-color: white;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        font-size: 1.4rem;
         input{
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background-color: rgb(207, 204, 204);
-            border-radius: .3rem;
-            color: white;
+          width: 100%;
+  
         }
+        label{
+          width: 15rem;
+        }
+        .form_separator{
+          height: 1px;
+          width: 100%;
+          margin: 0 auto;
+          background-color: $dark_blue;
+        }
+        input[type=submit]{
+          width: 7rem;
+          padding: .7rem;
+          border-radius: 15px;
+          font-size: 1rem;
+        }
+        input[type=submit]:hover{
+          cursor: pointer;
+          background-color: $orange;
+          color: white;
+        }
+      }
     }
+   
+  }
 }

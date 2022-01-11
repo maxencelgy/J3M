@@ -55,7 +55,7 @@ include('inc/header.php');
 <section id="inscription">
     <div class="wrap2">
     <div class="cadre_left">
-    <img src="asset/img/wing.png" alt="">
+    <img src="asset/img/wing.png" alt="illustration éclair bleu">
 </div>
 <div class="cadre_right">
     <h1>Inscription</h1>

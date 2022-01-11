@@ -1,3 +1,39 @@
-#footer{
+footer{
+    background-color: #242A2E;
+    padding: 3.5rem 2rem;
+    color: white;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    h2{
+        font-size: 1.7rem;
+        margin-bottom: .8rem;
+    }
+    p{
+        font-size: 1rem;
+    }
+    .div_foot{
+        width: 20%;
+    }
+    .footer_logo{
+        img{
+            width: 50%;
+          
+        }
+    }
+    .horraires{
+        display: flex;
+        .fa-times{
+            color: red;
+        }
+    .fa-check{
+        color: green;
+    }
     
+    .horraires_left{
+        margin-right: 1rem;
+    }
+    }
 }

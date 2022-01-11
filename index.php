@@ -5,17 +5,18 @@ include('inc/header.php');?>
 
 <section id="acceuil">
     <div class="wrap">
-        <div class="img">
-            <img src="asset/img/network.jpg" alt="">
+        <div class="title">
+            <img src="asset/img/logo white.svg" style="color: white" alt="">
+            <h1>Les meilleurs analyste reseaux de Normandie</h1>
+            <a href="">voir plus</a>
         </div>
         <div class="text">
-            <h2>Bienvenu sur notre site</h2>
-            <p>Bonjours, bienvenue sur notre site web, qui vous permettras d’analyse les trames réseaux de vos clients afin de détecter d’éventuelles attaque DdoS.
-                Grâce a notre site vous pourrais accéder à vos information réseaux avec des graphique simples a lire et a utilisé selon vos résultats.
-                Plusieurs graphiques seront proposés pour un aspect plus moderne.
+            <h2>Qui somme nous ?</h2>
+            <p>Nous somme une entreprise qui vous fournit un site web qui vous permettent d’analyser les trames réseaux de vos clients, afin de détecter d’éventuelles attaque DdoS, et de protéger vos utilisateurs.
+                Notre site et simple d’utilisation, et avec un aspect moderne, on vous propose des graphique simple et facile à analyser pour plus de productivité dans votre travaille, et pour plus de sécurité pour vos clients .
             </p>
         </div>
-
+    </div>
 </section>
 <?php include('inc/footer.php');
 

@@ -1,24 +1,42 @@
 
 #acceuil{
-  background-color: #001242;
   .wrap{
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    text-align: center;
-    div img{
-      position: relative;
-      filter: grayscale(60%) blur(5px);
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    img {
+      margin-bottom: -2rem;
     }
-    div.text{
-      position: absolute;
-      margin-top: 60vh; /* poussé de la moitié de hauteur de viewport */
-      transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
-      color: white;
-      font-size: 25px;
+    h1 {
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+    .title{
+      background-color: #142540;
       text-align: center;
+      color: white;
+      padding: 5rem;
+      a{
+        border-style: solid;
+        padding: .5rem;
+        border-radius: 10% 25%;
+      }
+      a:hover{
 
+        transition: 0.50s;
+      }
     }
-
+    img{
+      width: 30%;
+    }
+    .text{
+      font-size: 20px;
+      padding: 6rem;
+      text-align: center;
+      h2{
+        font-size: 35px;
+        margin-bottom: 1rem;
+      }
+    }
   }
 }

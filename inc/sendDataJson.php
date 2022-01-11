@@ -6,7 +6,7 @@ $json = file_get_contents($json_url);
 echo $json;
 $data = json_decode(($json));
  debug($data);
- test();
+
 global $pdo;
 var_dump($pdo);
 foreach($data as $trame){

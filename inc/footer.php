@@ -1,3 +1,4 @@
+
 <footer>
     <div class="footer_logo div_foot">
         <img src="asset/img/logo white.svg" alt="">

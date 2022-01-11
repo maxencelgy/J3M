@@ -5,7 +5,7 @@ include('inc/header.php');
 <section id="connexion">
 <div class="wrap2">
     <div class="cadre_left">
-    <img src="asset/img/wing.png" alt="">
+    <img src="asset/img/wing.png" alt="illustration éclair bleu">
 </div>
 
     <div class="cadre_right">
@@ -17,7 +17,7 @@ include('inc/header.php');
             <div class="form_separator"></div>
 
             <label for="password1">Mot de passe :</label>
-            <input type="password" name="password1" id="password1">
+            <input type="password" name="password1" id="password1" placeholder="*****">
 
             <div class="form_separator"></div>
             <input type="submit" name="submitted" id="submitted" value="Se connecter">

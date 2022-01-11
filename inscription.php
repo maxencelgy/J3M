@@ -72,25 +72,17 @@ include('inc/header.php');
             <input type="text" name="pseudo" id="pseudo" placeholder="ex : Doe" value="<?= recupInputValue('pseudo'); ?>">
             <span class="error"><?= viewError($errors,'pseudo'); ?></span>
 
-            <div class="form_separator"></div>
-
             <label for="email">Votre email :</label>
             <input type="text" name="email" id="email" placeholder="exemple@gmail.com" value="<?= recupInputValue('email'); ?>">
             <span class="error"><?= viewError($errors,'email'); ?></span>
-
-            <div class="form_separator"></div>
 
             <label for="password1">Mot de passe :</label>
             <input type="password" name="password1" id="password1" placeholder="*******">
             <span class="error"><?= viewError($errors,'password1'); ?></span>
 
-            <div class="form_separator"></div>
-
             <label for="password2">Confirmer :</label>
             <input type="password" name="password2" id="password2" placeholder="*******">
             <span class="error"><?= viewError($errors,'password2'); ?></span>
-
-            <div class="form_separator"></div>
 
             <input type="submit" name="submitted" id="submitted" value="S'inscrire">
         </form>

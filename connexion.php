@@ -54,13 +54,10 @@ if(!empty($_POST['submitted'])){
             <input type="text" name="email" id="email" placeholder="exemple@gmail.com" value="<?= recupInputValue('email'); ?>">
             <span class="error"><?= viewError($errors,'email'); ?></span>
 
-            <div class="form_separator"></div>
-
             <label for="password1">Mot de passe :</label>
             <input type="password" name="password1" id="password1" placeholder="*****">
             <span class="error"><?= viewError($errors,'password1'); ?></span>
 
-            <div class="form_separator"></div>
             <input type="submit" name="submitted" id="submitted" value="Se connecter">
         </form>
     </div>

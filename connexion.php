@@ -3,7 +3,7 @@ require_once('inc/fonction/pdo.php');
 require_once('inc/fonction/request.php');
 require_once('inc/fonction/toolbox.php');
 
-include('inc/header.php');
+include('inc/header2.php');
 
 verifUserAlreadyConnected();
 $success=false;

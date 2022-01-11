@@ -17,19 +17,17 @@ require_once('inc/fonction/toolbox.php');
 <body>
 
 <header id="header">
-    <nav>
+    <nav style="position: inherit; background-color: white;">
         <div class="logo_nav">
-           <a href="index.php"><img src="asset/img/logo white.svg" alt="logo du site"></a>
+            <a href="index.php"><img src="asset/img/logo.svg" alt="logo du site"></a>
         </div>
 
         <div class="header_btn">
-            <a href="#infos">Qui</a>
-            <a href="#where">Où</a>
             <?php if(isLogged()){ ?>
-            <a href="deconnexion.php">Déconnexion</a>
+                <a href="deconnexion.php" style="color: black;">Déconnexion</a>
             <?php }else{ ?>
-            <a href="inscription.php">Inscription</a>
-            <a href="connexion.php">Connexion</a>
+                <a href="inscription.php" style="color: black;">Inscription</a>
+                <a href="connexion.php" style="color: black;">Connexion</a>
             <?php } ?>
         </div>
     </nav>

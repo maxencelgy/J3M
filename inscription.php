@@ -56,7 +56,7 @@ if(!empty($_POST['submitted'])){
     }
 }
 
-include('inc/header.php');
+include('inc/header2.php');
 ?>
 
 <?php if($success==false){ ?>

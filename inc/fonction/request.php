@@ -35,9 +35,7 @@ function requestVerifMailRegister($email){
     }
 }
 
-<<<<<<< HEAD
 
-=======
 function requestVerifLogin($email){
     global $pdo;
     $sql = "SELECT * FROM user WHERE email = :email";
@@ -46,7 +44,7 @@ function requestVerifLogin($email){
     $query->execute();
     return $query->fetch();
 }
->>>>>>> b9fdb5237f5f989494aacd12f26a145401b75c9d
+
 
 // insert
 function addUser($email, $pseudo, $hashPassword, $token){

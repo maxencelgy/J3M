@@ -1,4 +1,27 @@
 <?php
+session_start();
+require('inc/fonction/pdo.php');
+require('inc/fonction/request.php');
+require('inc/fonction/toolbox.php');
+
+verifUserAlreadyConnected();
+$success=false;
+$errors = [];
+
+if(!empty($_POST['submitted'])){
+    //Faille Xss
+    $pseudo = cleanXss('pseudo');
+    $email = cleanXss('email');
+    $password1 = cleanXss('password1');
+    $password2 = cleanXss('password2');
+
+    $errors = mailValidation($errors,$email,'email');
+
+    if(empty($errors['email'])){
+
+    }
+}
+
 include('inc/header.php');
 ?>
 

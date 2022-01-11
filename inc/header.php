@@ -1,5 +1,12 @@
 <?php
 session_start();
+// Il y a un style différent du header pour la page d'accueil
+// On test la page, si on est n'est pas sur l'accueil 
+// On ajoute un class au header pour qu'il s'addapte au style voulu
+
+// Si vrai = true (index.php ou racine), si non = second (=> class changement graphique pour le header)
+$classHeader = (basename($_SERVER['PHP_SELF']) === 'index.php') ?: 'second';
+
 ?>
 
 <!DOCTYPE html>
@@ -15,15 +22,18 @@ session_start();
 <body>
 
 
-<header id="header">
-    <nav id="wrap1">
+<header class="<?php if(!empty($classHeader)) echo $classHeader; ?>" id="header">
+    <nav>
         <div class="logo_nav">
            <a href="<?php echo ROOTDIR; ?>index.php"><img src="<?php echo ROOTDIR; ?>asset/img/logo.svg" alt="logo du site"></a> 
         </div>
         <div class="header_btn">
+            <?php if($classHeader === true){?>
             <a href="#infos">Qui</a>
             <a href="#where">Où</a>
-            <?php if(isLogged()){ ?>
+            <?php
+            }            
+            if(isLogged()){ ?>
             <a href="<?php echo ROOTDIR; ?>deconnexion.php">Déconnexion</a>
             <?php }else{ ?>
             <a href="<?php echo ROOTDIR; ?>auth/inscription.php">Inscription</a>

@@ -15,7 +15,7 @@
         <p>6 rue de l'invitation paris VII</p>
     </div>
     <div class="footer_horraires div_foot">
-        <h2>Horraires</h2>
+        <h2>Horaires</h2>
         <div class="horraires">
         <div class="horraires_left">
         <p><i class="fas fa-check"></i> Lun 10h-19h</p>

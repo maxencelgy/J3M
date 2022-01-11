@@ -1,3 +1,9 @@
+<?php
+session_start();
+require_once('inc/fonction/toolbox.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,8 +23,12 @@
         </div>
 
         <div class="header_btn">
+            <?php if(isLogged()){ ?>
+            <a href="deconnexion.php">Déconnexion</a>
+            <?php }else{ ?>
             <a href="inscription.php">Inscription</a>
             <a href="connexion.php">Connexion</a>
+            <?php } ?>
         </div>
     </nav>
 </header>

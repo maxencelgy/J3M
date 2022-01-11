@@ -37,18 +37,6 @@
         label{
           width: 15rem;
         }
-
-        input[type=submit]{
-          width: 7rem;
-          padding: .7rem;
-          border-radius: 15px;
-          font-size: 1rem;
-        }
-        input[type=submit]:hover{
-          cursor: pointer;
-          background-color: $orange;
-          color: white;
-        }
       }
     }
    

@@ -1,7 +1,6 @@
-
 <footer>
     <div class="footer_logo div_foot">
-        <img src="asset/img/logo white.svg" alt="">
+        <img src="<?php echo ROOTDIR; ?>asset/img/logo white.svg" alt="">
     </div>
     <div class="footer_service div_foot">
         <h2>Nos services</h2>
@@ -41,7 +40,8 @@
     
 </footer>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="asset/js/main.js"></script>
 </body>

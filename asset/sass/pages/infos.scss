@@ -1,0 +1,28 @@
+#infos {
+    background-color: #242A2E;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem;
+    .left {
+        width: 28%;
+        img{
+            width: 125%;
+            border-radius: .3rem;
+
+        }
+    }
+    .right{
+        width: 63%;
+        h2{
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        p{
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+    }
+}

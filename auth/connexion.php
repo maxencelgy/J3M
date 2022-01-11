@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 require_once "../config.php";
 require_once('../inc/fonction/pdo.php');
 require_once('../inc/fonction/request.php');
@@ -34,12 +34,14 @@ if(!empty($_POST['submitted'])){
             $errors['password1'] = "Mot de passe incorrect";
         }
         if(count($errors) == 0) {
-            header('Location: index.php');
+            header('Location: '.ROOTDIR.'index.php');
+           
         }
     }
 }
 
 include('../inc/header.php');
+
 ?>
 
 <section id="connexion">
@@ -52,17 +54,16 @@ include('../inc/header.php');
     <h1>Connexion</h1>
         <form action="" method="post">
             <label for="email">Votre email :</label>
-            <input type="text" name="email" id="email" placeholder="exemple@gmail.com">
+            <input type="text" name="email" id="email" placeholder="exemple@gmail.com" value="<?= recupInputValue('email'); ?>">
             <span class="error"><?= viewError($errors,'email'); ?></span>
-
-            <div class="form_separator"></div>
 
             <label for="password1">Mot de passe :</label>
             <input type="password" name="password1" id="password1" placeholder="*****">
             <span class="error"><?= viewError($errors,'password1'); ?></span>
 
-            <div class="form_separator"></div>
-            <input type="submit" name="submitted" id="submitted" value="Se connecter">
+            <button class="btn btn-1 hover-filled-slide-down">
+                <input type="submit" name="submitted" id="submitted" value="Se connecter">
+            </button>
         </form>
     </div>
        

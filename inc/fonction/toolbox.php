@@ -29,7 +29,7 @@ function cleanXss($key){
 function isLogged()
 {
     if(!empty($_SESSION['user'])) {
-        if (!empty($_SESSION['user']['id_user'])) {
+        if (!empty($_SESSION['user']['id'])) {
             if (!empty($_SESSION['user']['email'])) {
                 if (!empty($_SESSION['user']['pseudo'])){
                     if (!empty($_SESSION['user']['status'])) {
@@ -59,7 +59,7 @@ function isAdmin()
 function verifUserAlreadyConnected(){
     if (isLogged()==true){
         header('Location: index.php');
-    }else{ }
+    }
 }
 
 function generateRandomString($length = 10) {
@@ -77,6 +77,7 @@ function viewError($errors,$key){
         echo $errors[$key];
     }
 }
+
 
 /*
  * Cette fonction boucle dans l'URL explosé précédemment
@@ -131,6 +132,12 @@ function getCurrentFile(){
     }
    
    return $result;
+}
+function recupInputValue($key){
+    if (!empty($_POST[$key])) {
+        echo $_POST[$key];
+    }
+
 }
 
 

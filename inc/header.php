@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,12 +18,17 @@
 <header id="header">
     <nav id="wrap1">
         <div class="logo_nav">
-           <a href="../index.php"><img src="../asset/img/logo.svg" alt="logo du site"></a> 
+           <a href="<?php echo ROOTDIR; ?>index.php"><img src="<?php echo ROOTDIR; ?>asset/img/logo.svg" alt="logo du site"></a> 
         </div>
-
         <div class="header_btn">
-            <a href="auth/inscription.php">Inscription</a>
-            <a href="auth/connexion.php">Connexion</a>
+            <a href="#infos">Qui</a>
+            <a href="#where">Où</a>
+            <?php if(isLogged()){ ?>
+            <a href="<?php echo ROOTDIR; ?>deconnexion.php">Déconnexion</a>
+            <?php }else{ ?>
+            <a href="<?php echo ROOTDIR; ?>auth/inscription.php">Inscription</a>
+            <a href="<?php echo ROOTDIR; ?>auth/connexion.php">Connexion</a>
+            <?php } ?>
         </div>
     </nav>
 </header>

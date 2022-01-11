@@ -1,8 +1,7 @@
 <?php
-session_start();
-require('../inc/fonction/pdo.php');
-require('../inc/fonction/request.php');
-require('../inc/fonction/toolbox.php');
+require_once "../config.php";
+require_once('../inc/fonction/pdo.php');
+require_once('../inc/fonction/request.php');
 
 verifUserAlreadyConnected();
 $success=false;
@@ -26,6 +25,8 @@ if(!empty($_POST['submitted'])){
         if(mb_strlen($pseudo)<3){
             $errors['pseudo'] = "Le pseudo doit comporter au moins 3 caractères.";
         }
+    }else{
+        $errors['pseudo'] = "Le champ ne doit pas être vide.";
     }
 
     //Verif Password
@@ -51,7 +52,7 @@ if(!empty($_POST['submitted'])){
 
         $success=true;
         //redirection
-        header('refresh:3;url=index.php');
+        header('refresh:3;url='.ROOTDIR.'index.php');
     }
 }
 
@@ -68,30 +69,24 @@ include('../inc/header.php');
     <h1>Inscription</h1>
         <form action="" method="post">
             <label for="pseudo">Votre pseudo :</label>
-            <input type="text" name="pseudo" id="pseudo" placeholder="ex : Doe">
+            <input type="text" name="pseudo" id="pseudo" placeholder="ex : Doe" value="<?= recupInputValue('pseudo'); ?>">
             <span class="error"><?= viewError($errors,'pseudo'); ?></span>
 
-            <div class="form_separator"></div>
-
             <label for="email">Votre email :</label>
-            <input type="text" name="email" id="email" placeholder="exemple@gmail.com">
+            <input type="text" name="email" id="email" placeholder="exemple@gmail.com" value="<?= recupInputValue('email'); ?>">
             <span class="error"><?= viewError($errors,'email'); ?></span>
-
-            <div class="form_separator"></div>
 
             <label for="password1">Mot de passe :</label>
             <input type="password" name="password1" id="password1" placeholder="*******">
             <span class="error"><?= viewError($errors,'password1'); ?></span>
 
-            <div class="form_separator"></div>
-
             <label for="password2">Confirmer :</label>
             <input type="password" name="password2" id="password2" placeholder="*******">
             <span class="error"><?= viewError($errors,'password2'); ?></span>
 
-            <div class="form_separator"></div>
-
-            <input type="submit" name="submitted" id="submitted" value="S'inscrire">
+            <button class="btn btn-1 hover-filled-slide-down">
+                <input type="submit" name="submitted" id="submitted" value="S'inscrire">
+            </button>
         </form>
 </div>
         <?php } else {echo'<div class="info_box_success"><h2>Bienvenue ! Votre compte a bien été créé !</h2><h4>Vous allez être redirigé...</h4></div>';} ?>

@@ -1,7 +1,5 @@
-#header{
- 
-  nav{
-    
+#header{ 
+  nav{    
     padding: 0 4rem;
     width: 100%;
     position: fixed;
@@ -49,7 +47,9 @@
 // second header
 
 #header.second{  
-  nav{   
+  nav{
+    position: inherit;
+    background-color: white;
     .header_btn{
       a{
         color: black;

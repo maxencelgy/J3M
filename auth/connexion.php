@@ -39,8 +39,7 @@ if(!empty($_POST['submitted'])){
             $errors['password1'] = "Mot de passe incorrect";
         }
         if(count($errors) == 0) {
-            header('Location: '.ROOTDIR.'index.php');
-           
+            header('Location: ../index.php');           
         }
     }
 }

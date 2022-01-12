@@ -214,6 +214,10 @@ input {
   width: 90%;
 }
 
+#header.second nav {
+  position: inherit;
+  background-color: white;
+}
 #header.second nav .header_btn a {
   color: black;
 }

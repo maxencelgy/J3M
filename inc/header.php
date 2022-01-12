@@ -1,12 +1,20 @@
 <?php
 session_start();
+
 // Il y a un style différent du header pour la page d'accueil
 // On test la page, si on est n'est pas sur l'accueil 
 // On ajoute un class au header pour qu'il s'addapte au style voulu
 
 // Si vrai = true (index.php ou racine), si non = second (=> class changement graphique pour le header)
 $classHeader = (basename($_SERVER['PHP_SELF']) === 'index.php') ?: 'second';
-
+if($classHeader === true || basename($_SERVER['PHP_SELF']) === 'accueil.php'){
+    require_once "inc/fonction/toolbox.php";
+    require_once "inc/fonction/pdo.php";
+}else{
+    require_once "../inc/fonction/toolbox.php";
+    require_once "../inc/fonction/pdo.php";
+}
+debug($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +30,7 @@ $classHeader = (basename($_SERVER['PHP_SELF']) === 'index.php') ?: 'second';
 <body>
 
 
-<header class="<?php if(!empty($classHeader)) echo $classHeader; ?>" id="header">
+<header class="<?php echo $classHeader; ?>" id="header">
     <nav>
         <div class="logo_nav">
            <a href="<?php echo ROOTDIR; ?>index.php"><img src="<?php echo ROOTDIR; ?>asset/img/logo.svg" alt="logo du site"></a> 

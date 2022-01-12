@@ -27,8 +27,8 @@ $classHeader = (basename($_SERVER['PHP_SELF']) === 'index.php') ?: 'second';
         </div>
         <div class="header_btn">
             <?php if($classHeader === true){?>
-            <a class="linkNav" href="#infos">Qui</a>
-            <a class="linkNav" href="#where">Où</a>
+            <a class="linkNav" href="#infos">A propos</a>
+            <a class="linkNav" href="#where">Contact</a>
             <?php
             }            
             if(isLogged()){ ?>

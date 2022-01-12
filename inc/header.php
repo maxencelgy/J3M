@@ -23,19 +23,19 @@ $classHeader = (basename($_SERVER['PHP_SELF']) === 'index.php') ?: 'second';
 <header class="<?php echo $classHeader; ?>" id="header">
     <nav>
         <div class="logo_nav">
-           <a href="<?php echo ROOTDIR; ?>index.php"><img src="<?php echo ROOTDIR; ?>asset/img/logo.svg" alt="logo du site"></a> 
+           <a class="linkNav" href="<?php echo ROOTDIR; ?>index.php"><img src="<?php echo ROOTDIR; ?>asset/img/logo.svg" alt="logo du site"></a>
         </div>
         <div class="header_btn">
             <?php if($classHeader === true){?>
-            <a href="#infos">Qui</a>
-            <a href="#where">Où</a>
+            <a class="linkNav" href="#infos">Qui</a>
+            <a class="linkNav" href="#where">Où</a>
             <?php
             }            
             if(isLogged()){ ?>
-            <a href="<?php echo ROOTDIR; ?>auth/deconnexion.php">Déconnexion</a>
+            <a class="linkNav" href="<?php echo ROOTDIR; ?>auth/deconnexion.php">Déconnexion</a>
             <?php }else{ ?>
-            <a href="<?php echo ROOTDIR; ?>auth/inscription.php">Inscription</a>
-            <a href="<?php echo ROOTDIR; ?>auth/connexion.php">Connexion</a>
+            <a class="linkNav" href="<?php echo ROOTDIR; ?>auth/inscription.php">Inscription</a>
+            <a class="linkNav" href="<?php echo ROOTDIR; ?>auth/connexion.php">Connexion</a>
             <?php } ?>
         </div>
     </nav>

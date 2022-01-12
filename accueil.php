@@ -18,9 +18,7 @@ include_once('inc/header.php');
 <section id="infos">
     <div class="left">
         <main>
-
             <div id="carousel">
-
                 <div class="hideLeft">
                     <img src="https://i1.sndcdn.com/artworks-000165384395-rhrjdn-t500x500.jpg">
                 </div>

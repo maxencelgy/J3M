@@ -33,5 +33,26 @@ VANTA.NET({
      
 //     })
 
+const navReveal = document.querySelector("nav");
+
+let navOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: .5
+};
+
+let observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry.isIntersecting)
+        if(entry.isIntersecting == true){
+            navReveal.style.background = "rgba(5,11,79,.9)";
+        }
+    })
+});
+
+let classTarget = document.querySelector(".right");
+observer.observe(classTarget);
+
+
 
     

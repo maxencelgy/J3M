@@ -1,5 +1,3 @@
-AOS.init();
-
 console.log("cc");
 
 VANTA.NET({
@@ -86,7 +84,7 @@ function animateIn( $item, $block )
   var $nrY = 360 * getRandomInt(2);
     
   var $nx = -(2000) + getRandomInt( 4000 )
-  var $ny = -(2000) + getRandomInt( 4000 )
+  var $ny = -(2000) + getRandomInt( 2000 )
   var $nz = -4000 +  getRandomInt( 4000 )
     
   var $s = 1.5 + (getRandomInt( 10 ) * .1)
@@ -119,6 +117,10 @@ function getRandomInt( $n )
   return Math.floor((Math.random()*$n)+1);	
 }
 
+
+
+
+
 //Utilisation de Intersection observer pour changer le style transparent de la barre de
 //navigation au scroll
 const navReveal = document.querySelector("nav");
@@ -141,3 +143,28 @@ let observer = new IntersectionObserver((entries) => {
 
 let idTarget = document.querySelector("#acceuil");
 observer.observe(idTarget);
+
+
+
+
+
+const carrouselReveal = document.getElementById("contentContainer");
+
+let carrouselOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: .5
+};
+
+let bobserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting == true){
+            carrouselReveal.style.display = "none";
+        }else{
+            carrouselReveal.style.display = "block";
+        }
+    })
+});
+
+let idTarget2 = document.querySelector("#infos");
+bobserver.observe(idTarget);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 10 jan. 2022 à 14:51
+-- Généré le : mar. 11 jan. 2022 à 15:57
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 8.0.13
 
@@ -53,9 +53,10 @@ CREATE TABLE `jsondata` (
 CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
   `email` varchar(200) NOT NULL,
-  `speudo` varchar(100) NOT NULL,
+  `pseudo` varchar(100) NOT NULL,
   `mdp` varchar(255) NOT NULL,
   `token` varchar(255) NOT NULL,
+  `status` varchar(10) NOT NULL,
   `created_at` datetime NOT NULL,
   `modified_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -78,7 +79,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

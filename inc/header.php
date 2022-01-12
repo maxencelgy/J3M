@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('inc/fonction/toolbox.php');
-
+debug($_SESSION);
 ?>
 
 <!DOCTYPE html>

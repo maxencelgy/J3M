@@ -6,11 +6,8 @@ VANTA.NET({
     el: ".main",
     color: 0x5b30e8,
     backgroundColor: 0xb133d,
-    points: 5,
     points: 10
-
   });
-
 
 
 // set and cache variables
@@ -134,16 +131,13 @@ let navOptions = {
 
 let observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        console.log(entry.isIntersecting)
         if(entry.isIntersecting == true){
+            navReveal.style.background = "transparent";
+        }else{
             navReveal.style.background = "#242A2E";
         }
     })
 });
 
-let idTarget = document.querySelector("#infos");
+let idTarget = document.querySelector("#acceuil");
 observer.observe(idTarget);
-
-
-
-    

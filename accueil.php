@@ -33,8 +33,6 @@ include_once('inc/header.php');
 	</div>
 </section>
 
-
-
 <section id="where">
 <h2>Où nous trouver </h2>
 <h3>Google maps :</h3>

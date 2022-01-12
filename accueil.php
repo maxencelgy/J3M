@@ -23,7 +23,7 @@ include_once('inc/header.php');
 <section id="infos">
 	<h2> <i>Ils nous ont fait confiance</i>  </h2>
 	<div id="contentContainer" class="trans3d"> 	
-		<section id="carouselContainer" class="trans3d">
+		<section id="carouselContainer" class="trans3d" data-aos="fade-up">
 			<figure id="item1" class="carouselItem trans3d"><div class="carouselItemInner trans3d"><img src="asset/img/pigier.png" alt=""></div></figure>
 			<figure id="item2" class="carouselItem trans3d"><div class="carouselItemInner trans3d"><img src="asset/img/campus.jpg" alt=""></div></figure>
 			<figure id="item3" class="carouselItem trans3d"><div class="carouselItemInner trans3d"><img src="asset/img/logo_Need_For_School.jpg" alt=""></div></figure>

@@ -17,17 +17,7 @@
     <div class="footer_horraires div_foot">
         <h2>Horaires</h2>
         <div class="horraires">
-        <div class="horraires_left">
-        <p><i class="fas fa-check"></i> Lun 10h-19h</p>
-        <p><i class="fas fa-check"></i> Mar 10h-19h</p>
-        <p><i class="fas fa-check"></i> Mer 10h-19h</p>
-        <p><i class="fas fa-check"></i> Jeu 10h-19h</p>
-        <p><i class="fas fa-check"></i> Ven 10h-19h</p>
-        </div>
-        <div class="horraires_right">
-        <p><i class="fas fa-times"></i> Sam fermé</p>
-        <p><i class="fas fa-times"></i> Dim fermé</p>
-        </div>
+            <p>Ouvert 7 jours sûr 7 24/24</p>
         </div>
        
 
@@ -40,7 +30,8 @@
     
 </footer>
 
-<script src="https://raw.githubusercontent.com/JohnBlazek/codepen-resources/master/3d-carousel/js/libs.min.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js"></script>

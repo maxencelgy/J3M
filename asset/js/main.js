@@ -1,3 +1,5 @@
+AOS.init();
+
 console.log("cc");
 
 VANTA.NET({

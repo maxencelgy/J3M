@@ -14,7 +14,6 @@ if($classHeader === true || basename($_SERVER['PHP_SELF']) === 'accueil.php'){
     require_once "../inc/fonction/toolbox.php";
     require_once "../inc/fonction/pdo.php";
 }
-debug($_SESSION);
 ?>
 
 <!DOCTYPE html>

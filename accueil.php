@@ -20,7 +20,6 @@ include_once('inc/header.php');
 </section>
 
 
-
 <section id="infos">
 	<h2> <i>Ils nous ont fait confiance</i>  </h2>
 	<div id="contentContainer" class="trans3d"> 	

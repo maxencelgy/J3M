@@ -454,11 +454,11 @@ footer .footer_logo img {
 }
 
 #analyse {
-  background-color: blue;
+  background: url("../img/reseaux.png") top;
   background-size: 100%;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  padding: 10rem;
+  padding: 3rem;
 }
 #analyse h2 {
   color: white;

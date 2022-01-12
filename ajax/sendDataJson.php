@@ -9,7 +9,6 @@ echo $json;
 // transformation de l'API en un objet
 $data = json_decode(($json));
 debug($data);
-
 // boucle de toutes les data
 // On verifi que les datas ne soit pas en base
 // Si oui on ne fait rien

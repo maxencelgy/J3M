@@ -134,7 +134,7 @@ let observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         console.log(entry.isIntersecting)
         if(entry.isIntersecting == true){
-            navReveal.style.background = "rgba(5,11,79,.9)";
+            navReveal.style.background = "#242A2E";
         }
     })
 });

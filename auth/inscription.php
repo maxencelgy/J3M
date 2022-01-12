@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../config.php";
 require_once('../inc/fonction/pdo.php');
 require_once('../inc/fonction/request.php');
@@ -56,10 +57,6 @@ if(!empty($_POST['submitted'])){
     }
 }
 
-
-// include('../inc/header.php');
-
-// include('../inc/header2.php');
 include('../inc/header.php');
 
 ?>

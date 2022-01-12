@@ -1,20 +1,10 @@
 <?php
-session_start();
-
 // Il y a un style différent du header pour la page d'accueil
 // On test la page, si on est n'est pas sur l'accueil 
 // On ajoute un class au header pour qu'il s'addapte au style voulu
 
 // Si vrai = true (index.php ou racine), si non = second (=> class changement graphique pour le header)
 $classHeader = (basename($_SERVER['PHP_SELF']) === 'index.php') ?: 'second';
-if($classHeader === true || basename($_SERVER['PHP_SELF']) === 'accueil.php'){
-    require_once "inc/fonction/toolbox.php";
-    require_once "inc/fonction/pdo.php";
-}else{
-    require_once "../inc/fonction/toolbox.php";
-    require_once "../inc/fonction/pdo.php";
-}
-debug($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +32,7 @@ debug($_SESSION);
             <?php
             }            
             if(isLogged()){ ?>
-            <a href="<?php echo ROOTDIR; ?>deconnexion.php">Déconnexion</a>
+            <a href="<?php echo ROOTDIR; ?>auth/deconnexion.php">Déconnexion</a>
             <?php }else{ ?>
             <a href="<?php echo ROOTDIR; ?>auth/inscription.php">Inscription</a>
             <a href="<?php echo ROOTDIR; ?>auth/connexion.php">Connexion</a>

@@ -1,14 +1,9 @@
 <?php
-
-// session_start();
+session_start();
 require_once "../config.php";
 require_once('../inc/fonction/pdo.php');
 require_once('../inc/fonction/request.php');
 require_once('../inc/fonction/toolbox.php');
-
-
-//  include('../inc/header2.php');
-
 
 verifUserAlreadyConnected();
 $success=false;
@@ -39,13 +34,11 @@ if(!empty($_POST['submitted'])){
             $errors['password1'] = "Mot de passe incorrect";
         }
         if(count($errors) == 0) {
-            header('Location: ../index.php');           
+            header('Location: ../index.php');
         }
     }
 }
-
 include('../inc/header.php');
-
 ?>
 
 <section id="connexion">

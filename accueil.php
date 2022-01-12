@@ -1,9 +1,11 @@
 <?php
+session_start();
 require_once "config.php";
-// require_once "inc/fonction/pdo.php";
-// require_once "inc/fonction/toolbox.php";
+ require_once "inc/fonction/pdo.php";
+ require_once "inc/fonction/toolbox.php";
 
-include_once('inc/header.php');?>
+include_once('inc/header.php');
+?>
 
 <section id="acceuil">
         <div class="main">

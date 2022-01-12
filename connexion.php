@@ -42,10 +42,11 @@ if(!empty($_POST['submitted'])){
 ?>
 
 <section id="connexion">
+<<<<<<< HEAD
 <div class="wrap2">
     <div class="cadre_left">
     <img src="asset/img/wing.png" alt="illustration éclair bleu">
-</div>
+    </div>
 
     <div class="cadre_right">
     <h1>Connexion</h1>
@@ -63,8 +64,7 @@ if(!empty($_POST['submitted'])){
             </button>
         </form>
     </div>
-       
-    </div>
+</div>
 </section>
 
 <?php include('inc/footer.php');

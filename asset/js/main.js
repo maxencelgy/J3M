@@ -112,15 +112,15 @@ let observer = new IntersectionObserver((entries) => {
 let idTarget = document.querySelector("#acceuil");
 observer.observe(idTarget);
 
-
 //Appartition du carrousel
+
 
 const carrouselReveal = document.getElementById("contentContainer");
 
 let carrouselOptions = {
-    root: null,
+    root: document.querySelector("#infos"),
     rootMargin: '0px',
-    threshold: .5
+    threshold: 0.25 
 };
 
 let bobserver = new IntersectionObserver((entries) => {
@@ -135,3 +135,4 @@ let bobserver = new IntersectionObserver((entries) => {
 
 let idTarget2 = document.querySelector("#infos");
 bobserver.observe(idTarget);
+

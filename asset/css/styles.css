@@ -496,4 +496,35 @@ footer .footer_logo img {
   padding: 5rem;
 }
 
+#searchbar {
+  background-color: #11151E;
+  padding: 1rem;
+}
+#searchbar .search {
+  background-color: #2D3341;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+#searchbar .search h2 {
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+#searchbar .search .tram {
+  display: flex;
+  align-items: center;
+}
+#searchbar .search .tram label {
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+#searchbar .search .tram select {
+  background-color: #43485A;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+}
+
 /*# sourceMappingURL=styles.css.map */

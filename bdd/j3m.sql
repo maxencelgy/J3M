@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 11 jan. 2022 à 15:57
+-- Généré le : mer. 12 jan. 2022 à 13:21
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 8.0.13
 
@@ -28,17 +28,23 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `jsondata` (
-  `date` varchar(8) DEFAULT NULL,
+  `id_jsondata` int(11) NOT NULL,
+  `date` varchar(10) DEFAULT NULL,
   `version` varchar(1) DEFAULT NULL,
   `headerLength` varchar(10) DEFAULT NULL,
   `service` varchar(10) DEFAULT NULL,
   `identification` varchar(10) DEFAULT NULL,
+  `status` varchar(15) DEFAULT NULL,
   `flags_code` varchar(10) DEFAULT NULL,
   `ttl` varchar(3) DEFAULT NULL,
   `protocol_name` varchar(10) DEFAULT NULL,
+  `protocol_flags__code` varchar(10) DEFAULT NULL,
   `protocol_checksum__status` varchar(30) DEFAULT NULL,
+  `protocol_checksum__code` varchar(10) DEFAULT NULL,
   `protocol_ports__from` varchar(10) DEFAULT NULL,
   `protocol_ports__dest` varchar(10) DEFAULT NULL,
+  `protocol_type` varchar(2) DEFAULT NULL,
+  `protocol_code` varchar(2) DEFAULT NULL,
   `headerChecksum` varchar(30) DEFAULT NULL,
   `ip_from` varchar(8) DEFAULT NULL,
   `ip_dest` varchar(8) DEFAULT NULL
@@ -66,6 +72,12 @@ CREATE TABLE `user` (
 --
 
 --
+-- Index pour la table `jsondata`
+--
+ALTER TABLE `jsondata`
+  ADD PRIMARY KEY (`id_jsondata`);
+
+--
 -- Index pour la table `user`
 --
 ALTER TABLE `user`
@@ -76,10 +88,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT pour la table `jsondata`
+--
+ALTER TABLE `jsondata`
+  MODIFY `id_jsondata` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

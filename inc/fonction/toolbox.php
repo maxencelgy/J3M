@@ -78,10 +78,66 @@ function viewError($errors,$key){
     }
 }
 
+
+/*
+ * Cette fonction boucle dans l'URL explosé précédemment
+ * Si c'est index.php ou /, on peuple une string
+ * par exemple /projet_reseau/J3M/
+ * SINON c'est connexion.php par exemple, on peuple une string
+ * en enlevant le sous-dossier du fichier pour garder /projet_reseau/J3M/
+ */
+function loopUri($array, $index){
+    $result = "";
+    /*
+    $array = [
+        0 => "",
+        1 => "projet_reseau",
+        2 => "J3M",
+        3 => "index.php"
+    ]
+    $key = 0, 1, 2, 3.... du tableau ci-dessus
+    $string = "", "projet_reseau", "J3M", "index.php"... ci-dessus
+    */
+    foreach($array as $key => $string)
+    {
+        if($index && $key < count($array) - 1)
+        {
+            // Si l'URL est /projet_reseau/J3M/index.php
+            $result .= $string."/";
+        }elseif(!$index && $key < count($array) - 2){
+            // Sinon si l'URL est /projet_reseau/J3M/auth/connnexion.php
+            // par exemple...
+            // On s'arrête non pas à connexion.php mais à auth/
+            $result .= $string."/";
+        }
+    }
+    return $result;
+}
+/*
+ * Cette fonction sépare l'URL en morceaux via "/"
+ * Si c'est index.php ou / on appelle loopUri avec TRUE
+ * Sinon, ce sont tous les autres (auth/connexion.php par exemple) avec FALSE
+ */
+function getCurrentFile(){
+    $array = explode('/',$_SERVER['REQUEST_URI']);
+
+    $result = '';
+    // count($array) return le nombre d'élément du tableau
+    // pour avoir le dernier élément du tableau, on fait -1
+    // car un tableau commence à zéro, le count commence à 1
+    if($array[count($array)-1] === 'index.php' || $array[count($array)-1] === ''){
+        $result = loopUri($array, true);
+    }else{
+        $result = loopUri($array, false);
+    }
+   
+   return $result;
+}
 function recupInputValue($key){
     if (!empty($_POST[$key])) {
         echo $_POST[$key];
     }
+
 }
 
 

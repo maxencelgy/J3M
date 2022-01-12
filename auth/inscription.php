@@ -1,7 +1,8 @@
 <?php
-require_once('inc/fonction/pdo.php');
-require_once('inc/fonction/request.php');
-require_once('inc/fonction/toolbox.php');
+session_start();
+require_once "../config.php";
+require_once('../inc/fonction/pdo.php');
+require_once('../inc/fonction/request.php');
 
 verifUserAlreadyConnected();
 $success=false;
@@ -52,18 +53,19 @@ if(!empty($_POST['submitted'])){
 
         $success=true;
         //redirection
-        header('refresh:3;url=index.php');
+        header('refresh:3;url='.ROOTDIR.'index.php');
     }
 }
 
-include('inc/header2.php');
+include('../inc/header.php');
+
 ?>
 
 <?php if($success==false){ ?>
 <section id="inscription">
     <div class="wrap2">
     <div class="cadre_left">
-    <img src="asset/img/wing.png" alt="illustration éclair bleu">
+    <img src="../asset/img/wing.png" alt="illustration éclair bleu">
 </div>
 <div class="cadre_right">
     <h1>Inscription</h1>
@@ -93,6 +95,6 @@ include('inc/header2.php');
     </div>
 </section>
 
-<?php include('inc/footer.php');
+<?php include('../inc/footer.php');
 
 

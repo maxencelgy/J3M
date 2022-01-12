@@ -1,9 +1,9 @@
 <?php
-require_once('inc/fonction/pdo.php');
-require_once('inc/fonction/request.php');
-require_once('inc/fonction/toolbox.php');
-
-include('inc/header2.php');
+session_start();
+require_once "../config.php";
+require_once('../inc/fonction/pdo.php');
+require_once('../inc/fonction/request.php');
+require_once('../inc/fonction/toolbox.php');
 
 verifUserAlreadyConnected();
 $success=false;
@@ -34,17 +34,17 @@ if(!empty($_POST['submitted'])){
             $errors['password1'] = "Mot de passe incorrect";
         }
         if(count($errors) == 0) {
-            header('Location: index.php');
+            header('Location: ../content/dashboard.php');
         }
     }
 }
-
+include('../inc/header.php');
 ?>
 
 <section id="connexion">
 <div class="wrap2">
     <div class="cadre_left">
-    <img src="asset/img/wing.png" alt="illustration éclair bleu">
+    <img src="<?php echo ROOTDIR; ?>asset/img/wing.png" alt="illustration éclair bleu">
     </div>
 
     <div class="cadre_right">
@@ -66,4 +66,4 @@ if(!empty($_POST['submitted'])){
 </div>
 </section>
 
-<?php include('inc/footer.php');
+<?php include('../inc/footer.php');

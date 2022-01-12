@@ -1,5 +1,5 @@
-#header{
-  nav{
+#header{ 
+  nav{    
     padding: 0 4rem;
     width: 100%;
     position: fixed;
@@ -16,6 +16,7 @@
     }
 
     .header_btn{
+      
       display: flex;
       flex-flow: row nowrap;
       gap: 2rem;
@@ -43,3 +44,16 @@
   }
 }
 
+// second header
+
+#header.second{  
+  nav{
+    position: inherit;
+    background-color: white;
+    .header_btn{
+      a{
+        color: black;
+      }
+    }
+  }    
+}

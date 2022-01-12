@@ -1,5 +1,4 @@
 <?php
-include "config.php";
 
 try {
     $pdo = new PDO('mysql:host='.$serveur.';dbname='.$bdd.'', ''.$username.'', ''.$password.'', array(

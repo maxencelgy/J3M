@@ -1,8 +1,7 @@
 #analyse {
   
         // background: url("../img/reseaux.jpg") center;
-        background: rgba(0,0,0,.6);
-        backdrop-filter: grayscale(1) contrast(2) blur(1px);
+        background-color: blue;
         background-size: 100%;
         background-attachment: fixed;
         background-repeat: no-repeat;
@@ -11,9 +10,6 @@
             color: white;
             text-align: center;
             font-weight: 400;
-            background: rgba(0,0,0,.6);
-            backdrop-filter: grayscale(1) contrast(2) blur(1px);
-      
             padding: 5rem;
         }
 }

@@ -4,11 +4,8 @@ VANTA.NET({
     el: ".main",
     color: 0x5b30e8,
     backgroundColor: 0xb133d,
-    points: 5,
     points: 10
-
   });
-
 
 
 // set and cache variables
@@ -142,7 +139,3 @@ let observer = new IntersectionObserver((entries) => {
 
 let idTarget = document.querySelector("#acceuil");
 observer.observe(idTarget);
-
-
-
-    

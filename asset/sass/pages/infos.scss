@@ -13,8 +13,6 @@
         left: 5%;
     }
 
-
-
     .trans3d
     {
         -webkit-transform-style: preserve-3d;
@@ -25,6 +23,7 @@
         -ms-transform: translate3d(0, 0, 0);
         transform-style:preserve-3d;
         transform: translate3d(0, 0, 0);
+       
         #contentContainer
         {
             position:absolute;
@@ -62,7 +61,6 @@
 }
 .carouselItemInner
 {
-  
     width:320px;
     height:130px;
     position:absolute;

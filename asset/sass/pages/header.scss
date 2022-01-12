@@ -1,8 +1,10 @@
-#header{
-  nav{
-    padding: 0 1rem;
+#header{ 
+  nav{    
+    padding: 0 4rem;
     width: 100%;
-    margin: 0 auto;
+    position: fixed;
+    background: transparent;
+    z-index: 2;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -14,21 +16,44 @@
     }
 
     .header_btn{
+      
       display: flex;
       flex-flow: row nowrap;
       gap: 2rem;
       font-size: 1.2rem;
-        a{
-          padding: .7rem;
-          background-color: $dark_blue;
-          color: white;
-          border-radius: 5px;
-        }
-        a:hover{
-          cursor: pointer;
-          opacity: .7;
+      a{
+        color: white;
+        position: relative;
+        text-transform: uppercase;
+      }
+      a:after{
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -0.4rem;
+        width: 0;
+        left: 0;
+        height: 2px;
+        transition: 0.5s cubic-bezier(0.42, 0.0, 1.0, 1.0);
+        background: $orange;
+      }
+      a:hover:after{
+        width: 90%;
       }
     }
   }
 }
 
+// second header
+
+#header.second{  
+  nav{
+    position: inherit;
+    background-color: white;
+    .header_btn{
+      a{
+        color: black;
+      }
+    }
+  }    
+}

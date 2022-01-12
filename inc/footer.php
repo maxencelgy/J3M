@@ -1,7 +1,6 @@
-
 <footer>
     <div class="footer_logo div_foot">
-        <img src="asset/img/logo white.svg" alt="">
+        <img src="<?php echo ROOTDIR; ?>asset/img/logo white.svg" alt="">
     </div>
     <div class="footer_service div_foot">
         <h2>Nos services</h2>

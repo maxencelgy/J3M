@@ -7,7 +7,7 @@ define('ROOTDIR', getCurrentFile());
 
 // DATABASE
 
-$bdd      ='j3m';
-$serveur  ='localhost';
-$username = 'root';
-$password = '';
+$bdd      ='DB_NAME';
+$serveur  ='DB_HOST';
+$username = 'DB_USER';
+$password = 'DB_PASSWORD';

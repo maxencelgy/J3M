@@ -373,31 +373,71 @@ footer .horraires .horraires_left {
 }
 
 #infos {
-  background-color: #242A2E;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 4rem;
+  padding: 14rem 0 12rem 0;
+  background-color: #e7e1e1;
+  position: relative;
 }
-#infos .left {
-  width: 28%;
-}
-#infos .left img {
-  width: 125%;
-  border-radius: 0.3rem;
-}
-#infos .right {
-  width: 63%;
-}
-#infos .right h2 {
-  font-size: 2.5rem;
+#infos h2 {
   font-weight: 400;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: #050B4F;
+  text-align: left;
+  position: absolute;
+  top: 10%;
+  left: 5%;
 }
-#infos .right p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+#infos .trans3d {
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform-style: preserve-3d;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform-style: preserve-3d;
+  -ms-transform: translate3d(0, 0, 0);
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 0);
+}
+#infos .trans3d #contentContainer {
+  position: absolute;
+  margin-left: -500px;
+  margin-top: -800px;
+  left: 50%;
+  top: 80%;
+  width: 2000px;
+  height: 2000px;
+}
+#infos .trans3d #contentContainer #carouselContainer {
+  position: absolute;
+  margin-left: -500px;
+  margin-top: -800px;
+  left: 50%;
+  top: 80%;
+  width: 1000px;
+  height: 1000px;
+}
+#infos .trans3d #contentContainer #carouselContainer .carouselItem {
+  width: 320px;
+  height: 130px;
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  margin-left: -160px;
+  margin-top: -90px;
+  visibility: hidden;
+}
+
+.carouselItemInner {
+  width: 320px;
+  height: 130px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 10px solid rgba(255, 255, 255, 0.5);
+  color: aqua;
+  font-size: 72px;
+  left: 50%;
+  top: 80%;
+  margin-left: -160px;
+  margin-top: -90px;
+  text-align: center;
 }
 
 #where {
@@ -422,6 +462,23 @@ footer .horraires .horraires_left {
   display: flex;
   margin: 0 auto;
   width: 80%;
+}
+
+#analyse {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: grayscale(1) contrast(2) blur(1px);
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 10rem;
+}
+#analyse h2 {
+  color: white;
+  text-align: center;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: grayscale(1) contrast(2) blur(1px);
+  padding: 5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

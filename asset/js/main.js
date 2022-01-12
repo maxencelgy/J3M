@@ -84,7 +84,7 @@ function animateIn( $item, $block )
   var $nrY = 360 * getRandomInt(2);
     
   var $nx = -(2000) + getRandomInt( 4000 )
-  var $ny = -(2000) + getRandomInt( 4000 )
+  var $ny = -(2000) + getRandomInt( 2000 )
   var $nz = -4000 +  getRandomInt( 4000 )
     
   var $s = 1.5 + (getRandomInt( 10 ) * .1)
@@ -117,6 +117,10 @@ function getRandomInt( $n )
   return Math.floor((Math.random()*$n)+1);	
 }
 
+
+
+
+
 //Utilisation de Intersection observer pour changer le style transparent de la barre de
 //navigation au scroll
 const navReveal = document.querySelector("nav");
@@ -129,33 +133,38 @@ let navOptions = {
 
 let observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        console.log(entry.isIntersecting)
         if(entry.isIntersecting == true){
+            navReveal.style.background = "transparent";
+        }else{
             navReveal.style.background = "#242A2E";
         }
     })
 });
 
-//chart
-let idTarget = document.querySelector("#infos");
+
+
+
+let idTarget = document.querySelector("#acceuil");
 observer.observe(idTarget);
 
-var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
+const carrouselReveal = document.getElementById("contentContainer");
 
-    // The data for our dataset
-    data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
-        datasets: [{
-            label: "My First dataset",
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45],
-        }]
-    },
+let carrouselOptions = {
+    root: document.querySelector("#infos"),
+    rootMargin: '0px',
+    threshold: 0.25 
+};
 
-    // Configuration options go here
-    options: {}
+let bobserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting == true){
+            carrouselReveal.style.display = "none";
+        }else{
+            carrouselReveal.style.display = "block";
+        }
+    })
 });
+
+let idTarget2 = document.querySelector("#infos");
+bobserver.observe(idTarget);
+

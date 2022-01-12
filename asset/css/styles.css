@@ -247,6 +247,35 @@ input {
   transition: 0.3s;
 }
 
+#where {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+#where .container {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+#where .container .contact {
+  width: 40%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+}
+#where .container .contact .box {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 3rem;
+}
+#where .container .maps {
+  width: 60%;
+}
+
 #inscription {
   padding: 5rem 0;
   background-color: #F1F1F1;

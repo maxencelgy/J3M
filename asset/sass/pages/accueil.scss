@@ -24,3 +24,32 @@
       }
   }
 }
+
+#where{
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  max-width: 1250px;
+  margin: 0 auto;
+  .container{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    .contact{
+      width: 40%;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 2rem;
+      .box{
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 3rem;
+      }
+    }
+    .maps{
+      width: 60%;
+    }
+  }
+}

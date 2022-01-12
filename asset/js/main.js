@@ -120,6 +120,8 @@ function getRandomInt( $n )
   return Math.floor((Math.random()*$n)+1);	
 }
 
+//Utilisation de Intersection observer pour changer le style transparent de la barre de
+//navigation au scroll
 const navReveal = document.querySelector("nav");
 
 let navOptions = {
@@ -137,8 +139,8 @@ let observer = new IntersectionObserver((entries) => {
     })
 });
 
-let classTarget = document.querySelector(".right");
-observer.observe(classTarget);
+let idTarget = document.querySelector("#infos");
+observer.observe(idTarget);
 
 
 

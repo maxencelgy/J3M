@@ -478,4 +478,29 @@ footer .horraires .horraires_left {
   padding: 5rem;
 }
 
+#acceuil img {
+  margin-bottom: -2rem;
+  width: 25%;
+}
+#acceuil h1 {
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+#acceuil .main {
+  background-color: #142540;
+  text-align: center;
+  color: white;
+  padding: 10rem;
+}
+#acceuil .main a {
+  border-style: solid;
+  padding: 0.5rem;
+  border-radius: 15% 25%;
+}
+#acceuil .main a:hover {
+  background-color: #000069;
+  color: white;
+  transition: 0.3s;
+}
+
 /*# sourceMappingURL=styles.css.map */

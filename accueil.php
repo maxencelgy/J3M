@@ -44,6 +44,11 @@ include_once('inc/header.php');
             </div>
 
             <div class="box">
+                <i class="far fa-envelope"></i>
+                <p>supportclient@gmail.com</p>
+            </div>
+
+            <div class="box">
                 <i class="fas fa-map-marked-alt"></i>
                 <p>30 Pl. Henri Gadeau de Kerville, 76100 Rouen</p>
             </div>

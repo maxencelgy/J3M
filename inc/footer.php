@@ -12,7 +12,7 @@
         <h2>Restons en contact</h2>
         <p>55-55-55-55-55</p>
         <p>supportclient@gmail.com</p>
-        <p>6 rue de l'invitation paris VII</p>
+        <p>30 Pl. Henri Gadeau de Kerville, 76100 Rouen</p>
     </div>
     <div class="footer_horraires div_foot">
         <h2>Horaires</h2>

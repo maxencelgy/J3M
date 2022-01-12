@@ -15,34 +15,6 @@ var mouseY = 0;
 var mouseZ = 0;
 var addX = 0;
 
-
-// fps counter created by: https://gist.github.com/sharkbrainguy/1156092,
-// no need to create my own :)
-var fps_counter = {
-  
-  tick: function () 
-  {
-    // this has to clone the array every tick so that
-    // separate instances won't share state 
-    this.times = this.times.concat(+new Date());
-    var seconds, times = this.times;
-    
-    if (times.length > this.span + 1) 
-    {
-      times.shift(); // ditch the oldest time
-      seconds = (times[times.length - 1] - times[0]) / 1000;
-      return Math.round(this.span / seconds);
-    } 
-    else return null;
-  },
-
-  times: [],
-  span: 20
-};
-var counter = Object.create(fps_counter);
-
-
-
 $(document).ready( init )
 
 function init()
@@ -75,7 +47,7 @@ function init()
   
   // set mouse x and y props and looper ticker
   window.addEventListener( "mousemove", onMouseMove, false );
-  ticker = setInterval( looper, 1000/60 );			
+  ticker = setInterval( looper, 2000/60 );			
 }
 
 function animateIn( $item, $block )
@@ -84,7 +56,7 @@ function animateIn( $item, $block )
   var $nrY = 360 * getRandomInt(2);
     
   var $nx = -(2000) + getRandomInt( 4000 )
-  var $ny = -(2000) + getRandomInt( 2000 )
+  var $ny = -(2000) + getRandomInt( 4000 )
   var $nz = -4000 +  getRandomInt( 4000 )
     
   var $s = 1.5 + (getRandomInt( 10 ) * .1)
@@ -153,7 +125,7 @@ const carrouselReveal = document.getElementById("contentContainer");
 let carrouselOptions = {
     root: document.querySelector("#infos"),
     rootMargin: '0px',
-    threshold: 0.25 
+    threshold: 0.25   
 };
 
 let bobserver = new IntersectionObserver((entries) => {

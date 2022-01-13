@@ -136,3 +136,4 @@ let bobserver = new IntersectionObserver((entries) => {
 let idTarget2 = document.querySelector("#infos");
 bobserver.observe(idTarget);
 
+// partie AJAX

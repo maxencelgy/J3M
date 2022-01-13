@@ -13,14 +13,13 @@ function verifyApiData($date, $identification )
     return $query->fetchAll();
 }
 
-function test()
+function getJsonData()
 {
     global $pdo;
     $sql = "SELECT * FROM `jsondata`";
     $query = $pdo->prepare($sql);
-
-    $query->execute();
-    return $query->fetchAll();
+    $query->execute();    
+    return json_encode($query->fetchAll());
 }
 function requestVerifMailRegister($email){
     global $pdo;

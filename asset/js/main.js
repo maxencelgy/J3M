@@ -136,3 +136,4 @@ observer.observe(idTarget);
 // let idTarget2 = document.querySelector("#infos");
 // bobserver.observe(idTarget);
 
+// partie AJAX

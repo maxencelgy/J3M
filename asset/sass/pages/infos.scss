@@ -1,8 +1,8 @@
 #infos {
-    padding: 14rem 0 12rem 0;
+    padding: 14rem 0 14rem 0;
     background-color: rgb(231, 225, 225);
     position: relative;
-
+   
     h2{
         font-weight: 400;
         font-size: 2.5rem;
@@ -27,33 +27,23 @@
         #contentContainer
         {
             position:absolute;
-            margin-left:-500px;
-            margin-top:-800px;
-            left:50%;
-            top:80%;
-            width:2000px;
-            height:2000px;
+            left:-20%;
+            top:-80%;
+            width:20%;
+            height:50%;
             #carouselContainer
             {
                 position:absolute;
-                margin-left:-500px;
-                margin-top:-800px;
-                left:50%;
-                top:80%;
-                width:1000px;
-                height:1000px;
+                left:-20%;
+                top:-80%;
                 .carouselItem
                 {
-                    width:320px;
-                    height:130px;
                     position:absolute;
-                    left:50%;
-                    top:80%;
-                    margin-left:-160px;
-                    margin-top:-90px;
+                    // left:20%;
+                 
+                    top:-80%;
                     visibility:hidden;
-                     
-       
+
                 } 
             }
         }
@@ -61,20 +51,11 @@
 }
 .carouselItemInner
 {
-    width:320px;
-    height:130px;
+    width:180px;
+    height:40px;
     position:absolute;
-    background-color:rgba(255, 255, 255, .75);
-    border:10px solid rgba(255, 255, 255, .5);
-    color:aqua;
-    font-size:72px;
     left:50%;
-    top:80%;
-    margin-left:-160px;
-    margin-top:-90px;
-    text-align:center;
-  
-    
+    top:-80%;
 }
         
        

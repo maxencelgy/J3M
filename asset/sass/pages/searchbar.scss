@@ -1,0 +1,48 @@
+#searchbar{
+    background-color: $dark_violet;
+    padding: 1rem;
+    .search{
+        background-color: $violet;
+        display: flex;
+        color: white;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+      h2{
+        font-weight: 400;
+        font-size: 1.4rem;
+      }
+      .tram{
+          display: flex;
+          align-items: center;
+          .type_tram{
+              display: flex;
+              align-items: center;
+          }
+          label{
+              font-size: 1.3rem;
+              margin-left: 1rem;
+          }
+          select {
+              background-color: #43485A;
+              color: white;
+              padding: .5rem;
+              border: none;
+              margin-left: 1rem;
+          }
+
+          a{
+              padding: .5rem;
+              font-size: 1rem;
+              border: solid 1px $orange;
+             
+              margin-left: 2rem;
+          }
+          a:hover{
+            background-color: $orange;
+            transition: .5s;
+        }
+      }
+    }
+
+}

@@ -1,19 +1,21 @@
 <?php
+session_start();
+
+
 require'../config.php'; // integre le toolbox
 require'../inc/fonction/pdo.php';
 require'../inc/fonction/request.php';
 // appel de l'API
 $json_url = "http://51.255.160.47:8282/resources/frames.json";
 $json = file_get_contents($json_url);
-echo $json;
+
 // transformation de l'API en un objet
 $data = json_decode(($json));
-debug($data);
+
 // boucle de toutes les data
 // On verifi que les datas ne soit pas en base
 // Si oui on ne fait rien
 // Si non on insert les nouvelles données de l'api
-$i =0; 
 foreach($data as $trame)
 {   
     // Variables (pour plus de visiblité et remplis donnes au cas où le champs est vide)
@@ -62,4 +64,5 @@ foreach($data as $trame)
         addTrame($date,$version,$headerLength,$service,$identification,$status,$flagsCode,$ttl,$protocolName,$protocolFlagsCode,$protocolChecksumStatus,$protocolChecksumCode,$protocolPortsFrom,$protocolPortsDest,$protocolType,$protocolCode,$headerChecksum,$ipFrom,$ipDest);
     }
 }
-// debug ($data[0]);
+    header('Location: ../content/dashboard.php');
+

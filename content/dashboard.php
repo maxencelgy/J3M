@@ -51,9 +51,14 @@ if(isLogged() == true){
 
 <section id="graphique">
     <div class="top">
-        <div class="time"></div>
-        <div class="camembert"></div>
+        <div class="time">
+            <canvas id="canvas1" class="canvas"></canvas>
+        </div>
+        <div class="camembert">
+            <canvas id="canvas2" class="canvas"></canvas>
+        </div>
     </div>
+
     <div class="bottom">
         <div class="timeline">
 

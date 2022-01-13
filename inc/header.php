@@ -30,12 +30,13 @@ $classHeader = (basename($_SERVER['PHP_SELF']) === 'index.php') ?: 'second';
             <a class="linkNav" href="#infos">A propos</a>
             <a class="linkNav" href="#where">Contact</a>
             <?php
-            }            
+            }
             if(isLogged()){ ?>
-            <a class="linkNav" href="<?php echo ROOTDIR; ?>auth/deconnexion.php">Déconnexion</a>
+            <a class="linkNav" href="<?php echo ROOTDIR; ?>content/dashboard.php">Dashboard</a>
+            <a class="linkNav btn-a" href="<?php echo ROOTDIR; ?>auth/deconnexion.php">Déconnexion</a>
             <?php }else{ ?>
-            <a class="linkNav" href="<?php echo ROOTDIR; ?>auth/inscription.php">Inscription</a>
-            <a class="linkNav" href="<?php echo ROOTDIR; ?>auth/connexion.php">Connexion</a>
+            <a class="linkNav btn-a" href="<?php echo ROOTDIR; ?>auth/inscription.php">Inscription</a>
+            <a class="linkNav btn-a" href="<?php echo ROOTDIR; ?>auth/connexion.php">Connexion</a>
             <?php } ?>
         </div>
     </nav>

@@ -185,19 +185,25 @@ input {
   justify-content: space-between;
   align-items: center;
 }
+#header nav .btn-a {
+  padding: 0.5rem;
+  border: solid 1px #FB9D2C;
+  border-radius: 0.4rem;
+}
 #header nav .logo_nav img {
   width: 8rem;
 }
 #header nav .header_btn {
   display: flex;
   flex-flow: row nowrap;
-  gap: 2rem;
+  align-items: center;
   font-size: 1.2rem;
 }
 #header nav .header_btn a {
   color: white;
   position: relative;
   text-transform: uppercase;
+  margin-left: 1rem;
 }
 #header nav .header_btn a:after {
   content: "";
@@ -227,8 +233,9 @@ input {
   width: 25%;
 }
 #acceuil h1 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 5rem;
   font-weight: 300;
+  font-size: 1.8rem;
 }
 #acceuil .main {
   background-color: #142540;
@@ -236,15 +243,17 @@ input {
   color: white;
   padding: 10rem;
 }
-#acceuil .main a {
-  border-style: solid;
-  padding: 0.5rem;
-  border-radius: 15% 25%;
+#acceuil .main .btn-b {
+  padding: 0.5rem 3rem;
+  background-color: #FB9D2C;
+  border: solid 1px #FB9D2C;
+  border-radius: 0.4rem;
+  -webkit-box-shadow: 3px 4px 5px -3px rgba(0, 0, 0, 0.93);
+  box-shadow: 3px 4px 5px -3px rgba(0, 0, 0, 0.93);
 }
-#acceuil .main a:hover {
-  background-color: #000069;
-  color: white;
-  transition: 0.3s;
+#acceuil .main .btn-b:hover {
+  background-color: transparent;
+  transition: 0.5s;
 }
 
 #where {
@@ -277,7 +286,7 @@ input {
 }
 
 #inscription {
-  padding: 5rem 0;
+  padding: 5.1rem 0;
   background-color: #F1F1F1;
 }
 #inscription .wrap2 {
@@ -391,7 +400,7 @@ footer .footer_logo img {
 }
 
 #infos {
-  padding: 14rem 0 12rem 0;
+  padding: 14rem 0 14rem 0;
   background-color: #e7e1e1;
   position: relative;
 }
@@ -416,46 +425,28 @@ footer .footer_logo img {
 }
 #infos .trans3d #contentContainer {
   position: absolute;
-  margin-left: -500px;
-  margin-top: -800px;
-  left: 50%;
-  top: 80%;
-  width: 2000px;
-  height: 2000px;
+  left: -20%;
+  top: -80%;
+  width: 20%;
+  height: 50%;
 }
 #infos .trans3d #contentContainer #carouselContainer {
   position: absolute;
-  margin-left: -500px;
-  margin-top: -800px;
-  left: 50%;
-  top: 80%;
-  width: 1000px;
-  height: 1000px;
+  left: -20%;
+  top: -80%;
 }
 #infos .trans3d #contentContainer #carouselContainer .carouselItem {
-  width: 320px;
-  height: 130px;
   position: absolute;
-  left: 50%;
-  top: 80%;
-  margin-left: -160px;
-  margin-top: -90px;
+  top: -80%;
   visibility: hidden;
 }
 
 .carouselItemInner {
-  width: 320px;
-  height: 130px;
+  width: 180px;
+  height: 40px;
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.75);
-  border: 10px solid rgba(255, 255, 255, 0.5);
-  color: aqua;
-  font-size: 72px;
   left: 50%;
-  top: 80%;
-  margin-left: -160px;
-  margin-top: -90px;
-  text-align: center;
+  top: -80%;
 }
 
 #where {
@@ -516,6 +507,10 @@ footer .footer_logo img {
   display: flex;
   align-items: center;
 }
+#searchbar .search .tram .type_tram {
+  display: flex;
+  align-items: center;
+}
 #searchbar .search .tram label {
   font-size: 1.3rem;
   margin-left: 1rem;
@@ -525,6 +520,66 @@ footer .footer_logo img {
   color: white;
   padding: 0.5rem;
   border: none;
+  margin-left: 1rem;
+}
+#searchbar .search .tram a {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: solid 1px #FB9D2C;
+  margin-left: 2rem;
+}
+#searchbar .search .tram a:hover {
+  background-color: #FB9D2C;
+  transition: 0.5s;
+}
+
+#graphique {
+  background-color: #11151E;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+#graphique .top {
+  background-color: #2D3341;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+#graphique .top .time {
+  margin-right: 1rem;
+  background-color: white;
+  padding: 2rem;
+  width: 49%;
+}
+#graphique .top .camembert {
+  background-color: white;
+  padding: 2rem;
+  width: 49%;
+}
+#graphique .bottom {
+  background-color: #2D3341;
+  padding: 1rem;
+}
+#graphique .bottom .timeline {
+  padding: 1rem;
+  background-color: white;
+}
+
+#hello {
+  background-color: #11151E;
+  padding: 1rem;
+}
+#hello h2 {
+  color: white;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+#hello p {
+  font-size: 1rem;
+  color: white;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

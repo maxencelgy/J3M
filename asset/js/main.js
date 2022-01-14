@@ -6,25 +6,61 @@ VANTA.NET({
     points: 10
   });
 
-// $(window).resize(function(){
-//    console.log('resize called');
-//    var width = $(window).width();
-//    if(width < 700){
-//        $('div').removeClass('main');
-//    }
-// })
-// .resize();//trigger the resize event on page load.
-// Variable carousel
-
-
-
 var w, container, carousel, item, radius, itemLength, rY, ticker;
 var mouseX = 0;
 var mouseY = 0;
 var mouseZ = 0;
 var addX = 0;
 
-$(document).ready( init )
+$(document).ready(init)
+
+// Menu BURGER /////////////////////////////////////////////
+
+    const burger = $('#burger');
+    const croix = $('#croix');
+    const nav = $('nav');
+    const navigation = $('.header_btn');
+
+    console.log(burger);
+    console.log(croix);
+    console.log(navigation);
+
+    burger.on('click',function (){
+      navigation.fadeIn();
+      nav.css('flex-direciton', 'column');
+      burger.css('display', 'none');
+      croix.css('display', 'block');
+    });
+
+    croix.on('click',function (){
+      navigation.fadeOut();
+      burger.css('display', 'block');
+      croix.css('display', 'none');
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function init()
 {

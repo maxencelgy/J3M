@@ -2,7 +2,6 @@
 // Il y a un style différent du header pour la page d'accueil
 // On test la page, si on est n'est pas sur l'accueil 
 // On ajoute un class au header pour qu'il s'addapte au style voulu
-
 // Si vrai = true (index.php ou racine), si non = second (=> class changement graphique pour le header)
 $pageIndex = (basename($_SERVER['PHP_SELF']) === 'index.php') ?: 'second';
 ?>
@@ -18,7 +17,6 @@ $pageIndex = (basename($_SERVER['PHP_SELF']) === 'index.php') ?: 'second';
     <title>J3M Analyste Tram Normandie</title>
 </head>
 <body>
-
 
 <header class="<?php echo $pageIndex; ?>" id="header">
     <nav>
@@ -37,17 +35,11 @@ $pageIndex = (basename($_SERVER['PHP_SELF']) === 'index.php') ?: 'second';
             <?php }else{ ?>
             <a class="linkNav btn-a" href="<?php echo ROOTDIR; ?>auth/inscription.php">Inscription</a>
             <a class="linkNav btn-a" href="<?php echo ROOTDIR; ?>auth/connexion.php">Connexion</a>
-            <?php } ?>           
+            <?php } ?>    
+        </div> 
+        <div class="burger">
+            <i id="burger" class="fas fa-bars"></i>
+            <i id="croix" class="fas fa-times"></i>
         </div>
-
-       <div class="burger">
-        <i id="burger" class="fas fa-bars"></i>
-        <i id="croix" class="fas fa-times"></i>
-       </div>
-               
-        
-            
-                
-        
     </nav>
 </header>

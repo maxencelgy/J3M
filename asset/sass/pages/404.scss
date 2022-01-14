@@ -1,0 +1,47 @@
+#acces_refuse {
+  background: #233142;
+  text-align: center;
+  color: white;
+  padding-bottom: 2rem;
+}
+.whistle{
+  width: 30%;
+  fill: #f95959;
+  text-align: left;
+  transform: translate(-50%, -50%) rotate(10deg);
+  transform-origin: 80% 30%;
+  animation: wiggle .2s infinite;
+}
+@keyframes wiggle {
+  0%{
+    transform: rotate(3deg);
+  }
+  50%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(3deg);
+  }
+}
+h1{
+  margin-bottom: 20px;
+  color: #facf5a;
+  text-align: center;
+  font-size: 90px;
+  font-weight: 800;
+}
+a.button{
+  color: #314154;
+  font-size: 30px;
+  margin-bottom: 1rem;
+}
+a.button:hover{
+  color: #455d7a;
+  transition: .5s;
+}
+h2.text404{
+  color: #455d7a;
+  text-align: center;
+  font-size: 30px;
+  text-transform: uppercase;
+}

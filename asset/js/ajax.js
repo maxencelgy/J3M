@@ -91,4 +91,4 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
         let secondChart = new Chart(second, secondConfig);
 })
 
->>>>>>> 9c772a1eb7fcaa3c9e2ab9a3f9e6c515633980d5
+

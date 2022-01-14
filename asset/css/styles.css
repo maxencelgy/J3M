@@ -175,7 +175,7 @@ input {
 }
 
 #header nav {
-  padding: 0 4rem;
+  padding: 0 1rem;
   width: 100%;
   position: fixed;
   background: transparent;
@@ -193,11 +193,51 @@ input {
 #header nav .logo_nav img {
   width: 8rem;
 }
+#header nav .burger {
+  position: absolute;
+  top: 2%;
+  right: 10%;
+}
+@media (max-width: 700px) {
+  #header nav .burger {
+    right: 15%;
+  }
+}
+#header nav .burger .fa-bars::before {
+  font-size: 2rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  border: solid 1px #FB9D2C;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 800px) {
+  #header nav .burger .fa-bars::before {
+    display: block;
+  }
+}
+#header nav .burger .fa-times::before {
+  font-size: 2rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  border: solid 1px #FB9D2C;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+}
 #header nav .header_btn {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   font-size: 1.2rem;
+}
+@media (max-width: 800px) {
+  #header nav .header_btn {
+    display: none;
+  }
 }
 #header nav .header_btn a {
   color: white;
@@ -229,19 +269,38 @@ input {
 }
 
 #acceuil img {
-  margin-bottom: -2rem;
   width: 25%;
+}
+@media (max-width: 700px) {
+  #acceuil img {
+    width: 145%;
+  }
+}
+@media (max-width: 800px) {
+  #acceuil img {
+    width: 50%;
+  }
 }
 #acceuil h1 {
   margin-bottom: 5rem;
   font-weight: 300;
   font-size: 1.8rem;
 }
+@media (max-width: 700px) {
+  #acceuil h1 {
+    font-size: 1rem;
+  }
+}
 #acceuil .main {
   background-color: #142540;
   text-align: center;
   color: white;
-  padding: 10rem;
+  padding: 10rem 0;
+}
+@media (max-width: 800px) {
+  #acceuil .main {
+    zoom: 1;
+  }
 }
 #acceuil .main .btn-b {
   padding: 0.5rem 3rem;
@@ -251,38 +310,15 @@ input {
   -webkit-box-shadow: 3px 4px 5px -3px rgba(0, 0, 0, 0.93);
   box-shadow: 3px 4px 5px -3px rgba(0, 0, 0, 0.93);
 }
+@media (max-width: 480px) {
+  #acceuil .main .btn-b {
+    padding: 0.5rem 3rem;
+    font-size: 1.5rem;
+  }
+}
 #acceuil .main .btn-b:hover {
   background-color: transparent;
   transition: 0.5s;
-}
-
-#where {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 1rem;
-  max-width: 1250px;
-  margin: 0 auto;
-}
-#where .container {
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 2rem;
-  justify-content: space-between;
-  align-items: center;
-}
-#where .container .contact {
-  width: 40%;
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 2rem;
-}
-#where .container .contact .box {
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 3rem;
-}
-#where .container .maps {
-  width: 60%;
 }
 
 #inscription {
@@ -384,9 +420,23 @@ footer {
   align-items: top;
   justify-content: space-between;
 }
+@media (max-width: 1200px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
 footer h2 {
   font-size: 1.7rem;
   margin-bottom: 0.8rem;
+  border-bottom: solid 1px #FB9D2C;
+  display: inline-block;
+}
+@media (max-width: 1200px) {
+  footer h2 {
+    margin-top: 2rem;
+  }
 }
 footer p {
   font-size: 1rem;
@@ -395,14 +445,46 @@ footer .div_foot {
   width: 19%;
   justify-content: space-between;
 }
+@media (max-width: 1200px) {
+  footer .div_foot {
+    width: 99%;
+  }
+}
 footer .footer_logo img {
   width: 50%;
 }
+@media (max-width: 1200px) {
+  footer .footer_logo img {
+    width: 30%;
+  }
+}
 
 #infos {
-  padding: 14rem 0 14rem 0;
+  padding: 14rem 0 28rem 0;
   background-color: #e7e1e1;
   position: relative;
+}
+@media (max-width: 700px) {
+  #infos {
+    padding: 12rem 0 2rem 0;
+  }
+}
+#infos .confiance {
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  display: none;
+}
+@media (max-width: 700px) {
+  #infos .confiance {
+    display: block;
+  }
+}
+#infos .confiance img {
+  width: 30%;
+  margin: 0 0.5rem;
+  margin-bottom: 1rem;
 }
 #infos h2 {
   font-weight: 400;
@@ -412,6 +494,11 @@ footer .footer_logo img {
   position: absolute;
   top: 10%;
   left: 5%;
+}
+@media (max-width: 700px) {
+  #infos h2 {
+    text-align: center;
+  }
 }
 #infos .trans3d {
   -webkit-transform-style: preserve-3d;
@@ -423,39 +510,55 @@ footer .footer_logo img {
   transform-style: preserve-3d;
   transform: translate3d(0, 0, 0);
 }
+@media (max-width: 700px) {
+  #infos .trans3d {
+    display: none;
+  }
+}
 #infos .trans3d #contentContainer {
   position: absolute;
   left: -20%;
-  top: -80%;
+  bottom: -50%;
   width: 20%;
-  height: 50%;
+  height: 0px;
 }
 #infos .trans3d #contentContainer #carouselContainer {
   position: absolute;
   left: -20%;
-  top: -80%;
+  bottom: -50%;
 }
 #infos .trans3d #contentContainer #carouselContainer .carouselItem {
   position: absolute;
-  top: -80%;
+  bottom: -50%;
   visibility: hidden;
 }
 
 .carouselItemInner {
   width: 180px;
-  height: 40px;
+  height: 1px;
   position: absolute;
   left: 50%;
-  top: -80%;
+  bottom: -700%;
 }
 
 #where {
+  background-color: white;
   padding: 3rem;
+}
+@media (max-width: 800px) {
+  #where {
+    padding: 1rem;
+  }
 }
 #where h2 {
   text-align: center;
   margin-bottom: 2rem;
   font-weight: 400;
+}
+@media (max-width: 800px) {
+  #where h2 {
+    font-size: 2.6rem;
+  }
 }
 #where h3 {
   font-size: 1.5rem;
@@ -471,6 +574,54 @@ footer .footer_logo img {
   display: flex;
   margin: 0 auto;
   width: 80%;
+}
+
+#where {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+#where .container {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 800px) {
+  #where .container {
+    flex-direction: column-reverse;
+    gap: 0;
+    font-size: 0.9rem;
+  }
+}
+#where .container .contact {
+  width: 40%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+}
+@media (max-width: 800px) {
+  #where .container .contact {
+    text-align: left;
+    width: 90%;
+  }
+}
+#where .container .contact .box {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 3rem;
+}
+#where .container .maps {
+  width: 60%;
+}
+@media (max-width: 800px) {
+  #where .container .maps {
+    width: 120%;
+    margin-bottom: 0.5rem;
+  }
 }
 
 #analyse {
@@ -548,12 +699,12 @@ footer .footer_logo img {
 }
 #graphique .top .time {
   margin-right: 1rem;
-  background-color: red;
+  background-color: white;
   padding: 2rem;
   width: 49%;
 }
 #graphique .top .camembert {
-  background-color: red;
+  background-color: white;
   padding: 2rem;
   width: 49%;
 }
@@ -563,7 +714,7 @@ footer .footer_logo img {
 }
 #graphique .bottom .timeline {
   padding: 1rem;
-  background-color: red;
+  background-color: white;
 }
 
 #hello {

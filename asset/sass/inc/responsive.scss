@@ -4,12 +4,17 @@
         @media (max-width: 280px){ @content;}
     }@else if $size == Phone {
         @media (max-width: 350px){ @content;}
-    }@else if $size == bigPhone {
+    }@else if $size == bigPhones {
+        @media (max-width: 550px){ @content;}
+    }
+    @else if $size == bigPhone {
         @media (max-width: 480px){ @content;}
+    }@else if $size == bigPhone2 {
+        @media (max-width: 600px){ @content;}
     }@else if $size == tablette {
         @media (max-width: 700px){ @content;}
     }@else if $size == litleLaptop {
-        @media (max-width: 900px){ @content;}
+        @media (max-width: 800px){ @content;}
     }@else if $size == laptop {
         @media (max-width: 1200px){ @content;}
     }@else if $size == MidScreen {

@@ -1,7 +1,49 @@
+//FONCTION CONVERTIR HEXA EN IP
+function hexaToNumber(hexaValue){
+    if(isNaN(hexaValue)){
+        if(hexaValue        == 'a'){
+            hexaValue = 10;
+        }else if (hexaValue == 'b') {
+            hexaValue = 11;
+        }else if (hexaValue == 'c') {
+            hexaValue = 12;
+        }else if (hexaValue == 'd') {
+            hexaValue = 13;
+        }else if (hexaValue == 'e') {
+            hexaValue = 14;
+        }else if (hexaValue == 'f') {
+            hexaValue = 15;
+        }
+    }else{
+        hexaValue = parseInt(hexaValue)
+    }
+    return hexaValue;
+}
+function getIpNumber(hexaIp){
+    let ip ='' // Ip retourné
+    let arrayNumber=[]
+    let arrayHexa = hexaIp.split('') // on mets chaine dans un tableau pour faire les calculs
+    // fonction qui transforme l'hexa en nombre
+
+    // on parcours le tableau qui est desormais avec des nombre en base 10
+
+    for (let i=0 ; i<arrayHexa.length ; i++){
+        if(i%2 === 0){
+            arrayHexa[i] = hexaToNumber(arrayHexa[i])
+            arrayHexa[i] = arrayHexa[i]*16
+        }else{
+            arrayHexa[i] = hexaToNumber(arrayHexa[i])
+            arrayNumber.push(arrayHexa[i] + arrayHexa[i-1]);
+        }
+    }
+    arrayNumber.forEach(element => ip += element+'.');
+    ip = ip.substring(0,ip.length-1);
+    return ip;
+}
+
+
 //FONCTION CALCUL
-
 // TTL manquante = TTL max - TTL presente
-
 function getTtl(array){
     //Somme des ttl
     let ttlOk = 0
@@ -18,11 +60,6 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
         console.log(data)
 
         //VARIABLES DATA
-
-        let id = data.map(function(e) {
-            return e.id_jsondata;
-        });
-
         //Calcul ttl pour camembert
         let ttl = data.map(function(e) {
             return e.ttl;
@@ -80,6 +117,15 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
 
         })
 
+        //VARIBALES IP FROM ET DEST
+        // si le client en subit DDOS, on aurait des centaines de trames de diverses adresses IP
+        // sources vers une même adresse IP destination.
+        let ip_from= data.map(function(e) {
+            return getIpNumber(e.ip_from);
+        });
+        let ip_dest= data.map(function(e) {
+            return getIpNumber(e.ip_dest);
+        });
 
 
         //GRAPHIQUES
@@ -167,10 +213,10 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
         let threeConfig = {
             type: 'bar',
             data: {
-                labels: identification,
+                labels: ip_from,
                 datasets: [{
-                    label: 'TTL',
-                    data: ttl,
+                    label: 'ip',
+                    data: [1,2,3,4,5,6,7,8,9,10],
                     backgroundColor: [
                         'green'
                     ],

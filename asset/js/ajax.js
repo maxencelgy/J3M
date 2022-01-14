@@ -9,8 +9,6 @@ function getTtl(array){
     return ttlOk
 }
 
-
-
 // Partie Ajax
 let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
     .then (function(response){
@@ -32,9 +30,11 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
         let ttl = data.map(function(e) {
             return e.ttl;
         });
-        let ttlMax = ttl.length * 128;
-        let ttlOk = getTtl(ttl);
-        let ttlKo = ttlMax - ttlOk;
+        let ttlMax           = ttl.length * 128;
+        let ttlOk            = getTtl(ttl);
+        let ttlKo            = ttlMax - ttlOk;
+        let pourcentageTtlOk = Math.round(ttlOk/ttlMax * 100);
+        console.log(pourcentageTtlOk);
 
 
         let identification = data.map(function (e){
@@ -84,11 +84,15 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
                 }]
             },
             options: {
-                responsive: false
+                title:{
+                    display: true,
+                    position: 'bottom',
+                    text: pourcentageTtlOk+'% de TTL ok'
+                }
             }
         };
 
         let secondChart = new Chart(second, secondConfig);
 })
 
->>>>>>> 9c772a1eb7fcaa3c9e2ab9a3f9e6c515633980d5
+

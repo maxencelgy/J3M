@@ -1,8 +1,30 @@
+
 #infos {
-    padding: 14rem 0 12rem 0;
+    @include breakpoints(tablette){
+        padding: 12rem 0 2rem 0;
+      }
+      
+    padding: 14rem 0 28rem 0;
     background-color: rgb(231, 225, 225);
     position: relative;
+   
 
+    .confiance {
+        @include breakpoints(tablette){
+            display: block;
+          }
+          text-align: center;
+          max-width: 800px;
+          width: 100%;
+          margin: 0 auto;
+        display: none;
+        img{
+            width: 30%;
+            margin: 0 .5rem;
+            margin-bottom: 1rem;
+        }
+      
+    }
     h2{
         font-weight: 400;
         font-size: 2.5rem;
@@ -11,10 +33,17 @@
         position: absolute;
         top: 10%;
         left: 5%;
+        @include breakpoints(tablette){
+            text-align: center;
+          }
+       
     }
 
     .trans3d
     {
+        @include breakpoints(tablette){
+            display: none;
+          }
         -webkit-transform-style: preserve-3d;
         -webkit-transform: translate3d(0, 0, 0);
         -moz-transform-style: preserve-3d;
@@ -23,37 +52,27 @@
         -ms-transform: translate3d(0, 0, 0);
         transform-style:preserve-3d;
         transform: translate3d(0, 0, 0);
-       
+      
         #contentContainer
         {
             position:absolute;
-            margin-left:-500px;
-            margin-top:-800px;
-            left:50%;
-            top:80%;
-            width:2000px;
-            height:2000px;
+            left:-20%;
+            bottom :-50%;  
+            width:20%;
+            height:0px;
             #carouselContainer
             {
                 position:absolute;
-                margin-left:-500px;
-                margin-top:-800px;
-                left:50%;
-                top:80%;
-                width:1000px;
-                height:1000px;
+                left:-20%;
+                bottom :-50%;  
                 .carouselItem
                 {
-                    width:320px;
-                    height:130px;
                     position:absolute;
-                    left:50%;
-                    top:80%;
-                    margin-left:-160px;
-                    margin-top:-90px;
+                    // left:20%;
+                 
+                    bottom :-50%;  
                     visibility:hidden;
-                     
-       
+
                 } 
             }
         }
@@ -61,20 +80,11 @@
 }
 .carouselItemInner
 {
-    width:320px;
-    height:130px;
+    width:180px;
+    height: 1px;
     position:absolute;
-    background-color:rgba(255, 255, 255, .75);
-    border:10px solid rgba(255, 255, 255, .5);
-    color:aqua;
-    font-size:72px;
     left:50%;
-    top:80%;
-    margin-left:-160px;
-    margin-top:-90px;
-    text-align:center;
-  
-    
+    bottom :-700%;  
 }
         
        

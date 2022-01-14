@@ -1,0 +1,132 @@
+#log {
+    background-color: $dark_violet;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    .title_log{
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .search{
+        background-color: $violet;
+        display: flex;
+        color: white;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+      h2{
+        font-weight: 400;
+        font-size: 1.4rem;
+      }
+      .tram{
+          display: flex;
+          align-items: center;
+          .type_tram{
+              display: flex;
+              align-items: center;
+          }
+          label{
+              font-size: 1.3rem;
+              margin-left: 1rem;
+          }
+          select {
+              background-color: #43485A;
+              color: white;
+              padding: .5rem;
+              border: none;
+              margin-left: 1rem;
+          }
+
+          a{
+              padding: .5rem;
+              font-size: 1rem;
+              border: solid 1px $orange;
+             
+              margin-left: 2rem;
+          }
+          a:hover{
+            background-color: $orange;
+            transition: .5s;
+        }
+      }
+    }
+}
+
+
+
+#tableau {
+        background-color: $dark-violet;
+        color: white;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        
+        .tab{
+            background-color: $violet;
+            border-radius: .3rem;
+            padding: 0.1rem 1rem;
+            width: 100%;
+            overflow-y: scroll;
+            scrollbar-width: thin;
+        }
+      
+}
+$breakpoint-alpha: 480px;
+
+
+
+
+
+.trb{
+    background-color: yellow;
+}
+
+.rwd-table {
+    width: 100%;
+  tr {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.5rem;  
+    z-index: 99;
+  }
+  
+  th {
+    display: none;
+    color: $orange;
+    border: 1px solid $orange;
+    font-size: 1.5rem;
+  }
+   .disable{
+       color: red;
+   }
+   .true{
+    color: green;
+    }
+    .move{
+        color: $orange;
+    }
+  td{
+      text-align: left;
+  }
+  th {
+    text-align: center;
+    
+    @media (min-width: $breakpoint-alpha) {
+      display: table-cell;
+      padding: .25em .5em;
+      
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+  }
+  
+  
+}

@@ -1,6 +1,6 @@
 #header{ 
-  nav{    
-    padding: 0 4rem;
+  nav{   
+   padding: 0 1rem;
     width: 100%;
     position: fixed;
     background: transparent;
@@ -9,22 +9,83 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+
+    .burger {
+      position: absolute;
+      top: 10%;
+      right: 5%;
+      width: 50px;
+      height: 50px;
+
+      #croix{
+        display: none;
+      }
+      #burger{
+        display: none;
+        @include breakpoints(litleLaptop){display: block;}
+      }
+
+
+      .fa-bars::before{
+        font-size: 2rem;
+        padding: .5rem 1rem;
+        border: solid 1px $orange;
+        color: white;
+        text-align: center;
+        cursor: pointer; 
+        z-index: 999;
+      }
+    
+      .fa-times::before{
+        font-size: 2rem;
+        padding: .5rem 1rem;
+        border: solid 1px $orange;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        z-index: 99;
+      }
+    }
+
+
+    .btn-a{
+      padding: .5rem;
+      border: solid 1px $orange ;
+      border-radius: .4rem;
+    }
     .logo_nav{
       img{
         width: 8rem;
       }
     }
+     
+   
+
 
     .header_btn{
-      
+      @include breakpoints(litleLaptop){
+        display: none;
+        flex-direction: column;
+        background-color: red;
+        width: 100%;
+        height: 50vh;
+        // justify-content: left;
+        // background-color: red;
+      }
+    
       display: flex;
-      flex-flow: row nowrap;
-      gap: 2rem;
+      align-items: center;
       font-size: 1.2rem;
+
       a{
         color: white;
         position: relative;
         text-transform: uppercase;
+        margin-left: 1rem;
+        @include breakpoints(litleLaptop){
+      
+        
+        }
       }
       a:after{
         content: '';

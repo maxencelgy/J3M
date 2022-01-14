@@ -1,55 +1,51 @@
 #acceuil{
     img {
-      margin-bottom: -2rem;
+      @include breakpoints(tablette){
+        width: 145%;
+      }
+      @include breakpoints(litleLaptop){
+        width: 50%;
+      }
       width: 25%;
     }
-    h1 {
-      margin-bottom: 1.5rem;
+    h1 { 
+      @include breakpoints(tablette){
+        font-size: 1rem;
+      }
+      margin-bottom: 5rem;
       font-weight: 300;
+      font-size: 1.8rem;
     }
+  
     .main{
+      @include breakpoints(litleLaptop){
+        zoom: 1;
+      }
       background-color: #142540;
       text-align: center;
       color: white;
-      padding: 10rem;
-      a{
-        border-style: solid;
-        padding: .5rem;
-        border-radius: 15% 25%;
+      padding:  10rem 0;
+
+
+
+      .btn-b{
+        @include breakpoints(bigPhone){
+          padding: .5rem 3rem;
+          font-size: 1.5rem;
+        }
+        padding: .5rem 3rem;   background-color: $orange;
+        border: solid 1px $orange ;
+        border-radius: .4rem;
+        -webkit-box-shadow: 3px 4px 5px -3px rgba(0,0,0,0.93); 
+        box-shadow: 3px 4px 5px -3px rgba(0,0,0,0.93);  
       }
-      a:hover{
-        background-color: #000069;
-        color: white;
-        transition: 0.30s;
+      .btn-b:hover{
+        background-color: transparent ;
+        transition: .5s;
+
       }
   }
 }
 
-#where{
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 1rem;
-  max-width: 1250px;
-  margin: 0 auto;
-  .container{
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 2rem;
-    justify-content: space-between;
-    align-items: center;
-    .contact{
-      width: 40%;
-      display: flex;
-      flex-flow: column nowrap;
-      gap: 2rem;
-      .box{
-        display: flex;
-        flex-flow: row nowrap;
-        gap: 3rem;
-      }
-    }
-    .maps{
-      width: 60%;
-    }
-  }
-}
+
+

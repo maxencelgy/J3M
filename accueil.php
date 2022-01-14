@@ -1,9 +1,8 @@
 <?php
 session_start();
 require_once "config.php";
- require_once "inc/fonction/pdo.php";
- require_once "inc/fonction/toolbox.php";
-
+require_once "inc/fonction/pdo.php";
+require_once "inc/fonction/toolbox.php";
 include_once('inc/header.php');
 ?>
 
@@ -11,18 +10,13 @@ include_once('inc/header.php');
         <div class="main">
             <img class="imgwhite" src="asset/img/logo white.svg" alt="">
             <h1>Les meilleurs analyste reseaux de Normandie</h1>
-            <a href="#infos">voir plus</a>
+            <a href="#infos" class="btn-b">Découvrir</a>
         </div>
 </section>
 
-<section id="analyse">
-        <h2 class="title">Supervision du trafic du réseau avec J3M</h2>
-</section>
-
-
 <section id="infos">
 	<h2> <i>Ils nous ont fait confiance</i>  </h2>
-	<div id="contentContainer" class="trans3d" style="display: none;"> 	
+	<div id="contentContainer" class="trans3d"> 	
 		<section id="carouselContainer" class="trans3d">
 			<figure id="item1" class="carouselItem trans3d"><div class="carouselItemInner trans3d"><img src="asset/img/pigier.png" alt=""></div></figure>
 			<figure id="item2" class="carouselItem trans3d"><div class="carouselItemInner trans3d"><img src="asset/img/campus.jpg" alt=""></div></figure>
@@ -31,6 +25,15 @@ include_once('inc/header.php');
 			<figure id="item5" class="carouselItem trans3d"><div class="carouselItemInner trans3d"><img src="asset/img/supveto.jpg" alt=""></div></figure>
 		</section>
 	</div>
+
+    <div class="confiance">
+        <img src="asset/img/pigier.png" alt="">
+        <img src="asset/img/campus.jpg" alt="">
+        <img src="asset/img/logo_Need_For_School.jpg" alt="">
+        <img src="asset/img/iscom.jpg" alt="">
+        <img src="asset/img/supveto.jpg" alt="">
+    </div>
+
 </section>
 
 <section id="where">

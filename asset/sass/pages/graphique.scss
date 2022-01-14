@@ -1,0 +1,22 @@
+#graphique{
+    background-color: $dark_violet;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    .double_box{
+        background-color: white;
+        padding: 2rem 8rem;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    .single_box{
+        background-color: white;
+        padding: 1rem;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+}

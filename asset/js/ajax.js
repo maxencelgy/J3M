@@ -58,6 +58,7 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
     }).then(function (data){
         //Recupération des données présent en base
         console.log(data)
+        console.log(data)
 
         //VARIABLES DATA
         //Calcul ttl pour camembert
@@ -138,7 +139,7 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
         let protocolNameConfig = {
             type: 'polarArea',
             data: {
-                labels: ['UDP: '+countUDP, 'TLSv1.2 :'+countTLS, 'ICMP :'+countICMP, 'TCP :'+countTCP, 'Another: '+countAnotherName],
+                labels: ['UDP : '+countUDP, 'TLSv1.2 : '+countTLS, 'ICMP : '+countICMP, 'TCP : '+countTCP, 'Autres : '+countAnotherName],
                 datasets: [{
                     data: [countUDP, countTLS, countICMP, countTCP, countAnotherName],
                     backgroundColor: [

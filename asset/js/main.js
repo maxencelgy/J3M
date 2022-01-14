@@ -1,5 +1,4 @@
 console.log("cc");
-
 VANTA.NET({
     el: ".main",
     color: 0xe89111,
@@ -7,8 +6,18 @@ VANTA.NET({
     points: 10
   });
 
-
+// $(window).resize(function(){
+//    console.log('resize called');
+//    var width = $(window).width();
+//    if(width < 700){
+//        $('div').removeClass('main');
+//    }
+// })
+// .resize();//trigger the resize event on page load.
 // Variable carousel
+
+
+
 var w, container, carousel, item, radius, itemLength, rY, ticker;
 var mouseX = 0;
 var mouseY = 0;
@@ -96,7 +105,7 @@ const navReveal = document.querySelector("nav");
 let navOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: .5
+    threshold: 1.25
 };
 
 let observer = new IntersectionObserver((entries) => {

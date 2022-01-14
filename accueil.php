@@ -14,8 +14,6 @@ include_once('inc/header.php');
         </div>
 </section>
 
-
-
 <section id="infos">
 	<h2> <i>Ils nous ont fait confiance</i>  </h2>
 	<div id="contentContainer" class="trans3d"> 	
@@ -27,6 +25,15 @@ include_once('inc/header.php');
 			<figure id="item5" class="carouselItem trans3d"><div class="carouselItemInner trans3d"><img src="asset/img/supveto.jpg" alt=""></div></figure>
 		</section>
 	</div>
+
+    <div class="confiance">
+        <img src="asset/img/pigier.png" alt="">
+        <img src="asset/img/campus.jpg" alt="">
+        <img src="asset/img/logo_Need_For_School.jpg" alt="">
+        <img src="asset/img/iscom.jpg" alt="">
+        <img src="asset/img/supveto.jpg" alt="">
+    </div>
+
 </section>
 
 <section id="where">

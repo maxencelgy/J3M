@@ -37,7 +37,17 @@ $classHeader = (basename($_SERVER['PHP_SELF']) === 'index.php') ?: 'second';
             <?php }else{ ?>
             <a class="linkNav btn-a" href="<?php echo ROOTDIR; ?>auth/inscription.php">Inscription</a>
             <a class="linkNav btn-a" href="<?php echo ROOTDIR; ?>auth/connexion.php">Connexion</a>
-            <?php } ?>
+            <?php } ?>           
         </div>
+
+       <div class="burger">
+        <i id="burger" class="fas fa-bars"></i>
+        <i id="croix" class="fas fa-times"></i>
+       </div>
+               
+        
+            
+                
+        
     </nav>
 </header>

@@ -80,11 +80,15 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.4)',
                         'rgba(75, 192, 192, 0.4)'
-                    ],
+                    ]
                 }]
             },
             options: {
-                responsive: false
+                responsive: false,
+                title: {
+                    display: true,
+                    text: 'Exemple title',
+                    },
             }
         };
 

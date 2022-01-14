@@ -22,7 +22,7 @@ if(isLogged() == true){
 
 <section id="searchbar">
     <div class="search">
-        <h2>Project Status Dashboard</h2>
+        <h2>Tableau de bord</h2>
         <div class="tram">
         <div class="type_tram">
         <label for="trame">Type de trame :</label>
@@ -50,19 +50,18 @@ if(isLogged() == true){
 </section>
 
 <section id="graphique">
-    <div class="top">
-        <div class="time">
-            <canvas id="canvas1" class="canvas"></canvas>
-        </div>
-        <div class="camembert">
-            <canvas id="canvas2" class="canvas"></canvas>
-        </div>
+    <div class="double_box">
+        <canvas id="canvas1" class="canvas"></canvas>
+        <canvas id="canvas2" class="canvas"></canvas>
     </div>
 
-    <div class="bottom">
-        <div class="timeline">
+    <div class="single_box">
+        <canvas id="canvas3" class="canvas"></canvas>
+    </div>
 
-        </div>
+    <div class="double_box">
+        <canvas id="canvas4" class="canvas"></canvas>
+        <canvas id="canvas5" class="canvas"></canvas>
     </div>
 
 </section>

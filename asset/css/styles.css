@@ -690,31 +690,21 @@ footer .footer_logo img {
   display: flex;
   flex-direction: column;
 }
-#graphique .top {
-  background-color: #2D3341;
-  padding: 1rem;
+#graphique .double_box {
+  background-color: white;
+  padding: 2rem 8rem;
   margin-bottom: 1rem;
   display: flex;
+  flex-flow: row nowrap;
   justify-content: space-between;
 }
-#graphique .top .time {
-  margin-right: 1rem;
+#graphique .single_box {
   background-color: white;
-  padding: 2rem;
-  width: 49%;
-}
-#graphique .top .camembert {
-  background-color: white;
-  padding: 2rem;
-  width: 49%;
-}
-#graphique .bottom {
-  background-color: #2D3341;
   padding: 1rem;
-}
-#graphique .bottom .timeline {
-  padding: 1rem;
-  background-color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 #hello {

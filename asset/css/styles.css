@@ -699,12 +699,12 @@ footer .footer_logo img {
 }
 #graphique .top .time {
   margin-right: 1rem;
-  background-color: red;
+  background-color: white;
   padding: 2rem;
   width: 49%;
 }
 #graphique .top .camembert {
-  background-color: red;
+  background-color: white;
   padding: 2rem;
   width: 49%;
 }
@@ -714,7 +714,7 @@ footer .footer_logo img {
 }
 #graphique .bottom .timeline {
   padding: 1rem;
-  background-color: red;
+  background-color: white;
 }
 
 #hello {

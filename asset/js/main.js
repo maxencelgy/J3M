@@ -146,3 +146,4 @@ observer.observe(idTarget);
 // bobserver.observe(idTarget);
 
 // partie AJAX
+

@@ -13,6 +13,7 @@ $pageIndex = (basename($_SERVER['PHP_SELF']) === 'index.php') ?: 'second';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500,800" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo ROOTDIR; ?>asset/css/styles.css">
     <title>J3M Analyste Tram Normandie</title>
 </head>
@@ -30,7 +31,7 @@ $pageIndex = (basename($_SERVER['PHP_SELF']) === 'index.php') ?: 'second';
             <?php
             }
             if(isLogged()){ ?>
-            <a class="linkNav" href="<?php echo ROOTDIR; ?>content/dashboard.php">Dashboard</a>
+            <a class="linkNav" href="<?php echo ROOTDIR; ?>content/dashboard.php">Tableau de bord</a>
             <a class="linkNav btn-a" href="<?php echo ROOTDIR; ?>auth/deconnexion.php">Déconnexion</a>
             <?php }else{ ?>
             <a class="linkNav btn-a" href="<?php echo ROOTDIR; ?>auth/inscription.php">Inscription</a>

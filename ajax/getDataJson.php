@@ -6,3 +6,4 @@ require'../inc/fonction/request.php';
 
 $dataSql = getJsonData();  // renvoie les données en JSON
 echo($dataSql);
+

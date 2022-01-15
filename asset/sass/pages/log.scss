@@ -58,6 +58,7 @@
 
 
 #tableau {
+  
         background-color: $dark-violet;
         color: white;
         align-items: center;
@@ -77,11 +78,9 @@
 $breakpoint-alpha: 480px;
 
 
-
-
-
 .trb{
     background-color: yellow;
+    
 }
 
 .rwd-table {
@@ -91,6 +90,11 @@ $breakpoint-alpha: 480px;
     border-bottom: 1px solid #ddd;
     font-size: 1.5rem;  
     z-index: 99;
+   
+  }
+
+  .tra {
+    display: none;
   }
   
   th {

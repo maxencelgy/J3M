@@ -1,14 +1,18 @@
 
-import { getIpNumber } from './fonction.js';
+import { getIpNumber , getLogDate } from './fonction.js';
+
+console.log(getLogDate('1414141414'));
 
 fetch('http://localhost/J3M/ajax/getDataJson.php')
     .then (function(response){
         return response.json()
     }).then(function (data){     
         // console.log(data)
+
         const form = document.querySelector('.rwd-table')
         data.forEach(element => {
             // Si protocolChecksumStatusClass = au text good afficher en vert sinon disable
+            let date = getLogDate(element.date)
             let protocolChecksumStatusClass = (element.protocol_checksum__status === 'good') ? 'true' : 'disable'
             let ttlClass                    = (element.ttl === '128') ? 'true' : 'move'
             let ipFrom                      = getIpNumber(element.ip_from)
@@ -17,7 +21,7 @@ fetch('http://localhost/J3M/ajax/getDataJson.php')
             <tr class="trame">
             <tr class="tra">
                 <td data-th="id">${element.identification}</td>
-                <td data-th="date">${element.date}</td>  
+                <td data-th="date">${date}</td>  
                 <td data-th="status">${element.status}</td>
                 <td data-th="name" class="elementName">${element.protocol_name}</td>
                 <td data-th="checksum" class="${protocolChecksumStatusClass}">${element.protocol_checksum__status}</td>

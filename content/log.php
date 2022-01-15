@@ -48,7 +48,7 @@ if(isLogged() == true){
     <table class="rwd-table">
         <tr>
           <th>Id</th>
-          <th>Date</th>
+          <th>Date / Heure</th>
           <th>Status</th>
           <th>Protocole Name</th>
           <th>Protocole Checksum</th>

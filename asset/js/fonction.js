@@ -39,3 +39,16 @@ export function getIpNumber(hexaIp){
   ip = ip.substring(0,ip.length-1);
   return ip;
 }
+
+export function getLogDate(logDate){
+  logDate *= 1000
+  let date = new Date(logDate)
+  let day      = date.getDate()
+  let month    = date.getMonth()
+  let year     = date.getFullYear()
+  let hours    = date.getHours()
+  let minutes  = date.getMinutes()
+  let seconde  = date.getSeconds()
+  let dateClean= day+'/'+month+'/'+year+' '+hours+':'+minutes+':'+seconde
+return dateClean
+}

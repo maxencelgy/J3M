@@ -6,7 +6,7 @@ import { getIpNumber } from './fonction.js';
 fetch('http://localhost/J3M/ajax/getDataJson.php')
     .then (function(response){
         return response.json()
-    }).then(function (data){     
+    }).then(function (data){    
         console.log(data)
         function hexaToNumber(hexaValue){
             if(isNaN(hexaValue)){

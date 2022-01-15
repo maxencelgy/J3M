@@ -58,7 +58,6 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
     }).then(function (data){
         //Recupération des données présent en base
         console.log(data)
-        console.log(data)
 
         //VARIABLES DATA
         //Calcul ttl pour camembert
@@ -274,8 +273,6 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
 
         //Initialisation du graph
         let statusChart = new Chart(status, statusConfig);
-
-
         //
 })
 

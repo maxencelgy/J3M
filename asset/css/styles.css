@@ -795,6 +795,13 @@ footer .footer_logo img {
   overflow-y: scroll;
   scrollbar-width: thin;
 }
+#tableau .tab .tra {
+  transition-duration: 0.2s;
+}
+#tableau .tab .tra:hover {
+  background-color: rgba(255, 159, 64, 0.2);
+  transition-duration: 0.2s;
+}
 
 .trb {
   background-color: yellow;
@@ -816,7 +823,7 @@ footer .footer_logo img {
   font-size: 1.5rem;
 }
 .rwd-table .disable {
-  color: red;
+  color: crimson;
 }
 .rwd-table .true {
   color: green;

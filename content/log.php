@@ -4,14 +4,8 @@ require_once "../config.php";
 require_once "../inc/fonction/pdo.php";
 require_once "../inc/fonction/toolbox.php";
 include_once('../inc/header.php');
-
-
 if(isLogged() == true){
-    
-
-
 ?>
-
 <section id="log">
     <div class="title_log">
         <h2>Bonjour <?= $_SESSION['user']['pseudo']?></h2>
@@ -39,52 +33,29 @@ if(isLogged() == true){
                 <option value="parrot">4 mois</option>
             </select>
         </div>
-
         <a href="../ajax/sendDataJson.php">Refresh</a>
         </div>
 </section>
 
 
 <section id="tableau">
-    <div class="tab">
-   <table class="rwd-table">
-  <tr>
-    <th>Id</th>
-    <th>Date</th>
-    <th>Status</th>
-    <th>Protocole Name</th>
-    <th>Protocole Checksum</th>
-    <th>TTL</th>
-    <th>Ip venant</th>
-    <th>Ip destination</th>
-  </tr>
-  <!-- <tr>
-    <td data-th="id">0xf30f</td>
-    <td data-th="status">Good</td>
-    <td data-th="protocole">UDP</td>
-    <td data-th="checksum" class="disable">disabled</td>
-    <td data-th="ttl">128</td>
-    <td data-th="portA">50046</td>
-    <td data-th="portB">3481</td>
-    <td data-th="ipA">c0a8014a</td>
-    <td data-th="ipB">3470ff25</td>
-  </tr> -->
-  
-</table>
-
-
-    <div class="formfirst">
-        
-
-
+<div class="tab">
+    <table class="rwd-table">
+        <tr>
+          <th>Id</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Protocole Name</th>
+          <th>Protocole Checksum</th>
+          <th>TTL</th>
+          <th>Ip source</th>
+          <th>Ip destination</th>
+        </tr> 
+    </table>
+    <div class="formfirst">        
     </div>
-
-
-    </div>
+</div>
 </section>
-
-
-
 <?php }else{
   header('Location: ../index.php');
 } include('../inc/footer.php');

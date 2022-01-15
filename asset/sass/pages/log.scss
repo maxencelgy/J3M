@@ -58,32 +58,32 @@
 
 
 #tableau {
-        background-color: $dark-violet;
-        color: white;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem;
-        
-        .tab{
-            background-color: $violet;
-            border-radius: .3rem;
-            padding: 0.1rem 1rem;
-            width: 100%;
-            overflow-y: scroll;
-            scrollbar-width: thin;
-        }
-      
+  background-color: $dark-violet;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;        
+  .tab{
+      background-color: $violet;
+      border-radius: .3rem;
+      padding: 0.1rem 1rem;
+      width: 100%;
+      overflow-y: scroll;
+      scrollbar-width: thin;
+      .tra{
+        transition-duration: .2s;
+      }
+      .tra:hover{
+        background-color: rgba(255, 159, 64, 0.2);
+        transition-duration: .2s;
+      } 
+  }
+          
 }
 $breakpoint-alpha: 480px;
-
-
-
-
-
 .trb{
     background-color: yellow;
 }
-
 .rwd-table {
     width: 100%;
   tr {
@@ -100,7 +100,7 @@ $breakpoint-alpha: 480px;
     font-size: 1.5rem;
   }
    .disable{
-       color: red;
+       color: crimson;
    }
    .true{
     color: green;
@@ -112,8 +112,7 @@ $breakpoint-alpha: 480px;
       text-align: left;
   }
   th {
-    text-align: center;
-    
+    text-align: center;    
     @media (min-width: $breakpoint-alpha) {
       display: table-cell;
       padding: .25em .5em;
@@ -125,8 +124,5 @@ $breakpoint-alpha: 480px;
         padding-right: 0;
       }
     }
-
-  }
-  
-  
+  } 
 }

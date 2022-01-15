@@ -18,24 +18,24 @@ function hexaToNumber(hexaValue){
     }
     return hexaValue;
   }
-function getIpNumber(hexaIp){
-    let ip ='' // Ip retourné
-    let arrayNumber=[]
-    let arrayHexa = hexaIp.split('') // on mets chaine dans un tableau pour faire les calculs
-  // fonction qui transforme l'hexa en nombre
-    
-  // on parcours le tableau qui est desormais avec des nombre en base 10
+export function getIpNumber(hexaIp){
+  let ip ='' // Ip retourné
+  let arrayNumber=[]
+  let arrayHexa = hexaIp.split('') // on mets chaine dans un tableau pour faire les calculs
+// fonction qui transforme l'hexa en nombre
   
-    for (let i=0 ; i<arrayHexa.length ; i++){
-      if(i%2 === 0){
-        arrayHexa[i] = hexaToNumber(arrayHexa[i])
-        arrayHexa[i] = arrayHexa[i]*16
-      }else{
-        arrayHexa[i] = hexaToNumber(arrayHexa[i])
-        arrayNumber.push(arrayHexa[i] + arrayHexa[i-1]);
-      }
+// on parcours le tableau qui est desormais avec des nombre en base 10
+
+  for (let i=0 ; i<arrayHexa.length ; i++){
+    if(i%2 === 0){
+      arrayHexa[i] = hexaToNumber(arrayHexa[i])
+      arrayHexa[i] = arrayHexa[i]*16
+    }else{
+      arrayHexa[i] = hexaToNumber(arrayHexa[i])
+      arrayNumber.push(arrayHexa[i] + arrayHexa[i-1]);
     }
-    arrayNumber.forEach(element => ip += element+'.');
-    ip = ip.substring(0,ip.length-1);
-    return ip;
   }
+  arrayNumber.forEach(element => ip += element+'.');
+  ip = ip.substring(0,ip.length-1);
+  return ip;
+}

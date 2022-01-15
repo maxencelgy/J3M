@@ -58,6 +58,7 @@
 
 
 #tableau {
+
   background-color: $dark-violet;
   color: white;
   align-items: center;
@@ -80,9 +81,32 @@
   }
           
 }
+// $breakpoint-alpha: 480px;
+
+  
+//         background-color: $dark-violet;
+//         color: white;
+//         align-items: center;
+//         justify-content: space-between;
+//         padding: 1rem;
+        
+//         .tab{
+//             background-color: $violet;
+//             border-radius: .3rem;
+//             padding: 0.1rem 1rem;
+//             width: 100%;
+//             overflow-y: scroll;
+//             scrollbar-width: thin;
+//         }
+      
+// }
 $breakpoint-alpha: 480px;
+
+
+
 .trb{
     background-color: yellow;
+    
 }
 .rwd-table {
     width: 100%;
@@ -91,7 +115,12 @@ $breakpoint-alpha: 480px;
     border-bottom: 1px solid #ddd;
     font-size: 1.5rem;  
     z-index: 99;
+   
   }
+
+  // .tra {
+  //   display: none;
+  // }
   
   th {
     display: none;

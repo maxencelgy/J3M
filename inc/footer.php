@@ -53,7 +53,7 @@ if($page === 'index.php'){?>
 <script src="../asset/js/dashboard.js"></script>
 <?php
 }
-// autre charger ça 
+
 ?>
 </body>
 </html>

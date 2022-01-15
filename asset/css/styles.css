@@ -856,6 +856,28 @@ footer .footer_logo img {
   color: white;
   padding-bottom: 2rem;
 }
+#acces_refuse h1 {
+  margin-bottom: 20px;
+  color: #facf5a;
+  text-align: center;
+  font-size: 90px;
+  font-weight: 800;
+}
+#acces_refuse a.button {
+  color: #314154;
+  font-size: 30px;
+  margin-bottom: 1rem;
+}
+#acces_refuse a.button:hover {
+  color: #455d7a;
+  transition: 0.5s;
+}
+#acces_refuse h2.text404 {
+  color: #455d7a;
+  text-align: center;
+  font-size: 30px;
+  text-transform: uppercase;
+}
 
 .whistle {
   width: 30%;
@@ -877,37 +899,33 @@ footer .footer_logo img {
     transform: rotate(3deg);
   }
 }
-h1 {
+#acces_refuse {
+  background: #233142;
+  text-align: center;
+  color: white;
+  padding-bottom: 2rem;
+}
+#acces_refuse h1 {
   margin-bottom: 20px;
   color: #facf5a;
   text-align: center;
   font-size: 90px;
   font-weight: 800;
 }
-
-a.button {
+#acces_refuse a.button {
   color: #314154;
   font-size: 30px;
   margin-bottom: 1rem;
 }
-
-a.button:hover {
+#acces_refuse a.button:hover {
   color: #455d7a;
   transition: 0.5s;
 }
-
-h2.text404 {
+#acces_refuse h2.text403 {
   color: #455d7a;
   text-align: center;
   font-size: 30px;
   text-transform: uppercase;
-}
-
-#acces_refuse {
-  background: #233142;
-  text-align: center;
-  color: white;
-  padding-bottom: 2rem;
 }
 
 svg {
@@ -934,31 +952,6 @@ svg {
   100% {
     transform: rotate(3deg);
   }
-}
-h1 {
-  margin-bottom: 20px;
-  color: #facf5a;
-  text-align: center;
-  font-size: 90px;
-  font-weight: 800;
-}
-
-a.button {
-  color: #314154;
-  font-size: 30px;
-  margin-bottom: 1rem;
-}
-
-a.button:hover {
-  color: #455d7a;
-  transition: 0.5s;
-}
-
-h2.text403 {
-  color: #455d7a;
-  text-align: center;
-  font-size: 30px;
-  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=styles.css.map */

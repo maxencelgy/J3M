@@ -44,8 +44,8 @@ include('../inc/header.php');
 <section id="connexion">
 <div class="wrap2">
     <div class="cadre_left">
-    <img src="../asset/img/wing.png" alt="illustration éclair bleu">
-</div>
+    <img src="<?php echo ROOTDIR; ?>asset/img/wing.png" alt="illustration éclair bleu">
+    </div>
 
     <div class="cadre_right">
     <h1>Connexion</h1>
@@ -63,8 +63,7 @@ include('../inc/header.php');
             </button>
         </form>
     </div>
-       
-    </div>
+</div>
 </section>
 
 <?php include('../inc/footer.php');

@@ -3,6 +3,28 @@
   text-align: center;
   color: white;
   padding-bottom: 2rem;
+  h1{
+    margin-bottom: 20px;
+    color: #facf5a;
+    text-align: center;
+    font-size: 90px;
+    font-weight: 800;
+  }
+  a.button{
+    color: #314154;
+    font-size: 30px;
+    margin-bottom: 1rem;
+  }
+  a.button:hover{
+    color: #455d7a;
+    transition: .5s;
+  }
+  h2.text403{
+    color: #455d7a;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+  }
 }
 svg{
   width: 30%;
@@ -27,26 +49,4 @@ svg{
   100%{
     transform: rotate(3deg);
   }
-}
-h1{
-  margin-bottom: 20px;
-  color: #facf5a;
-  text-align: center;
-  font-size: 90px;
-  font-weight: 800;
-}
-a.button{
-  color: #314154;
-  font-size: 30px;
-  margin-bottom: 1rem;
-}
-a.button:hover{
-  color: #455d7a;
-  transition: .5s;
-}
-h2.text403{
-  color: #455d7a;
-  text-align: center;
-  font-size: 30px;
-  text-transform: uppercase;
 }

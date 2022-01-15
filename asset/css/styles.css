@@ -798,6 +798,9 @@ footer .footer_logo img {
 #tableau .tab .tra {
   transition-duration: 0.2s;
 }
+#tableau .tab .trNone {
+  display: none;
+}
 #tableau .tab .tra:hover {
   background-color: rgba(255, 159, 64, 0.2);
   transition-duration: 0.2s;
@@ -832,7 +835,7 @@ footer .footer_logo img {
   color: #FB9D2C;
 }
 .rwd-table td {
-  text-align: left;
+  text-align: center;
 }
 .rwd-table th {
   text-align: center;

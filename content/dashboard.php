@@ -24,7 +24,7 @@ if(isLogged() == true){
     <div class="search">
         <h2>Tableau de bord</h2>
         <div class="tram">
-        <div class="type_tram">
+        <!-- <div class="type_tram">
         <label for="trame">Type de trame :</label>
             <select name="trame" id="trame">
                 <option value="tcp">TCP</option>
@@ -41,7 +41,7 @@ if(isLogged() == true){
                 <option value="hamster">3 mois</option>
                 <option value="parrot">4 mois</option>
             </select>
-        </div>
+        </div> -->
         <a href="../ajax/sendDataJson.php">Refresh</a>
 
         </div>

@@ -40,15 +40,15 @@ export function getIpNumber(hexaIp){
   return ip;
 }
 
-function getLogDate(logDate){
+export function getLogDate(logDate){
   logDate *= 1000
   let date = new Date(logDate)
-  day      = date.getDate()
-  month    = date.getMonth()
-  year     = date.getFullYear()
-  hours    = date.getHours()
-  minutes  = date.getMinutes()
-  seconde  = date.getSeconds()
-  dateClean= day+'/'+month+'/'+year+' '+hours+':'+minutes+':'+seconde
+  let day      = date.getDate()
+  let month    = date.getMonth()
+  let year     = date.getFullYear()
+  let hours    = date.getHours()
+  let minutes  = date.getMinutes()
+  let seconde  = date.getSeconds()
+  let dateClean= day+'/'+month+'/'+year+' '+hours+':'+minutes+':'+seconde
 return dateClean
 }

@@ -4,12 +4,10 @@
     display: flex;
     flex-direction: column;
     color: white;
-
     .title_log{
         text-align: center;
         margin-bottom: 1rem;
     }
-
     .search{
         background-color: $violet;
         display: flex;
@@ -54,7 +52,6 @@
     }
 }
 #tableau {
-
   background-color: $dark-violet;
   color: white;
   align-items: center;
@@ -69,7 +66,7 @@
       scrollbar-width: thin;
       .tra{
         transition-duration: .2s;
-     
+        cursor: pointer;
       }
       .trNone{
         display: none;
@@ -79,28 +76,7 @@
         transition-duration: .2s;
       } 
   }
-          
-}
-// $breakpoint-alpha: 480px;
-
-  
-//         background-color: $dark-violet;
-//         color: white;
-//         align-items: center;
-//         justify-content: space-between;
-//         padding: 1rem;
-        
-//         .tab{
-//             background-color: $violet;
-//             border-radius: .3rem;
-//             padding: 0.1rem 1rem;
-//             width: 100%;
-//             overflow-y: scroll;
-//             scrollbar-width: thin;
-//         }
-      
-// }
-$breakpoint-alpha: 480px;
+  $breakpoint-alpha: 480px;
 
 .trb{
     background-color: yellow;
@@ -130,7 +106,7 @@ $breakpoint-alpha: 480px;
         color: $orange;
     }
   td{
-      text-align: left;
+      text-align: center;
   }
   th {
     text-align: center;    
@@ -146,4 +122,6 @@ $breakpoint-alpha: 480px;
       }
     }
   } 
+}       
 }
+

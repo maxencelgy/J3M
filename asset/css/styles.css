@@ -797,6 +797,7 @@ footer .footer_logo img {
 }
 #tableau .tab .tra {
   transition-duration: 0.2s;
+  cursor: pointer;
 }
 #tableau .tab .trNone {
   display: none;
@@ -805,50 +806,48 @@ footer .footer_logo img {
   background-color: rgba(255, 159, 64, 0.2);
   transition-duration: 0.2s;
 }
-
-.trb {
+#tableau .trb {
   background-color: yellow;
 }
-
-.rwd-table {
+#tableau .rwd-table {
   width: 100%;
 }
-.rwd-table tr {
+#tableau .rwd-table tr {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   font-size: 1.5rem;
   z-index: 99;
 }
-.rwd-table th {
+#tableau .rwd-table th {
   display: none;
   color: #FB9D2C;
   border: 1px solid #FB9D2C;
   font-size: 1.5rem;
 }
-.rwd-table .disable {
+#tableau .rwd-table .disable {
   color: crimson;
 }
-.rwd-table .true {
+#tableau .rwd-table .true {
   color: green;
 }
-.rwd-table .move {
+#tableau .rwd-table .move {
   color: #FB9D2C;
 }
-.rwd-table td {
-  text-align: left;
+#tableau .rwd-table td {
+  text-align: center;
 }
-.rwd-table th {
+#tableau .rwd-table th {
   text-align: center;
 }
 @media (min-width: 480px) {
-  .rwd-table th {
+  #tableau .rwd-table th {
     display: table-cell;
     padding: 0.25em 0.5em;
   }
-  .rwd-table th:first-child {
+  #tableau .rwd-table th:first-child {
     padding-left: 0;
   }
-  .rwd-table th:last-child {
+  #tableau .rwd-table th:last-child {
     padding-right: 0;
   }
 }

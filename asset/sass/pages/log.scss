@@ -39,7 +39,6 @@
               border: none;
               margin-left: 1rem;
           }
-
           a{
               padding: .5rem;
               font-size: 1rem;
@@ -54,9 +53,6 @@
       }
     }
 }
-
-
-
 #tableau {
 
   background-color: $dark-violet;
@@ -73,6 +69,10 @@
       scrollbar-width: thin;
       .tra{
         transition-duration: .2s;
+     
+      }
+      .trNone{
+        display: none;
       }
       .tra:hover{
         background-color: rgba(255, 159, 64, 0.2);
@@ -102,26 +102,18 @@
 // }
 $breakpoint-alpha: 480px;
 
-
-
 .trb{
     background-color: yellow;
-    
 }
 .rwd-table {
     width: 100%;
+    // display: none;
   tr {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
     font-size: 1.5rem;  
     z-index: 99;
-   
-  }
-
-  // .tra {
-  //   display: none;
-  // }
-  
+  }  
   th {
     display: none;
     color: $orange;

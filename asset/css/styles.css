@@ -798,6 +798,9 @@ footer .footer_logo img {
 #tableau .tab .tra {
   transition-duration: 0.2s;
 }
+#tableau .tab .trNone {
+  display: none;
+}
 #tableau .tab .tra:hover {
   background-color: rgba(255, 159, 64, 0.2);
   transition-duration: 0.2s;

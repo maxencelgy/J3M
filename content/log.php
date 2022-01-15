@@ -7,6 +7,7 @@ include_once('../inc/header.php');
 if(isLogged() == true){
 ?>
 
+
 <section id="log">
     <div class="title_log">
         <h2>Bonjour <?= $_SESSION['user']['pseudo']?></h2>
@@ -19,13 +20,13 @@ if(isLogged() == true){
 
       
         <label for="trame">Type de trame :</label>
-            <select name="list" onchange="change(this)">
+            <select name="list" id="select-list">
+                <option value="ALL">ALL</option>
                 <option value="TCP">TCP</option>
                 <option value="UDP">UDP</option>
                 <option value="TLSv1.2">TLSv1.2</option>
                 <option value="ICMP">ICMP</option>
             </select>
-
         </div>
         <div class="type_tram">
         <label for="pet-select">Date :</label>

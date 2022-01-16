@@ -776,7 +776,7 @@ footer .footer_logo img {
   margin-left: 2rem;
 }
 #log .search .tram a:hover {
-  background-color: #FB9D2C;
+  background-color: #cc5500;
   transition: 0.5s;
 }
 
@@ -825,10 +825,10 @@ footer .footer_logo img {
   font-size: 1.5rem;
 }
 #tableau .rwd-table .disable {
-  color: crimson;
+  color: #e9383f;
 }
 #tableau .rwd-table .true {
-  color: green;
+  color: #568203;
 }
 #tableau .rwd-table .move {
   color: #FB9D2C;

@@ -1,8 +1,6 @@
 
 import { getIpNumber , getLogDate } from './fonction.js';
 
-console.log(getLogDate('1414141414'));
-
 fetch('http://localhost/J3M/ajax/getDataJson.php')
     .then (function(response){
         return response.json()

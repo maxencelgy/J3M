@@ -17,11 +17,9 @@ if(isLogged() == true){
         <h2>Dashboard Log</h2>
         <div class="tram">
         <div class="type_tram">
-
-      
         <label for="trame">Type de trame :</label>
             <select name="list" id="select-list">
-                <option value="ALL">ALL</option>
+                <option value="ALL">TOUTE</option>
                 <option value="TCP">TCP</option>
                 <option value="UDP">UDP</option>
                 <option value="TLSv1.2">TLSv1.2</option>
@@ -29,13 +27,11 @@ if(isLogged() == true){
             </select>
         </div>
         <div class="type_tram">
-        <label for="pet-select">Date :</label>
-            <select name="pets" id="pet">
-                <option value="">24h</option>
-                <option value="dog">1 mois</option>
-                <option value="cat">2 mois</option>
-                <option value="hamster">3 mois</option>
-                <option value="parrot">4 mois</option>
+        <label for="trame">Status :</label>
+            <select name="listTwo" id="select-list2">
+                <option value="Tous">TOUTE</option>
+                <option value="Acceptée">Acceptée</option>
+                <option value="Refusée">Refusée</option>
             </select>
         </div>
         <a href="../ajax/sendDataJson.php">Refresh</a>
@@ -43,7 +39,42 @@ if(isLogged() == true){
 </section>
 
 
+<i id="crossPop" class="fas fa-times"></i>
+<div class="popup">
+
+    <div class="left">
+        <h2 class="violet">Id</h2>
+        <h2>Date</h2>
+        <h2 class="red">Status</h2>
+        <h2 class="vert">Protocole Name</h2>
+        <h2 class="vert">Protocole Checksum</h2>
+        <h2 class="vert">Protocole TTL</h2>
+        <h2 class="orange">Ip Source</h2>
+        <h2 class="orange">Ip Destination</h2>
+        <h2 class="orange">Version</h2>
+        <h2>Header Length</h2>
+        <h2>Service</h2>
+        <h2>Header Checksum</h2>
+        <h2 class="orange">Ports from</h2>
+        <h2 class="orange">Ports Dest</h2>
+        <h2>Flags_code</h2>
+        <h2>Protocol checksum code</h2>
+    </div>
+
+    <div class="right">
+        
+    </div>
+
+
+
+</div>
+
+
 <section id="tableau">
+
+
+
+
 <div class="tab">
     <table class="rwd-table">
         <tr>

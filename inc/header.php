@@ -18,7 +18,6 @@ $pageIndex = (basename($_SERVER['PHP_SELF']) === 'index.php') ?: 'second';
     <title>J3M Analyste Tram Normandie</title>
 </head>
 <body>
-
 <header class="<?php echo $pageIndex; ?>" id="header">
     <nav>
         <div class="logo_nav">

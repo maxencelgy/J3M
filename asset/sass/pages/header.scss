@@ -1,6 +1,6 @@
 #header{ 
-  nav{   
-   padding: 0 1rem;
+  nav{
+    padding: 0 1rem;
     width: 100%;
     position: fixed;
     background: transparent;
@@ -9,6 +9,7 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
 
     .burger {
       position: absolute;
@@ -65,10 +66,8 @@
     .header_btn{
       @include breakpoints(litleLaptop){
         display: none;
-        flex-direction: column;
-        background-color: red;
+        background-color: #232222;
         width: 100%;
-        height: 50vh;
         // justify-content: left;
         // background-color: red;
       }
@@ -81,9 +80,13 @@
         color: white;
         position: relative;
         text-transform: uppercase;
-        margin-left: 1rem;
+        margin: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         @include breakpoints(litleLaptop){
-      
+
         
         }
       }

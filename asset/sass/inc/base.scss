@@ -93,11 +93,7 @@ input{
 }
 
 /*Bouton hover vers le haut*/
-::before,
-::after {
-    position: absolute;
-    content: "";
-}
+
 .btn {
     position: relative;
     display: inline-block;

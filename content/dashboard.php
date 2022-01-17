@@ -7,8 +7,6 @@ include_once('../inc/header.php');
 
 
 if(isLogged() == true){
-    
-
 
 ?>
 
@@ -42,7 +40,7 @@ if(isLogged() == true){
                 <option value="parrot">4 mois</option>
             </select>
         </div> -->
-        <a href="../ajax/sendDataJson.php">Refresh</a>
+        <a href="../ajax/sendDataJson.php">Actualiser</a>
 
         </div>
        
@@ -68,6 +66,7 @@ if(isLogged() == true){
 
 
 
-<?php }else{
-  header('Location: ../index.php');
-} include('../inc/footer.php');
+<?php include('../inc/footer.php');
+}else{
+  header('Location: ../pageError/404.php');
+}

@@ -61,6 +61,7 @@ if(isLogged() == true){
     </div>
 </div>
 </section>
-<?php }else{
-  header('Location: ../index.php');
-} include('../inc/footer.php');
+<?php include('../inc/footer.php');
+}else{
+  header('Location: ../pageError/404.php');
+}

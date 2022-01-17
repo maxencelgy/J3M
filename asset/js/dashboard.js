@@ -74,6 +74,7 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
             return e.identification;
         })
 
+
         //Variables de status
         let countStatusGood = 0
         let countStatusDisabled =0
@@ -116,16 +117,6 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
             }
 
         })
-
-        //VARIBALES IP FROM ET DEST
-        // si le client en subit DDOS, on aurait des centaines de trames de diverses adresses IP
-        // sources vers une même adresse IP destination.
-        let ip_from= data.map(function(e) {
-            return getIpNumber(e.ip_from);
-        });
-        let ip_dest= data.map(function(e) {
-            return getIpNumber(e.ip_dest);
-        });
 
 
         //GRAPHIQUES
@@ -205,38 +196,61 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
         //Initialisation du graph
         let ttlChart = new Chart(ttlGraph, ttlConfig);
 
-        //Troisieme
 
-        threeCanvas = document.getElementById('canvas3');
-        let three = threeCanvas.getContext('2d');
-        three.canvas.width = 1000;
-        let threeConfig = {
-            type: 'bar',
-            data: {
-                labels: ip_from,
-                datasets: [{
-                    label: 'ip',
-                    data: [1,2,3,4,5,6,7,8,9,10],
-                    backgroundColor: [
-                        'green'
-                    ],
-                }]
-            },
-            options: {
-                responsive: false,
-                title:{
-                    display: true,
-                    fontSize: 30,
-                    position: 'top',
-                    text: 'Requêtes ip',
-                },
-                legend:{
-                    position: 'right',
-                }
-            }
-        };
+        //Recupération des ip dest en bdd
 
-        let threeChart = new Chart(three, threeConfig);
+        let ajaxIpData = fetch('http://localhost/J3M/ajax/getIpJson.php')
+            .then (function(response){
+                return response.json()
+            }).then(function (data) {
+                console.log(data)
+
+                let ip_dest = data.map(function(e) {
+                    return getIpNumber(e.ip_dest);
+                });
+                let nb_request = data.map(function(e) {
+                    return e.nbIp;
+                });
+
+                //GAPH IP
+
+                threeCanvas = document.getElementById('canvas3');
+                let three = threeCanvas.getContext('2d');
+                three.canvas.width = 1000;
+                let threeConfig = {
+                    type: 'bar',
+                    data: {
+                        labels: ip_dest,
+                        datasets: [{
+                            label: 'Occurrence de requête par IP',
+                            data: nb_request,
+                            backgroundColor: "#B0F2B6",
+                            borderColor: "green",
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                            }
+                        },
+                        responsive: false,
+                        title:{
+                            display: true,
+                            fontSize: 30,
+                            position: 'top',
+                            text: 'Requêtes ip',
+                        },
+                        legend:{
+                            position: 'right',
+                        },
+                    }
+                };
+
+                let threeChart = new Chart(three, threeConfig);
+            })
+
 
         //Graph Status
 
@@ -275,5 +289,8 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
         let statusChart = new Chart(status, statusConfig);
         //
 })
+
+
+
 
 

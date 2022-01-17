@@ -13,6 +13,15 @@ function verifyApiData($date, $identification )
     return $query->fetchAll();
 }
 
+//SELECT ip dest
+function getIpDest(){
+    global $pdo;
+    $sql = "SELECT COUNT(ip_dest) AS nbIp, ip_dest FROM `jsondata` GROUP BY ip_dest";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    return json_encode($query->fetchAll());
+}
+
 function getJsonData()
 {
     global $pdo;
@@ -27,10 +36,7 @@ function requestVerifMailRegister($email){
     $query = $pdo->prepare($sql);
     $query->bindValue(':email',$email,PDO::PARAM_STR);
     $query->execute();
-    $verifUser = $query->fetch();
-    if(!empty($verifUser)) {
-        $errors['email'] = 'Vous avez déjà un compte avec cette adresse mail';
-    }
+    return $query->fetch();
 }
 
 

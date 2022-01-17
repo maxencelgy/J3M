@@ -4,7 +4,8 @@ require_once "../config.php";
 require_once('../inc/fonction/pdo.php');
 require_once('../inc/fonction/request.php');
 
-verifUserAlreadyConnected();
+if(isLogged() == false){
+
 $success=false;
 $errors = [];
 
@@ -18,7 +19,10 @@ if(!empty($_POST['submitted'])){
     $errors = mailValidation($errors,$email,'email');
 
     if(empty($errors['email'])){
-        requestVerifMailRegister($email);
+        $verifUserMail = requestVerifMailRegister($email);
+        if(!empty($verifUserMail)) {
+            $errors['email'] = 'Vous avez déjà un compte avec cette adresse mail';
+        }
     }
 
     //Verif pseudo
@@ -96,5 +100,8 @@ include('../inc/header.php');
 </section>
 
 <?php include('../inc/footer.php');
+}else{
+    header('Location: ../pageError/403.php');
+}
 
 

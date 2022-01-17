@@ -39,8 +39,9 @@ if(isLogged() == true){
         <canvas id="canvas3" class="canvas"></canvas>
     </div>
 
-    <div class="single_box">
+    <div class="double_box">
         <canvas id="canvas4" class="canvas"></canvas>
+        <canvas id="canvas5" class="canvas"></canvas>
     </div>
 
 </section>

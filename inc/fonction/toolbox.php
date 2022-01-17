@@ -58,7 +58,7 @@ function isAdmin()
 
 function verifUserAlreadyConnected(){
     if (isLogged()==true){
-        header('Location: index.php');
+        header('Location: pageError/403.php');
     }
 }
 

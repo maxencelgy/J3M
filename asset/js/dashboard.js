@@ -119,6 +119,9 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
         })
 
 
+        //Variables ICMP Error
+
+
         //GRAPHIQUES
         //Nom de protocole
 
@@ -251,23 +254,22 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
                 let threeChart = new Chart(three, threeConfig);
             })
 
-
         //Graph Status
 
         statusCanvas = document.getElementById('canvas4');
         let status = statusCanvas.getContext('2d');
-        status.canvas.width = 400;
+        status.canvas.width = 500;
 
         let statusConfig = {
-            type: 'pie',
+            type: 'doughnut',
             data: {
                 labels: ['Status "good": '+pourcentageStatusGood+'%', 'Status "disabled": '+pourcentageStatusDisabled+'%', 'Status "another": '+pourcentageStatusAnother+'%'],
                 datasets: [{
                     data: [countStatusGood,countStatusDisabled, countStatusAnother],
                     backgroundColor: [
-                        'rgba(2,194,100,0.65)',
-                        'rgba(253,1,47,0.65)',
-                        'rgba(100, 50, 125, 0.4)',
+                        'rgb(253,100,46)',
+                        'rgb(143,166,229)',
+                        'rgb(246,130,86)'
                     ],
                 }]
             },
@@ -287,7 +289,6 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
 
         //Initialisation du graph
         let statusChart = new Chart(status, statusConfig);
-        //
 })
 
 

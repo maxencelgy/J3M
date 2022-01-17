@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     color: white;
+    
     .title_log{
         text-align: center;
         margin-bottom: 1rem;
@@ -126,3 +127,59 @@
 }       
 }
 
+i{
+  font-size: 3rem;
+  position: fixed;
+  top: 12%;
+  right: 16%;
+  transform: translate(-50%);
+  cursor: pointer;
+  color: whitesmoke;
+  visibility: hidden;
+  z-index: 99;
+}
+
+.popup{
+  z-index: 3;
+  color: whitesmoke;
+  height: 80vh;
+  width: 70%;
+  padding: 0 2rem;
+  border-radius: .5rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 30px rgb(0 0 0 / 10%);  
+  backdrop-filter: blur(10px);
+  position: fixed; /* postulat de départ */
+  top: 10%;
+  left: 15%;
+  bottom: 25%;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h2{
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+  .violet {
+    color: #061765;
+    font-size: 2.3rem;
+    margin-bottom: .5rem;
+  }
+  .orange {
+    color: $orange;
+  }
+  .vert {
+    color: #00fa9a;
+  }
+  .red {
+    color: red;
+  }
+
+
+}
+
+// body {
+//   background-color: #1115
+// }

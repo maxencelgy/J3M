@@ -1,43 +1,59 @@
-footer{
-    @include breakpoints(laptop){
+footer {
+    @include breakpoints(laptop) {
         display: flex;
         flex-direction: column;
         text-align: center;
     }
-    background-color: #242A2E;
-    padding: 3.5rem 2rem;
-    color: white;
-    max-width: 100%;
-    margin: 0 auto;
     display: flex;
-    align-items: top;
-    justify-content: space-between;
-    h2{
-        font-size: 1.7rem;
-        margin-bottom: .8rem;
-        border-bottom: solid 1px $orange;
-        display: inline-block;
-        @include breakpoints(laptop){
-            margin-top: 2rem;
-        }
-    }
-    p{
-        font-size: 1rem;
-       
-    }
-    .div_foot{
-        @include breakpoints(laptop){
-            width: 99%;
-        }
-        width: 19%;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: #242A2E;
+    color: white;
+    padding: 3.5rem 2rem 2rem 2rem;
+    gap: 2.5rem;
+    .footer {
+        max-width: 100%;
+        margin: 0 auto;
+        display: flex;
         justify-content: space-between;
-    }
-    .footer_logo{
-        img{
-            width: 50%;
-            @include breakpoints(laptop){
-                width: 30%;
+        a{
+            font-size: 1.2rem;
+            text-decoration: underline;
+            color: $orange;
+        }
+        h2 {
+            font-size: 1.7rem;
+            margin-bottom: .8rem;
+            border-bottom: solid 1px $orange;
+            display: inline-block;
+            @include breakpoints(laptop) {
+                margin-top: 2rem;
             }
         }
+
+        p {
+            font-size: 1rem;
+
+        }
+
+        .div_foot {
+            @include breakpoints(laptop) {
+                width: 99%;
+            }
+            width: 19%;
+            justify-content: space-between;
+        }
+
+        .footer_logo {
+            img {
+                width: 50%;
+                @include breakpoints(laptop) {
+                    width: 30%;
+                }
+            }
+        }
+    }
+    #copyright{
+        font-size: 1.2rem;
     }
 }

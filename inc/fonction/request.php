@@ -34,11 +34,29 @@ function getIcmpStatus(){
 function getJsonData()
 {
     global $pdo;
-    $sql = "SELECT * FROM `jsondata`";
+    $sql = "SELECT * FROM `jsondata` ORDER BY `jsondata`.`date` DESC";
     $query = $pdo->prepare($sql);
     $query->execute();    
     return json_encode($query->fetchAll());
 }
+
+function getJsonDataIcmp()
+{
+    global $pdo;
+    $sql = "SELECT * FROM `jsondata` WHERE `protocol_name` = 'ICMP'";
+    $query = $pdo->prepare($sql);
+    $query->execute();    
+    return json_encode($query->fetchAll());
+}
+function getJsonDataUdp()
+{
+    global $pdo;
+    $sql = "SELECT * FROM `jsondata` WHERE `protocol_name` = 'UDP'";
+    $query = $pdo->prepare($sql);
+    $query->execute();    
+    return json_encode($query->fetchAll());
+}
+
 function requestVerifMailRegister($email){
     global $pdo;
     $sql = "SELECT * FROM user WHERE email = :email";

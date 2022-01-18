@@ -13,8 +13,8 @@ fetch('http://localhost/J3M/ajax/getDataJson.php')
             let date = getLogDate(element.date)
             let protocolChecksumStatusClass = (element.protocol_checksum__status === 'good') ? 'true' : 'disable'
             let ttlClass                    = (element.ttl === '128') ? 'true' : 'move'
-            let statusClass                    = (element.status === 'timeout') ? 'disable' : 'true'
-            let statusVide                   = (element.status === 'timeout') ? 'Refusée' : 'Acceptée'
+            let statusClass                 = (element.status === 'timeout') ? 'disable' : 'true'
+            let statusVide                  = (element.status === 'timeout') ? 'Refusée' : 'Acceptée'
             let ipFrom                      = getIpNumber(element.ip_from)
             let ipDest                      = getIpNumber(element.ip_dest)
             form.innerHTML += `
@@ -48,6 +48,7 @@ fetch('http://localhost/J3M/ajax/getDataJson.php')
         const popupRight = document.querySelector('.right');
         const cross = document.querySelector('#crossPop');
         const tableau = document.querySelector('#tableau');
+
     
 
 
@@ -55,16 +56,17 @@ fetch('http://localhost/J3M/ajax/getDataJson.php')
             popup.style.visibility = 'hidden';
             cross.style.visibility = 'hidden';
             tableau.style.filter = 'inherit';
-         
+            document.body.style.overflowY      = 'inherit';
         });
 
         // Ouverture de trame avec plus de données
         trame.forEach(elements =>{
             elements.addEventListener('click', event => {
 
-                popup.style.visibility = 'inherit';
-                cross.style.visibility = 'inherit';
-                tableau.style.filter = 'brightness(0.3)';
+                popup.style.visibility             = 'inherit';
+                cross.style.visibility             = 'inherit';
+                tableau.style.filter               = 'brightness(0.3)';
+                document.body.style.overflowY      = 'hidden';
 
                 popupRight.innerHTML = 
                 `
@@ -111,10 +113,10 @@ fetch('http://localhost/J3M/ajax/getDataJson.php')
     selectListTwo.addEventListener("change",() => {
         // protocolName = selectList.value
         trame.forEach(element => {
-            console.log(element.cells[2].innerText);
+            // console.log(element.cells[2].innerText);
 
             if(selectListTwo.value == 'Tous'){
-                element.classList.remove("trNone");
+                element.classList.remove("secNone");
             }
             else if(element.cells[2].innerText == selectListTwo.value){
                 element.classList.remove("trNone");

@@ -62,6 +62,10 @@ include('../inc/header.php');
             <button class="btn btn-1 hover-filled-slide-down">
                 <input type="submit" name="submitted" id="submitted" value="Se connecter">
             </button>
+
+            <div id="missing_password">
+                <a href="emailMdpOublie.php">Mot de passe oublié ?</a>
+            </div>
         </form>
     </div>
 </div>

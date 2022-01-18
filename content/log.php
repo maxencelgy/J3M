@@ -39,7 +39,6 @@ if(isLogged() == true){
 </section>
 
 
-<i id="crossPop" class="fas fa-times"></i>
 <div class="popup">
 
     <div class="left">

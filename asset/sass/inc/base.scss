@@ -137,6 +137,7 @@ input{
 .btn-1 input[type=submit]:hover {
     color: white;
     transition: 0.2s 0.1s;
+    cursor: pointer;
 }
 
 .btn.hover-filled-slide-down::before {
@@ -147,3 +148,32 @@ input{
     height: 0;
 }
 
+//Formulaires
+.cadre_right {
+    width: 80%;
+    h1 {
+        text-align: center;
+        background-color: $dark_blue;
+        color: white;
+        width: 50%;
+        margin: 0 auto;
+        padding: .5rem;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+    form {
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 1rem 1rem;
+        width: 50%;
+        margin: 0 auto;
+        gap: .5rem;
+        background-color: white;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        font-size: 1.4rem;
+        label {
+            width: 15rem;
+        }
+    }
+}

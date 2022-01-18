@@ -245,7 +245,7 @@ input {
   font-size: 2rem;
   padding: 0.5rem 1rem;
   border: solid 1px #FB9D2C;
-  color: white;
+  color: #FB9D2C;
   text-align: center;
   cursor: pointer;
   z-index: 999;

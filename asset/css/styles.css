@@ -898,11 +898,6 @@ footer #copyright {
   }
 }
 
-i {
-  font-size: 3rem;
-  color: whitesmoke;
-}
-
 .popup {
   z-index: 3;
   color: whitesmoke;

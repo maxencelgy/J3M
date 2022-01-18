@@ -137,6 +137,7 @@ input{
 .btn-1 input[type=submit]:hover {
     color: white;
     transition: 0.2s 0.1s;
+    cursor: pointer;
 }
 
 .btn.hover-filled-slide-down::before {

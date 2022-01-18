@@ -56,3 +56,7 @@ function hexaToNumber(hexaValue){
   }
   return hexaValue;
 }
+
+export function pourcentage(val1, val2){
+  return Math.round(pingOK/(pingOK+pingKO)*100)
+}

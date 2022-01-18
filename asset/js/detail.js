@@ -1,11 +1,8 @@
-//import { getIpNumber , getLogDate } from './fonction.js';
-// http://localhost/J3M/ajax/ICMP/getIcmpData.php
-// http://localhost/J3M/ajax/TCP/getIcmpData.php
-// http://localhost/J3M/ajax/UDP/getIcmpData.php
-// http://localhost/J3M/ajax/TLS/getIcmpData.php
-
+function pourcentage(val1,val2) {return Math.round(val1/(val1+val2)*100)}
+// ICMP
 fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
     .then (function(response){
+        
         return response.json()
     }).then(function (data){
         console.log(data)
@@ -14,6 +11,8 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
         let ipVersion = data.map(function (e) {
             return e.version;
         });
+        
+        
         let nbIpv4 = 0
         let nbIpv6 = 0
         ipVersion.forEach(element => {
@@ -23,23 +22,40 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
                 nbIpv6++;
             }
         });
-        console.log(nbIpv4)
-        console.log(nbIpv6)
-
+        let pourcentageIpv6 = pourcentage(nbIpv6,nbIpv4)
+        let pourcentageIpv4 = pourcentage(nbIpv4,nbIpv6)
+        console.log(pourcentageIpv6)
+        console.log(pourcentageIpv4)
+        // taux de Ping OK
+        let pingOK = 0
+        let pingKO = 0
+        
+        data.forEach(element => {
+            if(element.protocol_type == 8){
+                if(element.protocol_checksum__status == 'good'){
+                    pingOK++;
+                }else{
+                    pingKO++;
+                }
+            }
+            
+        });
+        let pourcentagePingOK = pourcentage(pingOK,pingKO)
+        console.log(pourcentagePingOK)
+        // Graphique IPv4 IPV6
         protocolNameCanvas = document.getElementById('canvasIcmp1');
-        let protocolName = protocolNameCanvas.getContext('2d');
+        let protocolName   = protocolNameCanvas.getContext('2d');
         protocolName.canvas.width = 400;
         
         let protocolNameConfig = {
             type: 'pie',
             data: {
-                labels: ["ipV4","ipv6"],
+                labels: ['ipV4 : '+pourcentageIpv4+'%','ipv6 : '+pourcentageIpv6+'%'],
                 datasets: [{
                     data: [nbIpv4,nbIpv6],
                     backgroundColor: [
                         '#050B4F',
-                        '#FB9D2C',
-                        
+                        '#FB9D2C',                        
                     ],
                 }]
             },
@@ -57,6 +73,9 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
             }
         };
         let protocolNameChart = new Chart(protocolName, protocolNameConfig);
+        // taux de ping à l'état good
+
+
 }) // fin du fectch
 
 

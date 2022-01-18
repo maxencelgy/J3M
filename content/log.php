@@ -11,10 +11,10 @@ if(isLogged() == true){
 <section id="log">
     <div class="title_log">
         <h2>Bonjour <?= $_SESSION['user']['pseudo']?></h2>
-        <p>Voici les logs</p>
+        <p>Voici les journaux</p>
     </div>
     <div class="search">
-        <h2>Dashboard Log</h2>
+        <h2>Journaux </h2>
         <div class="tram">
         <div class="type_tram">
         <label for="trame">Type de trame :</label>
@@ -34,7 +34,7 @@ if(isLogged() == true){
                 <option value="Refusée">Refusée</option>
             </select>
         </div>
-        <a href="../ajax/sendDataJson.php">Refresh</a>
+        <a href="../ajax/sendDataJson.php">Actualiser</a>
         </div>
 </section>
 
@@ -46,19 +46,19 @@ if(isLogged() == true){
         <h2 class="violet">Id</h2>
         <h2>Date</h2>
         <h2 class="red">Status</h2>
-        <h2 class="vert">Protocole Name</h2>
-        <h2 class="vert">Protocole Checksum</h2>
+        <h2 class="vert">Nom du protocole</h2>
+        <h2 class="vert">Somme de contrôle</h2>
         <h2 class="vert">Protocole TTL</h2>
         <h2 class="orange">Ip Source</h2>
         <h2 class="orange">Ip Destination</h2>
         <h2 class="orange">Version</h2>
-        <h2>Header Length</h2>
+        <h2>Longueur d'en-tête</h2>
         <h2>Service</h2>
-        <h2>Header Checksum</h2>
+        <h2>Somme de contrôle d'en-tête</h2>
         <h2 class="orange">Ports from</h2>
         <h2 class="orange">Ports Dest</h2>
         <h2>Flags_code</h2>
-        <h2>Protocol checksum code</h2>
+        <h2>Code de somme de contrôle du protocole</h2>
     </div>
 
     <div class="right">
@@ -81,8 +81,8 @@ if(isLogged() == true){
           <th>Id</th>
           <th>Date / Heure</th>
           <th>Status</th>
-          <th>Protocole Name</th>
-          <th>Protocole Checksum</th>
+          <th>Nom du protocole</th>
+          <th>Somme de contrôle</th>
           <th>TTL</th>
           <th>Ip source</th>
           <th>Ip destination</th>

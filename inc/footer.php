@@ -1,3 +1,7 @@
+<?php
+$page = basename($_SERVER['PHP_SELF']);
+?>
+
 <footer>
     <section class="footer">
         <div class="footer_logo div_foot">
@@ -27,8 +31,17 @@
         <div class="footer_horraires div_foot">
             <h2>Mention légales</h2>
                 <ul>
-                    <li><a href="inc/mentions_legales.php">Mentions légales</a></li>
-                    <li><a href="inc/donnes_perso.php">Données personnelles</a></li>
+                    <?php
+                        if($page === 'index.php'){ ?>
+                            <li><a href="inc/mentions_legales.php">Mentions légales</a></li>
+                            <li><a href="inc/donnes_perso.php">Données personnelles</a></li>
+                        <?php }else if($page === 'mentions_legales.php' || $page === 'donnees_perso.php'){ ?>
+                            <li><a href="mentions_legales.php">Mentions légales</a></li>
+                            <li><a href="donnes_perso.php">Données personnelles</a></li>
+                        <?php }else{ ?>
+                            <li><a href="../inc/mentions_legales.php">Mentions légales</a></li>
+                            <li><a href="../inc/donnes_perso.php">Données personnelles</a></li>
+                        <?php } ?>
                 </ul>
         </div>
     </section>
@@ -41,7 +54,6 @@
 
 
 <?php 
-$page = basename($_SERVER['PHP_SELF']);
 
 // Determine la page dans laquel on se trouve pour ne pas charger unitilement du js
 if($page === 'index.php'){?>

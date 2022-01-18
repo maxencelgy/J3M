@@ -253,11 +253,6 @@ input {
   cursor: pointer;
   z-index: 99;
 }
-#header nav .btn-a {
-  padding: 0.5rem;
-  border: solid 1px #FB9D2C;
-  border-radius: 0.4rem;
-}
 #header nav .logo_nav img {
   width: 8rem;
 }
@@ -297,6 +292,21 @@ input {
 }
 #header nav .header_btn a:hover:after {
   width: 90%;
+}
+#header nav .header_btn .btn-a {
+  padding: 0.5rem;
+  border: solid 1px #FB9D2C;
+  border-radius: 0.4rem;
+}
+#header nav .header_btn .btn-a:hover {
+  background-color: #FB9D2C;
+  color: black;
+}
+#header nav .header_btn .btn-a::before {
+  display: none;
+}
+#header nav .header_btn .btn-a::after {
+  display: none;
 }
 
 #header.second nav {

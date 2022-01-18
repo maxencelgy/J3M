@@ -260,7 +260,6 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
                     backgroundColor: [
                         '#050B4F',
                         '#FB9D2C',
-                        
                     ],
                 }]
             },
@@ -277,7 +276,13 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
                 }
             }
         };
-        let protocolNameChart = new Chart(protocolName, protocolNameConfig);
+
+
+        // CANVAS 2
+
+      
+
+     
 
 }) // fin du fectch
 

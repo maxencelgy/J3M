@@ -175,6 +175,35 @@ input {
   height: 0;
 }
 
+.cadre_right {
+  width: 80%;
+}
+.cadre_right h1 {
+  text-align: center;
+  background-color: #050B4F;
+  color: white;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.cadre_right form {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1rem 1rem;
+  width: 50%;
+  margin: 0 auto;
+  gap: 0.5rem;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 1.4rem;
+}
+.cadre_right form label {
+  width: 15rem;
+}
+
 #header nav {
   padding: 0 1rem;
   width: 100%;
@@ -341,31 +370,7 @@ input {
 #inscription .wrap2 .cadre_left img {
   width: 150%;
 }
-#inscription .wrap2 .cadre_right {
-  width: 80%;
-}
-#inscription .wrap2 .cadre_right h1 {
-  text-align: center;
-  background-color: #050B4F;
-  color: white;
-  width: 50%;
-  margin: 0 auto;
-  padding: 0.5rem 0;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-}
-#inscription .wrap2 .cadre_right form {
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 1rem 1rem;
-  width: 50%;
-  margin: 0 auto;
-  background-color: white;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  font-size: 1.4rem;
-}
-#inscription .wrap2 .cadre_right form .cgu {
+#inscription .wrap2 .cgu {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -373,16 +378,19 @@ input {
   font-size: 1.2rem;
   padding-top: 1.5rem;
 }
-#inscription .wrap2 .cadre_right form .cgu input {
+#inscription .wrap2 .cgu input {
   flex: 0.2;
   margin-bottom: inherit;
 }
-#inscription .wrap2 .cadre_right form .cgu a {
+#inscription .wrap2 .cgu a {
   flex: 3;
   text-decoration: underline;
   color: #FB9D2C;
 }
-#inscription .wrap2 .cadre_right form label {
+#inscription .wrap2 .cgu a:hover {
+  color: #050B4F;
+}
+#inscription .wrap2 label {
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 0.8rem;
@@ -403,33 +411,17 @@ input {
 #connexion .wrap2 .cadre_left img {
   width: 150%;
 }
-#connexion .wrap2 .cadre_right {
-  width: 80%;
-}
-#connexion .wrap2 .cadre_right h1 {
+#connexion .wrap2 #missing_password {
+  margin-top: 0.7rem;
   text-align: center;
-  background-color: #050B4F;
-  color: white;
-  width: 50%;
-  margin: 0 auto;
-  padding: 0.5rem 0;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
 }
-#connexion .wrap2 .cadre_right form {
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 1rem 1rem;
-  width: 50%;
-  margin: 0 auto;
-  gap: 0.5rem;
-  background-color: white;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  font-size: 1.4rem;
+#connexion .wrap2 #missing_password a {
+  font-size: 1.1rem;
+  color: #FB9D2C;
+  text-decoration: underline;
 }
-#connexion .wrap2 .cadre_right form label {
-  width: 15rem;
+#connexion .wrap2 #missing_password a:hover {
+  color: #050B4F;
 }
 
 footer {

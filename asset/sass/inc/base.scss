@@ -117,6 +117,12 @@ input{
     border-radius: 15px;
 }
 
+.btn-1::before,
+.btn-1::after {
+    position: absolute;
+    content: "";
+}
+
 .btn-1::before {
     background-color: $orange;
     transition: 0.3s ease-out;

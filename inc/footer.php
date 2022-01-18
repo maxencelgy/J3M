@@ -47,11 +47,12 @@ if($page === 'index.php'){?>
 }else if($page === 'log.php'){?>
 <script type="module" src="../asset/js/log.js"></script>
 <?php
-}else if($page === 'dashboard.php'){?>
+}else if($page === 'dashboard.php' || $page === 'detail.php'){?>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-<script src="../asset/js/dashboard.js"></script>
-<?php
+    <?php
+    if($page === 'dashboard.php'){?><script src="../asset/js/dashboard.js"></script><?php }
+    if($page === 'detail.php'){?><script src="../asset/js/detail.js"></script><?php }
 }
 
 ?>

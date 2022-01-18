@@ -27,11 +27,55 @@ if(isLogged() == true){
         </div>
 </section>
 
-<section class="detail" id="graphique">
+<!-- TCP -->
+<section class="detail " id="graphiqueTCP">
+<h2 class="title">TCP</h2>
+<div class="double_box">
+        <canvas id="canvasTcp1" class="canvas"></canvas>
+        <canvas id="canvasTcp2" class="canvas"></canvas>
+    </div>
     <div class="single_box">
-        <canvas id="canvasIcmp1" class="canvas"></canvas>
+        <canvas id="canvasTcp3" class="canvas"></canvas>
     </div>  
+</section>
 
+<!-- UDP -->
+
+<section class="detail secNone" id="graphiqueUDP">
+<h2 class="title">UDP</h2>
+<div class="double_box">
+        <canvas id="canvasUdp1" class="canvas"></canvas>
+        <canvas id="canvasUdp2" class="canvas"></canvas>
+    </div>
+    <div class="single_box">
+        <canvas id="canvasUdp3" class="canvas"></canvas>
+    </div>  
+</section>
+
+<!-- TLS V12 -->
+
+<section class="detail secNone" id="graphiqueTLS">
+<h2 class="title">TLS</h2>
+<div class="double_box">
+        <canvas id="canvasTls1" class="canvas"></canvas>
+        <canvas id="canvasTls2" class="canvas"></canvas>
+    </div>
+    <div class="single_box">
+        <canvas id="canvasTls3" class="canvas"></canvas>
+    </div>  
+</section>
+
+<!-- DETAIL ICMP -->
+<section class="detail secNone" id="graphiqueICMP">
+
+<h2 class="title">ICMP</h2>
+<div class="double_box">
+        <canvas id="canvasIcmp1" class="canvas"></canvas>
+        <canvas id="canvasIcmp2" class="canvas"></canvas>
+    </div>
+    <div class="single_box">
+        <canvas id="canvasIcmp3" class="canvas"></canvas>
+    </div>  
 </section>
 
 <?php include('../inc/footer.php');

@@ -48,6 +48,14 @@ function getJsonDataIcmp()
     $query->execute();    
     return json_encode($query->fetchAll());
 }
+function getJsonDataUdp()
+{
+    global $pdo;
+    $sql = "SELECT * FROM `jsondata` WHERE `protocol_name` = 'UDP'";
+    $query = $pdo->prepare($sql);
+    $query->execute();    
+    return json_encode($query->fetchAll());
+}
 
 function requestVerifMailRegister($email){
     global $pdo;

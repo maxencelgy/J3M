@@ -706,13 +706,13 @@ footer .footer_logo img {
   transition: 0.5s;
 }
 
-#graphique {
+.detail {
   background-color: #11151E;
   padding: 1rem;
   display: flex;
   flex-direction: column;
 }
-#graphique .double_box {
+.detail .double_box {
   background-color: white;
   padding: 2rem 8rem;
   margin-bottom: 1rem;
@@ -720,13 +720,21 @@ footer .footer_logo img {
   flex-flow: row nowrap;
   justify-content: space-between;
 }
-#graphique .single_box {
+.detail .single_box {
   background-color: white;
   padding: 1rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   margin-bottom: 1rem;
+}
+.detail h2 {
+  color: white;
+  text-align: center;
+}
+
+.secNone {
+  display: none;
 }
 
 #hello {
@@ -919,6 +927,9 @@ i {
 }
 .popup .red {
   color: red;
+}
+.popup .title {
+  color: white;
 }
 
 #acces_refuse {

@@ -111,7 +111,7 @@ fetch('http://localhost/J3M/ajax/getDataJson.php')
     selectListTwo.addEventListener("change",() => {
         // protocolName = selectList.value
         trame.forEach(element => {
-            console.log(element.cells[2].innerText);
+            // console.log(element.cells[2].innerText);
 
             if(selectListTwo.value == 'Tous'){
                 element.classList.remove("trNone");

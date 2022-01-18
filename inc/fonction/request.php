@@ -22,6 +22,15 @@ function getIpDest(){
     return json_encode($query->fetchAll());
 }
 
+//SELECT ICMP STATUS
+function getIcmpStatus(){
+    global $pdo;
+    $sql = 'SELECT protocol_name AS nbICMP, status FROM `jsondata` WHERE protocol_name = "ICMP" ';
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    return json_encode($query->fetchAll());
+}
+
 function getJsonData()
 {
     global $pdo;

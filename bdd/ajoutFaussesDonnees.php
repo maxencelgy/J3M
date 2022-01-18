@@ -1,5 +1,5 @@
 <?php
-/* code commenté pour éviter ajout donné via URL (réalisé une fois en base)
+// /* code commenté pour éviter ajout donné via URL (réalisé une fois en base)
 
 require'../config.php'; // integre le toolbox
 require'../inc/fonction/pdo.php';

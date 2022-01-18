@@ -1,38 +1,59 @@
-<footer>
-    <div class="footer_logo div_foot">
-        <img src="<?php echo ROOTDIR; ?>asset/img/logo white.svg" alt="">
-    </div>
-    <div class="footer_service div_foot">
-        <h2>Nos services</h2>
-        <p>Analyse de trame</p>
-        <p>Sécurité réseaux</p>
-        <p>Hébergement</p>
-    </div>
-    <div class="footer_contact div_foot">
-        <h2>Restons en contact</h2>
-        <p>55-55-55-55-55</p>
-        <p>supportclient@gmail.com</p>
-        <p>30 Pl. Henri Gadeau de Kerville, 76100 Rouen</p>
-    </div>
-    <div class="footer_horraires div_foot">
-        <h2>Horaires</h2>
-        <div class="horraires">
-            <p>Ouvert 7 jours sûr 7 24/24</p>
-        </div>
-       
+<?php
+$page = basename($_SERVER['PHP_SELF']);
+?>
 
-        
+<footer>
+    <section class="footer">
+        <div class="footer_logo div_foot">
+            <a href="../index.php"><img src="<?php echo ROOTDIR; ?>asset/img/logo white.svg" alt="Logo du site"></a>
+        </div>
+        <div class="footer_service div_foot">
+            <h2>Nos services</h2>
+            <p>Analyse de trame</p>
+            <p>Sécurité réseaux</p>
+            <p>Hébergement</p>
+        </div>
+        <div class="footer_contact div_foot">
+            <h2>Restons en contact</h2>
+            <p>55-55-55-55-55</p>
+            <p>supportclient@gmail.com</p>
+            <p>30 Pl. Henri Gadeau de Kerville, 76100 Rouen</p>
+        </div>
+        <div class="footer_horraires div_foot">
+            <h2>Horaires</h2>
+            <div class="horraires">
+                <p>Ouvert 7 jours sûr 7 24h/24</p>
+            </div>
+
+
+
+        </div>
+        <div class="footer_horraires div_foot">
+            <h2>Mention légales</h2>
+                <ul>
+                    <?php
+                        if($page === 'index.php'){ ?>
+                            <li><a href="inc/mentions_legales.php">Mentions légales</a></li>
+                            <li><a href="inc/donnes_perso.php">Données personnelles</a></li>
+                        <?php }else if($page === 'mentions_legales.php' || $page === 'donnees_perso.php'){ ?>
+                            <li><a href="mentions_legales.php">Mentions légales</a></li>
+                            <li><a href="donnes_perso.php">Données personnelles</a></li>
+                        <?php }else{ ?>
+                            <li><a href="../inc/mentions_legales.php">Mentions légales</a></li>
+                            <li><a href="../inc/donnes_perso.php">Données personnelles</a></li>
+                        <?php } ?>
+                </ul>
+        </div>
+    </section>
+
+    <div id="copyright">
+        <p>&copy copyright - Site web crée par la J3M team.</p>
     </div>
-    <div class="footer_horraires div_foot">
-        <h2>Mention légales</h2>
-        <p>Ⓡ mentions légales site web crée par la j3m team.</p>
-    </div>
-    
+
 </footer>
 
 
 <?php 
-$page = basename($_SERVER['PHP_SELF']);
 
 // Determine la page dans laquel on se trouve pour ne pas charger unitilement du js
 if($page === 'index.php'){?>

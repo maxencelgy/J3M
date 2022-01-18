@@ -9,10 +9,6 @@ include_once('../inc/header.php');
 if(isLogged() == true){
 
 ?>
-
-
-
-
 <section id="hello">
     <h2>Bonjour <?= $_SESSION['user']['pseudo']?></h2>
     <p>Voici les dernieres données mise à jours</p>
@@ -23,13 +19,11 @@ if(isLogged() == true){
         <h2>Tableau de bord</h2>
         <div class="tram">
         <a href="../ajax/sendDataJson.php">Actualiser</a>
-
         </div>
-       
     </div>
 </section>
 
-<section id="graphique">
+<section id="graphique" class="detail">
     <div class="double_box">
         <canvas id="canvas1" class="canvas"></canvas>
         <canvas id="canvas2" class="canvas"></canvas>
@@ -38,14 +32,11 @@ if(isLogged() == true){
     <div class="single_box">
         <canvas id="canvas3" class="canvas"></canvas>
     </div>
-
     <div class="double_box">
         <canvas id="canvas4" class="canvas"></canvas>
         <canvas id="canvas5" class="canvas"></canvas>
     </div>
-
 </section>
-
 
 
 <?php include('../inc/footer.php');

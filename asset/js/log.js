@@ -116,7 +116,7 @@ fetch('http://localhost/J3M/ajax/getDataJson.php')
             // console.log(element.cells[2].innerText);
 
             if(selectListTwo.value == 'Tous'){
-                element.classList.remove("trNone");
+                element.classList.remove("secNone");
             }
             else if(element.cells[2].innerText == selectListTwo.value){
                 element.classList.remove("trNone");

@@ -31,7 +31,7 @@ $pageIndex = (basename($_SERVER['PHP_SELF']) === 'index.php') ?: 'second';
             <?php
             }
             if(isLogged()){ ?>
-            <a class="linkNav" href="<?php echo ROOTDIR; ?>content/log.php">Journeaux</a>
+            <a class="linkNav" href="<?php echo ROOTDIR; ?>content/log.php">Journaux</a>
             <a class="linkNav" href="<?php echo ROOTDIR; ?>content/detail.php">Detail</a>
             <a class="linkNav" href="<?php echo ROOTDIR; ?>content/dashboard.php">Tableau de bord</a>
             <a class="linkNav btn-a" href="<?php echo ROOTDIR; ?>auth/deconnexion.php">Déconnexion</a>

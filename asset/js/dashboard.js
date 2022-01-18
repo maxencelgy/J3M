@@ -55,42 +55,42 @@ function getTtl(array){
 let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
     .then (function(response){
         return response.json()
-    }).then(function (data){
+    }).then(function (data) {
         //Recupération des données présent en base
         console.log(data)
 
         //VARIABLES DATA
         //Calcul ttl pour camembert
-        let ttl = data.map(function(e) {
+        let ttl = data.map(function (e) {
             return e.ttl;
         });
-        let ttlMax           = ttl.length * 128;
-        let ttlOk            = getTtl(ttl);
-        let ttlKo            = ttlMax - ttlOk;
-        let pourcentageTtlOk = Math.round(ttlOk/ttlMax * 100);
-        let pourcentageTtlKo = Math.round(ttlKo/ttlMax * 100);
+        let ttlMax = ttl.length * 128;
+        let ttlOk = getTtl(ttl);
+        let ttlKo = ttlMax - ttlOk;
+        let pourcentageTtlOk = Math.round(ttlOk / ttlMax * 100);
+        let pourcentageTtlKo = Math.round(ttlKo / ttlMax * 100);
 
-        let identification = data.map(function (e){
+        let identification = data.map(function (e) {
             return e.identification;
         })
 
+
         //Variables de status
         let countStatusGood = 0
-        let countStatusDisabled =0
-        let countStatusAnother =0
+        let countStatusDisabled = 0
+        let countStatusAnother = 0
         data.forEach(element => {
-            if(element.protocol_checksum__status === "good"){
+            if (element.protocol_checksum__status === "good") {
                 countStatusGood++
-            }else if(element.protocol_checksum__status === "disabled"){
+            } else if (element.protocol_checksum__status === "disabled") {
                 countStatusDisabled++
-            }
-            else{
+            } else {
                 countStatusAnother++
             }
         })
-        let pourcentageStatusGood = Math.round(countStatusGood/data.length * 100);
-        let pourcentageStatusDisabled = Math.round(countStatusDisabled/data.length * 100);
-        let pourcentageStatusAnother = Math.round(countStatusAnother/data.length * 100);
+        let pourcentageStatusGood = Math.round(countStatusGood / data.length * 100);
+        let pourcentageStatusDisabled = Math.round(countStatusDisabled / data.length * 100);
+        let pourcentageStatusAnother = Math.round(countStatusAnother / data.length * 100);
 
         //Variables nom de protocol
 
@@ -101,31 +101,20 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
         let countAnotherName = 0;
 
         data.forEach(element => {
-            if(element.protocol_name === "UDP"){
+            if (element.protocol_name === "UDP") {
                 countUDP++
-            }else if(element.protocol_name === "TLSv1.2"){
+            } else if (element.protocol_name === "TLSv1.2") {
                 countTLS++
-            }
-            else if(element.protocol_name === "ICMP"){
+            } else if (element.protocol_name === "ICMP") {
                 countICMP++
-            }
-            else if(element.protocol_name === "TCP"){
+            } else if (element.protocol_name === "TCP") {
                 countTCP++
-            }else{
-                countAnotherName++
             }
 
         })
 
-        //VARIBALES IP FROM ET DEST
-        // si le client en subit DDOS, on aurait des centaines de trames de diverses adresses IP
-        // sources vers une même adresse IP destination.
-        let ip_from= data.map(function(e) {
-            return getIpNumber(e.ip_from);
-        });
-        let ip_dest= data.map(function(e) {
-            return getIpNumber(e.ip_dest);
-        });
+
+        //Variables ICMP Error
 
 
         //GRAPHIQUES
@@ -138,9 +127,9 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
         let protocolNameConfig = {
             type: 'polarArea',
             data: {
-                labels: ['UDP : '+countUDP, 'TLSv1.2 : '+countTLS, 'ICMP : '+countICMP, 'TCP : '+countTCP, 'Autres : '+countAnotherName],
+                labels: ['UDP : ' + countUDP, 'TLSv1.2 : ' + countTLS, 'ICMP : ' + countICMP, 'TCP : ' + countTCP],
                 datasets: [{
-                    data: [countUDP, countTLS, countICMP, countTCP, countAnotherName],
+                    data: [countUDP, countTLS, countICMP, countTCP],
                     backgroundColor: [
                         'rgb(255, 99, 132)',
                         'rgb(75, 192, 192)',
@@ -152,13 +141,13 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
             },
             options: {
                 responsive: false,
-                title:{
+                title: {
                     display: true,
                     fontSize: 30,
                     position: 'top',
                     text: 'Répartition des protocoles',
                 },
-                legend:{
+                legend: {
                     position: 'right',
                 }
             }
@@ -179,9 +168,9 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
         let ttlConfig = {
             type: 'pie',
             data: {
-                labels: ['TTL Ok: '+pourcentageTtlOk+'%', 'TTL Perte: '+pourcentageTtlKo+'%'],
+                labels: ['TTL Ok: ' + pourcentageTtlOk + '%', 'TTL Perte: ' + pourcentageTtlKo + '%'],
                 datasets: [{
-                    data: [ttlOk,ttlKo],
+                    data: [ttlOk, ttlKo],
                     backgroundColor: [
                         'rgba(75, 192, 192, 0.4)',
                         'rgba(255, 99, 132, 0.4)',
@@ -190,13 +179,13 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
             },
             options: {
                 responsive: false,
-                title:{
+                title: {
                     display: true,
                     fontSize: 30,
                     position: 'top',
                     text: 'Taux de TTL',
                 },
-                legend:{
+                legend: {
                     position: 'right',
                 }
             }
@@ -205,67 +194,89 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
         //Initialisation du graph
         let ttlChart = new Chart(ttlGraph, ttlConfig);
 
-        //Troisieme
 
-        threeCanvas = document.getElementById('canvas3');
-        let three = threeCanvas.getContext('2d');
-        three.canvas.width = 1000;
-        let threeConfig = {
-            type: 'bar',
-            data: {
-                labels: ip_from,
-                datasets: [{
-                    label: 'ip',
-                    data: [1,2,3,4,5,6,7,8,9,10],
-                    backgroundColor: [
-                        'green'
-                    ],
-                }]
-            },
-            options: {
-                responsive: false,
-                title:{
-                    display: true,
-                    fontSize: 30,
-                    position: 'top',
-                    text: 'Requêtes ip',
-                },
-                legend:{
-                    position: 'right',
-                }
-            }
-        };
+        //Recupération des ip dest en bdd
 
-        let threeChart = new Chart(three, threeConfig);
+        let ajaxIpData = fetch('http://localhost/J3M/ajax/getIpJson.php')
+            .then(function (response) {
+                return response.json()
+            }).then(function (data) {
+                console.log(data)
+
+                let ip_dest = data.map(function (e) {
+                    return getIpNumber(e.ip_dest);
+                });
+                let nb_request = data.map(function (e) {
+                    return e.nbIp;
+                });
+
+                //GAPH IP
+
+                threeCanvas = document.getElementById('canvas3');
+                let three = threeCanvas.getContext('2d');
+                three.canvas.width = 1000;
+                let threeConfig = {
+                    type: 'bar',
+                    data: {
+                        labels: ip_dest,
+                        datasets: [{
+                            label: 'Occurrence de requête par IP',
+                            data: nb_request,
+                            backgroundColor: "#B0F2B6",
+                            borderColor: "green",
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                            }
+                        },
+                        responsive: false,
+                        title: {
+                            display: true,
+                            fontSize: 30,
+                            position: 'top',
+                            text: 'Requêtes ip',
+                        },
+                        legend: {
+                            position: 'right',
+                        },
+                    }
+                };
+
+                let threeChart = new Chart(three, threeConfig);
+            })
 
         //Graph Status
 
         statusCanvas = document.getElementById('canvas4');
         let status = statusCanvas.getContext('2d');
-        status.canvas.width = 400;
+        status.canvas.width = 450;
 
         let statusConfig = {
             type: 'pie',
             data: {
-                labels: ['Status "good": '+pourcentageStatusGood+'%', 'Status "disabled": '+pourcentageStatusDisabled+'%', 'Status "another": '+pourcentageStatusAnother+'%'],
+                labels: ['Status "good": ' + pourcentageStatusGood + '%', 'Status "disabled": ' + pourcentageStatusDisabled + '%', 'Status "another": ' + pourcentageStatusAnother + '%'],
                 datasets: [{
-                    data: [countStatusGood,countStatusDisabled, countStatusAnother],
+                    data: [countStatusGood, countStatusDisabled, countStatusAnother],
                     backgroundColor: [
-                        'rgba(2,194,100,0.65)',
-                        'rgba(253,1,47,0.65)',
-                        'rgba(100, 50, 125, 0.4)',
+                        'rgb(253,100,46)',
+                        'rgb(143,166,229)',
+                        'rgb(246,130,86)'
                     ],
                 }]
             },
             options: {
                 responsive: false,
-                title:{
+                title: {
                     display: true,
                     fontSize: 30,
                     position: 'top',
-                    text: 'Checksum status',
+                    text: 'Somme de contrôle',
                 },
-                legend:{
+                legend: {
                     position: 'right',
                 }
             }
@@ -273,7 +284,74 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
 
         //Initialisation du graph
         let statusChart = new Chart(status, statusConfig);
-        //
-})
+
+
+        //Graph Error ICMP
+        let ajaxDataICMP = fetch('http://localhost/J3M/ajax/getICMPJson.php')
+            .then(function (response) {
+                return response.json()
+            }).then(function (data) {
+                console.log(data)
+
+                let countNbIcmp = 0;
+                data.forEach(element => {
+                    if (element.nbICMP) {
+                        countNbIcmp++
+                    }
+                })
+
+                let countTimeout = 0;
+                data.forEach(element => {
+                    if (element.status === "timeout") {
+                        countTimeout++
+                    }
+                })
+                let countIcmpOk = countNbIcmp - countTimeout;
+
+                console.log(countTimeout)
+                console.log(countIcmpOk)
+
+                //GRAPH ERROR ICMP
+
+                IcmpErrorCanvas = document.getElementById('canvas5');
+                let IcmpError = IcmpErrorCanvas.getContext('2d');
+                IcmpError.canvas.width = 450;
+                let IcmpErrorConfig = {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Status timeout : ' + countTimeout, 'Status ok : ' + countIcmpOk],
+                        datasets: [{
+                            data: [countTimeout ,countIcmpOk],
+                            backgroundColor: [
+                                'rgb(255, 205, 86)',
+                                'rgb(75, 192, 192)',
+                            ],
+                        }]
+                    },
+                    options: {
+                        responsive: false,
+                        title: {
+                            display: true,
+                            fontSize: 30,
+                            position: 'top',
+                            text: 'Status ping ICMP',
+                        },
+                        legend: {
+                            position: 'right',
+                        },
+                    }
+                };
+
+                let IcmpErrorChart = new Chart(IcmpError, IcmpErrorConfig);
+            })
+    })
+
+
+
+
+
+
+
+
 
 

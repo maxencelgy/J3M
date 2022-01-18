@@ -5,7 +5,8 @@ require_once('../inc/fonction/pdo.php');
 require_once('../inc/fonction/request.php');
 require_once('../inc/fonction/toolbox.php');
 
-verifUserAlreadyConnected();
+if(isLogged() == false){
+
 $success=false;
 $errors = [];
 
@@ -61,9 +62,16 @@ include('../inc/header.php');
             <button class="btn btn-1 hover-filled-slide-down">
                 <input type="submit" name="submitted" id="submitted" value="Se connecter">
             </button>
+
+            <div id="missing_password">
+                <a href="emailMdpOublie.php">Mot de passe oublié ?</a>
+            </div>
         </form>
     </div>
 </div>
 </section>
 
 <?php include('../inc/footer.php');
+}else{
+    header('Location: ../pageError/403.php');
+}

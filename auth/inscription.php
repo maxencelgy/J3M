@@ -4,7 +4,8 @@ require_once "../config.php";
 require_once('../inc/fonction/pdo.php');
 require_once('../inc/fonction/request.php');
 
-verifUserAlreadyConnected();
+if(isLogged() == false){
+
 $success=false;
 $errors = [];
 
@@ -15,10 +16,14 @@ if(!empty($_POST['submitted'])){
     $password1 = cleanXss('password1');
     $password2 = cleanXss('password2');
 
+
     $errors = mailValidation($errors,$email,'email');
 
     if(empty($errors['email'])){
-        requestVerifMailRegister($email);
+        $verifUserMail = requestVerifMailRegister($email);
+        if(!empty($verifUserMail)) {
+            $errors['email'] = 'Vous avez déjà un compte avec cette adresse mail';
+        }
     }
 
     //Verif pseudo
@@ -42,6 +47,11 @@ if(!empty($_POST['submitted'])){
         $errors['password1'] = 'Veuillez renseigner un mot de passe puis confirmez-le.';
     }
 
+    //Verif CGU
+    if(empty($_POST['cgu'])){
+        $errors['cgu'] = "Vous devez accepter les condition d'utilisation";
+    }
+
     if(count($errors)==0) {
         //hash mot de passe
         $hashPassword = password_hash($password1, PASSWORD_DEFAULT);
@@ -53,7 +63,7 @@ if(!empty($_POST['submitted'])){
 
         $success=true;
         //redirection
-        header('refresh:3;url='.ROOTDIR.'index.php');
+        header('refresh:3;url='.ROOTDIR.'auth/connexion.php');
     }
 }
 
@@ -89,6 +99,11 @@ include('../inc/header.php');
             <button class="btn btn-1 hover-filled-slide-down">
                 <input type="submit" name="submitted" id="submitted" value="S'inscrire">
             </button>
+
+            <div class="cgu">
+                <input type="checkbox" id="cgu" name="cgu" class="cgu_check"><a href="../inc/cgu.php">J'accepte les conditions d'utilisation</a>
+            </div>
+            <span class="error"><?= viewError($errors,'cgu'); ?></span>
         </form>
 </div>
         <?php } else {echo'<div class="info_box_success"><h2>Bienvenue ! Votre compte a bien été créé !</h2><h4>Vous allez être redirigé...</h4></div>';} ?>
@@ -96,5 +111,8 @@ include('../inc/header.php');
 </section>
 
 <?php include('../inc/footer.php');
+}else{
+    header('Location: ../pageError/403.php');
+}
 
 

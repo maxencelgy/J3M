@@ -1,4 +1,5 @@
-#header{ 
+
+#header{
   nav{
     padding: 0 1rem;
     width: 100%;
@@ -33,10 +34,10 @@
         border: solid 1px $orange;
         color: white;
         text-align: center;
-        cursor: pointer; 
+        cursor: pointer;
         z-index: 999;
       }
-    
+
       .fa-times::before{
         font-size: 2rem;
         padding: .5rem 1rem;
@@ -49,18 +50,16 @@
     }
 
 
-    .btn-a{
-      padding: .5rem;
-      border: solid 1px $orange ;
-      border-radius: .4rem;
-    }
+
+
+
     .logo_nav{
       img{
         width: 8rem;
       }
     }
-     
-   
+
+
 
 
     .header_btn{
@@ -68,10 +67,9 @@
         display: none;
         background-color: #232222;
         width: 100%;
-        // justify-content: left;
-        // background-color: red;
+        flex-direction: column;
       }
-    
+
       display: flex;
       align-items: center;
       font-size: 1.2rem;
@@ -86,8 +84,6 @@
         align-items: center;
         text-align: center;
         @include breakpoints(litleLaptop){
-
-        
         }
       }
       a:after{
@@ -104,13 +100,29 @@
       a:hover:after{
         width: 90%;
       }
+
+      .btn-a{
+        padding: .5rem;
+        border: solid 1px $orange ;
+        border-radius: .4rem;
+      }
+      .btn-a:hover{
+        background-color: $orange;
+        color: black;
+      }
+      .btn-a::before{
+        display: none;
+      }
+      .btn-a::after{
+        display: none;
+      }
     }
   }
 }
 
 // second header
 
-#header.second{  
+#header.second{
   nav{
     position: inherit;
     background-color: white;
@@ -121,3 +133,4 @@
     }
   }    
 }
+

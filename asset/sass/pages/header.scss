@@ -17,6 +17,8 @@
       right: 5%;
       width: 50px;
       height: 50px;
+      display: none;
+      @include breakpoints(litleLaptop){display: block;}
 
       #croix{
         display: none;

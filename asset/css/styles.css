@@ -223,6 +223,12 @@ input {
   right: 5%;
   width: 50px;
   height: 50px;
+  display: none;
+}
+@media (max-width: 800px) {
+  #header nav .burger {
+    display: block;
+  }
 }
 #header nav .burger #croix {
   display: none;

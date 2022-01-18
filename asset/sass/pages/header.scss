@@ -1,6 +1,6 @@
-#header{ 
-  nav{   
-   padding: 0 1rem;
+#header{
+  nav{
+    padding: 0 1rem;
     width: 100%;
     position: fixed;
     background: transparent;
@@ -9,6 +9,7 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
 
     .burger {
       position: absolute;
@@ -25,16 +26,17 @@
         @include breakpoints(litleLaptop){display: block;}
       }
 
+
       .fa-bars::before{
         font-size: 2rem;
         padding: .5rem 1rem;
         border: solid 1px $orange;
         color: white;
         text-align: center;
-        cursor: pointer; 
+        cursor: pointer;
         z-index: 999;
       }
-    
+
       .fa-times::before{
         font-size: 2rem;
         padding: .5rem 1rem;
@@ -57,21 +59,20 @@
         width: 8rem;
       }
     }
-     
-   
+
+
 
 
     .header_btn{
       @include breakpoints(litleLaptop){
         display: none;
-        flex-direction: column;
-        background-color: red;
+        background-color: #232222;
         width: 100%;
-        height: 50vh;
-        // justify-content: left;
+        flex-direction: column;
+        //justify-content: left;
         // background-color: red;
       }
-    
+
       display: flex;
       align-items: center;
       font-size: 1.2rem;
@@ -80,10 +81,14 @@
         color: white;
         position: relative;
         text-transform: uppercase;
-        margin-left: 1rem;
+        margin: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         @include breakpoints(litleLaptop){
-      
-        
+
+
         }
       }
       a:after{
@@ -106,7 +111,7 @@
 
 // second header
 
-#header.second{  
+#header.second{
   nav{
     position: inherit;
     background-color: white;
@@ -115,5 +120,5 @@
         color: black;
       }
     }
-  }    
+  }
 }

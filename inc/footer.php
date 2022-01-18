@@ -22,9 +22,8 @@ $page = basename($_SERVER['PHP_SELF']);
         <div class="footer_horraires div_foot">
             <h2>Horaires</h2>
             <div class="horraires">
-                <p>Ouvert 7 jours sûr 7 24h/24</p>
+                <p>Ouvert 7J/7 - 24h/24</p>
             </div>
-
 
 
         </div>

@@ -161,6 +161,7 @@ input {
 .btn-1 input[type=submit]:hover {
   color: white;
   transition: 0.2s 0.1s;
+  cursor: pointer;
 }
 
 .btn.hover-filled-slide-down::before {
@@ -175,6 +176,35 @@ input {
   height: 0;
 }
 
+.cadre_right {
+  width: 80%;
+}
+.cadre_right h1 {
+  text-align: center;
+  background-color: #050B4F;
+  color: white;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.cadre_right form {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1rem 1rem;
+  width: 50%;
+  margin: 0 auto;
+  gap: 0.5rem;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 1.4rem;
+}
+.cadre_right form label {
+  width: 15rem;
+}
+
 #header nav {
   padding: 0 1rem;
   width: 100%;
@@ -185,6 +215,7 @@ input {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
 }
 #header nav .burger {
   position: absolute;
@@ -222,11 +253,6 @@ input {
   cursor: pointer;
   z-index: 99;
 }
-#header nav .btn-a {
-  padding: 0.5rem;
-  border: solid 1px #FB9D2C;
-  border-radius: 0.4rem;
-}
 #header nav .logo_nav img {
   width: 8rem;
 }
@@ -238,17 +264,20 @@ input {
 @media (max-width: 800px) {
   #header nav .header_btn {
     display: none;
-    flex-direction: column;
-    background-color: red;
+    background-color: #232222;
     width: 100%;
-    height: 50vh;
+    flex-direction: column;
   }
 }
 #header nav .header_btn a {
   color: white;
   position: relative;
   text-transform: uppercase;
-  margin-left: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 #header nav .header_btn a:after {
   content: "";
@@ -263,6 +292,21 @@ input {
 }
 #header nav .header_btn a:hover:after {
   width: 90%;
+}
+#header nav .header_btn .btn-a {
+  padding: 0.5rem;
+  border: solid 1px #FB9D2C;
+  border-radius: 0.4rem;
+}
+#header nav .header_btn .btn-a:hover {
+  background-color: #FB9D2C;
+  color: black;
+}
+#header nav .header_btn .btn-a::before {
+  display: none;
+}
+#header nav .header_btn .btn-a::after {
+  display: none;
 }
 
 #header.second nav {
@@ -341,31 +385,7 @@ input {
 #inscription .wrap2 .cadre_left img {
   width: 150%;
 }
-#inscription .wrap2 .cadre_right {
-  width: 80%;
-}
-#inscription .wrap2 .cadre_right h1 {
-  text-align: center;
-  background-color: #050B4F;
-  color: white;
-  width: 50%;
-  margin: 0 auto;
-  padding: 0.5rem 0;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-}
-#inscription .wrap2 .cadre_right form {
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 1rem 1rem;
-  width: 50%;
-  margin: 0 auto;
-  background-color: white;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  font-size: 1.4rem;
-}
-#inscription .wrap2 .cadre_right form .cgu {
+#inscription .wrap2 .cgu {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -373,16 +393,19 @@ input {
   font-size: 1.2rem;
   padding-top: 1.5rem;
 }
-#inscription .wrap2 .cadre_right form .cgu input {
+#inscription .wrap2 .cgu input {
   flex: 0.2;
   margin-bottom: inherit;
 }
-#inscription .wrap2 .cadre_right form .cgu a {
+#inscription .wrap2 .cgu a {
   flex: 3;
   text-decoration: underline;
   color: #FB9D2C;
 }
-#inscription .wrap2 .cadre_right form label {
+#inscription .wrap2 .cgu a:hover {
+  color: #050B4F;
+}
+#inscription .wrap2 label {
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 0.8rem;
@@ -403,33 +426,17 @@ input {
 #connexion .wrap2 .cadre_left img {
   width: 150%;
 }
-#connexion .wrap2 .cadre_right {
-  width: 80%;
-}
-#connexion .wrap2 .cadre_right h1 {
+#connexion .wrap2 #missing_password {
+  margin-top: 0.7rem;
   text-align: center;
-  background-color: #050B4F;
-  color: white;
-  width: 50%;
-  margin: 0 auto;
-  padding: 0.5rem 0;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
 }
-#connexion .wrap2 .cadre_right form {
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 1rem 1rem;
-  width: 50%;
-  margin: 0 auto;
-  gap: 0.5rem;
-  background-color: white;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  font-size: 1.4rem;
+#connexion .wrap2 #missing_password a {
+  font-size: 1.1rem;
+  color: #FB9D2C;
+  text-decoration: underline;
 }
-#connexion .wrap2 .cadre_right form label {
-  width: 15rem;
+#connexion .wrap2 #missing_password a:hover {
+  color: #050B4F;
 }
 
 footer {
@@ -889,18 +896,6 @@ footer #copyright {
   #tableau .rwd-table th:last-child {
     padding-right: 0;
   }
-}
-
-i {
-  font-size: 3rem;
-  position: fixed;
-  top: 12%;
-  right: 16%;
-  transform: translate(-50%);
-  cursor: pointer;
-  color: whitesmoke;
-  visibility: hidden;
-  z-index: 99;
 }
 
 .popup {

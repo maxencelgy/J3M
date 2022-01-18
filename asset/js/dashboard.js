@@ -274,7 +274,7 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
                     display: true,
                     fontSize: 30,
                     position: 'top',
-                    text: 'Checksum status',
+                    text: 'Somme de contrôle',
                 },
                 legend: {
                     position: 'right',

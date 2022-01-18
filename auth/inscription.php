@@ -101,7 +101,7 @@ include('../inc/header.php');
             </button>
 
             <div class="cgu">
-                <input type="checkbox" id="cgu" name="cgu" class="cgu_check"><a href="../inc/cgu.php">J'accepte les condition d'utilisation</a>
+                <input type="checkbox" id="cgu" name="cgu" class="cgu_check"><a href="../inc/cgu.php">J'accepte les conditions d'utilisation</a>
             </div>
             <span class="error"><?= viewError($errors,'cgu'); ?></span>
         </form>

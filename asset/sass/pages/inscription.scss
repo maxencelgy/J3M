@@ -11,28 +11,6 @@
         width: 150%;
       }
     }
-    .cadre_right{
-      width: 80%;
-      h1{
-        text-align: center;
-        background-color: $dark_blue;
-        color: white;
-        width: 50%;
-        margin: 0 auto;
-        padding: .5rem 0;
-        border-top-right-radius: 10px;
-        border-top-left-radius: 10px;
-      }
-      form{
-        display: flex;
-        flex-flow: column nowrap;
-        padding: 1rem 1rem;
-        width: 50%;
-        margin: 0 auto;
-        background-color: white;
-        border-bottom-right-radius: 10px;
-        border-bottom-left-radius: 10px;
-        font-size: 1.4rem;
         .cgu{
           display: flex;
           flex-flow: row nowrap;
@@ -49,16 +27,15 @@
             text-decoration: underline;
             color: $orange;
           }
+          a:hover{
+            color: $dark_blue;
+          }
         }
         label{
           font-size: 1.5rem;
           font-weight: 400;
           margin-bottom: .8rem;
         }
-
       }
     }
-   
-  }
-}
 

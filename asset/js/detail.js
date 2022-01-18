@@ -87,9 +87,19 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
                     backgroundColor: [
                         'rgba(75, 192, 192, 0.2)',                                              
                         'rgba(255, 99, 132, 0.2)',                                              
-                    ],
-                }]
-            },
+                    ], },{
+                        type: 'line',
+                        label: 'Ping KO',
+                        data: [pingKO],
+                        backgroundColor:'rgba(255, 99, 132, 0.2)', 
+                    },{
+                        type: 'line',
+                        label: 'Ping OK',
+                        data: [pingOK],
+                        backgroundColor:'rgba(255, 99, 132, 0.2)', 
+                    }               
+            
+                ]},
             options: {
                 responsive: false,
                 title: {
@@ -99,7 +109,8 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
                     text: 'Taux de ping valide',
                 },
                 legend: {
-                    display: 'none',
+                    display: false,
+                
                 }
             }
         };

@@ -58,7 +58,7 @@ include_once('inc/header.php');
 
             <div class="box">
                 <i class="far fa-clock"></i>
-                <p>Ouvert 7 jours sûr 7 24/24</p>
+                <p>Ouvert 7J/7 - 24h/24</p>
             </div>
         </div>
 

@@ -1,3 +1,5 @@
+
+
 function pourcentage(val1,val2) {return Math.round(val1/(val1+val2)*100)}
 // ICMP
 fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
@@ -6,13 +8,11 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
         return response.json()
     }).then(function (data){
         console.log(data)
-        // jeu avec les données
-
+        // GRAPH IP
+        // calcul DATA
         let ipVersion = data.map(function (e) {
             return e.version;
-        });
-        
-        
+        });     
         let nbIpv4 = 0
         let nbIpv6 = 0
         ipVersion.forEach(element => {
@@ -23,31 +23,13 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
             }
         });
         let pourcentageIpv6 = pourcentage(nbIpv6,nbIpv4)
-        let pourcentageIpv4 = pourcentage(nbIpv4,nbIpv6)
-        console.log(pourcentageIpv6)
-        console.log(pourcentageIpv4)
-        // taux de Ping OK
-        let pingOK = 0
-        let pingKO = 0
-        
-        data.forEach(element => {
-            if(element.protocol_type == 8){
-                if(element.protocol_checksum__status == 'good'){
-                    pingOK++;
-                }else{
-                    pingKO++;
-                }
-            }
-            
-        });
-        let pourcentagePingOK = pourcentage(pingOK,pingKO)
-        console.log(pourcentagePingOK)
-        // Graphique IPv4 IPV6
+        let pourcentageIpv4 = pourcentage(nbIpv4,nbIpv6)        
+   
+        // Graphique 
         protocolNameCanvas = document.getElementById('canvasIcmp1');
-        let protocolName   = protocolNameCanvas.getContext('2d');
-        protocolName.canvas.width = 400;
-        
-        let protocolNameConfig = {
+        let protocolNameIp   = protocolNameCanvas.getContext('2d');
+        protocolNameIp.canvas.width = 400;        
+        let protocolNameConfigIp = {
             type: 'pie',
             data: {
                 labels: ['ipV4 : '+pourcentageIpv4+'%','ipv6 : '+pourcentageIpv6+'%'],
@@ -72,8 +54,57 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
                 }
             }
         };
+        // appel du graphique
+        let protocolNameChartGraphIp = new Chart(protocolNameIp, protocolNameConfigIp);
+        // graph PING
+        // calcul DATA
+        let pingOK = 0
+        let pingKO = 0
+        // taux de ping à l'état good        
+        data.forEach(element => {
+            if(element.protocol_type == 8){
+                if(element.protocol_checksum__status == 'good'){
+                    pingOK++;
+                }else{
+                    pingKO++;
+                }
+            }
+            
+        });        
+        pourcentagePingOK = pourcentage(pingOK,pingKO)
+        pourcentagePingKO = pourcentage(pingKO,pingOK)
+
+        protocolNameCanvas = document.getElementById('canvasIcmp2');
+        let protocolName   = protocolNameCanvas.getContext('2d');
+        protocolName.canvas.width = 600;
+        
+        let protocolNameConfig = {
+            type: 'bar',
+            data: {
+                labels: ['Ping OK : '+pourcentagePingOK+'%','Ping KO : '+pourcentagePingKO+'%'],
+                datasets: [{
+                    data: [pingOK,pingKO],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)',                                              
+                        'rgba(255, 99, 132, 0.2)',                                              
+                    ],
+                }]
+            },
+            options: {
+                responsive: false,
+                title: {
+                    display: true,
+                    fontSize: 30,
+                    position: 'top',
+                    text: 'Taux de ping valide',
+                },
+                legend: {
+                    display: 'none',
+                }
+            }
+        };
         let protocolNameChart = new Chart(protocolName, protocolNameConfig);
-        // taux de ping à l'état good
+        
 
 
 }) // fin du fectch
@@ -228,13 +259,15 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
 
 fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
     .then (function(response){
+        
         return response.json()
     }).then(function (data){
         console.log(data)
-        // jeu avec les données
+        // GRAPH IP
+        // calcul DATA
         let ipVersion = data.map(function (e) {
             return e.version;
-        });
+        });     
         let nbIpv4 = 0
         let nbIpv6 = 0
         ipVersion.forEach(element => {
@@ -244,22 +277,22 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
                 nbIpv6++;
             }
         });
-        console.log(nbIpv4)
-        console.log(nbIpv6)
-
+        let pourcentageIpv6 = pourcentage(nbIpv6,nbIpv4)
+        let pourcentageIpv4 = pourcentage(nbIpv4,nbIpv6)        
+   
+        // Graphique 
         protocolNameCanvas = document.getElementById('canvasUdp1');
-        let protocolName = protocolNameCanvas.getContext('2d');
-        protocolName.canvas.width = 400;
-        
-        let protocolNameConfig = {
+        let protocolNameIp   = protocolNameCanvas.getContext('2d');
+        protocolNameIp.canvas.width = 400;        
+        let protocolNameConfigIp = {
             type: 'pie',
             data: {
-                labels: ["ipV4","ipv6"],
+                labels: ['ipV4 : '+pourcentageIpv4+'%','ipv6 : '+pourcentageIpv6+'%'],
                 datasets: [{
                     data: [nbIpv4,nbIpv6],
                     backgroundColor: [
                         '#050B4F',
-                        '#FB9D2C',
+                        '#FB9D2C',                        
                     ],
                 }]
             },
@@ -276,13 +309,133 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
                 }
             }
         };
+        // appel du graphique
+        let protocolNameChartGraphIp = new Chart(protocolNameIp, protocolNameConfigIp);
+        // graph PING
+        // calcul DATA
+        let pingOK = 0
+        let pingKO = 0
+        // taux de ping à l'état good        
+        data.forEach(element => {
+            if(element.protocol_type == 8){
+                if(element.protocol_checksum__status == 'good'){
+                    pingOK++;
+                }else{
+                    pingKO++;
+                }
+            }
+            
+        });        
+        pourcentagePingOK = pourcentage(pingOK,pingKO)
+        pourcentagePingKO = pourcentage(pingKO,pingOK)
+
+        protocolNameCanvas = document.getElementById('canvasUdp2');
+        let protocolName   = protocolNameCanvas.getContext('2d');
+        protocolName.canvas.width = 600;
+        
+        let protocolNameConfig = {
+            type: 'bar',
+            data: {
+                labels: ['Ping OK : '+pourcentagePingOK+'%','Ping KO : '+pourcentagePingKO+'%'],
+                datasets: [{
+                    data: [pingOK,pingKO],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)',                                              
+                        'rgba(255, 99, 132, 0.2)',                                              
+                    ],
+                }]
+            },
+            options: {
+                responsive: false,
+                title: {
+                    display: true,
+                    fontSize: 30,
+                    position: 'top',
+                    text: 'Taux de ping valide',
+                },
+                legend: {
+                    display: 'none',
+                }
+            }
+        };
+        let protocolNameChart = new Chart(protocolName, protocolNameConfig);
 
 
-        // CANVAS 2
 
-      
+
+
+        /////////////////////////////////  CHART JS TABLEAU IP EN FONCTION DES HEURES ///////////
+
+        /////////////////////FUNCTION POUR TRANSFORMER LA DATE EN DATE LISIBLE////////////////////
+        function getLogDate(logDate){
+            logDate *= 1000
+            let date = new Date(logDate)
+            let day      = date.getDate().toString()
+            day = (day.toString().length === 1) ? '0'+day : day  
+            let month    = date.getMonth()
+            month = (month.toString().length === 1) ? '0'+month : month  
+            let year     = date.getFullYear()
+            let hours    = date.getHours()
+            hours = (hours.toString().length === 1) ? '0'+hours : hours  
+            let minutes  = date.getMinutes()
+            minutes = (minutes.toString().length === 1) ? '0'+minutes : minutes  
+            let seconde  = date.getSeconds()
+            seconde = (seconde.toString().length === 1) ? '0'+seconde : seconde  
+            let dateClean= day+'/'+month+'/'+year+' '+hours+':'+minutes+':'+seconde
+          return dateClean
+          }
+         let ipDate = data.map(function (e) {
+            return getLogDate(e.date);
+        }); 
+       
+        /////////////////////////// INIATILASATION ////////////////////////////////
+        let tab = []
+        ipDate.forEach(element => {
+            // console.log(element.substr(10, 3));
+            const nbrDate = parseInt(element.substr(10, 3));
+            tab.push(nbrDate)
+        });   
+
+    
+        // ///////////////////////////TABLEAU ASSOCIATIF//////////////////////////
+        let count = new Object();
+
+        for (let i = 0; i< 24; i++){
+            count[i] = 0
+        }
+        tab.forEach(element => {
+
+        for (let i = 0; i< 24; i++ ){
+           
+               if(element == i){
+                   count[i]++
+               }
+        }
+    })
+        console.log(count);
+        // console.log(count[16]);    
+
+        // //////////////////////////////////////// Nombre De ping Ip selon L'heure /////////////////////
+
+        protocolNameCanvas = document.getElementById('canvasUdp3');
+        let protocolName2   = protocolNameCanvas.getContext('2d');
+        protocolName2.canvas.width = 600;
+        
+        let protocolName2Config = {
+            type: 'line',
+       
+        };
+        let protocolNameChart2 = new Chart(protocolName2, protocolName2Config);
+
+
+
+
+
+
+
 
      
+
 
 }) // fin du fectch
 

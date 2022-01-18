@@ -66,7 +66,6 @@ if($page === 'index.php'){?>
 <script src="asset/js/main.js"></script>
 <?php
 }else if($page === 'log.php'){?>
-<script src="../asset/js/log.js"></script>
 <script type="module" src="../asset/js/log.js"></script>
 <?php
 }else if($page === 'dashboard.php' || $page === 'detail.php'){?>

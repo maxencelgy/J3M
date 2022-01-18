@@ -42,7 +42,7 @@ if(isLogged() == true){
                 <option value="parrot">4 mois</option>
             </select>
         </div> -->
-        <a href="../ajax/sendDataJson.php">Refresh</a>
+        <a href="../ajax/sendDataJson.php">Rafraichir</a>
 
         </div>
        

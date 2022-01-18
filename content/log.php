@@ -11,17 +11,17 @@ if(isLogged() == true){
 <section id="log">
     <div class="title_log">
         <h2>Bonjour <?= $_SESSION['user']['pseudo']?></h2>
-        <p>Voici les logs</p>
+        <p>Voici les journaux</p>
     </div>
     <div class="search">
-        <h2>Dashboard Log</h2>
+        <h2>Journaux</h2>
         <div class="tram">
         <div class="type_tram">
 
       
         <label for="trame">Type de trame :</label>
             <select name="list" id="select-list">
-                <option value="ALL">ALL</option>
+                <option value="ALL">TOUTE</option>
                 <option value="TCP">TCP</option>
                 <option value="UDP">UDP</option>
                 <option value="TLSv1.2">TLSv1.2</option>
@@ -38,7 +38,7 @@ if(isLogged() == true){
                 <option value="parrot">4 mois</option>
             </select>
         </div>
-        <a href="../ajax/sendDataJson.php">Refresh</a>
+        <a href="../ajax/sendDataJson.php">Rafraichir</a>
         </div>
 </section>
 
@@ -50,8 +50,8 @@ if(isLogged() == true){
           <th>Id</th>
           <th>Date / Heure</th>
           <th>Status</th>
-          <th>Protocole Name</th>
-          <th>Protocole Checksum</th>
+          <th>Nom protocole</th>
+          <th>Somme de contrôle</th>
           <th>TTL</th>
           <th>Ip source</th>
           <th>Ip destination</th>

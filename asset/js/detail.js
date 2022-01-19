@@ -32,6 +32,8 @@ function getCount(array){
 
     return count
 }
+
+
 ///////////////////////////////////////////////////////// ICMP //////////////////////////////////////
 fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
     .then (function(response){  
@@ -103,11 +105,9 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
         });        
         pourcentagePingOK = pourcentage(pingOK,pingKO)
         pourcentagePingKO = pourcentage(pingKO,pingOK)
-
         protocolNameCanvas = document.getElementById('canvasIcmp2');
         let protocolName   = protocolNameCanvas.getContext('2d');
-        protocolName.canvas.width = 600;
-        
+        protocolName.canvas.width = 600        
         let protocolNameConfig = {
             type: 'bar',
             
@@ -128,8 +128,7 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
                         label: 'Ping OK',
                         data: [pingOK],
                         backgroundColor:'rgba(255, 99, 132, 0.2)', 
-                    }               
-            
+                    }           
                 ]},                
             options: { 
                 scales: {
@@ -244,7 +243,7 @@ fetch('http://localhost/J3M/ajax/TCP/getDataTcp.php')
         });
         let pourcentageIpv6 = pourcentage(nbIpv6,nbIpv4)
         let pourcentageIpv4 = pourcentage(nbIpv4,nbIpv6)        
-   
+    
         // Graphique 
         protocolNameCanvas = document.getElementById('canvasTcp1');
         let protocolNameIp   = protocolNameCanvas.getContext('2d');
@@ -303,7 +302,7 @@ fetch('http://localhost/J3M/ajax/TCP/getDataTcp.php')
 
         /////////////////////////////////  CHART JS TABLEAU IP EN FONCTION DES HEURES ///////////
 
-         let ipDate = data.map(function (e) {
+        let ipDate = data.map(function (e) {
             return getLogDate(e.date);
         }); 
 
@@ -376,7 +375,7 @@ fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
         });
         let pourcentageIpv6 = pourcentage(nbIpv6,nbIpv4)
         let pourcentageIpv4 = pourcentage(nbIpv4,nbIpv6)        
-   
+
         // Graphique 
         protocolNameCanvas = document.getElementById('canvasTls1');
         let protocolNameIp   = protocolNameCanvas.getContext('2d');
@@ -434,10 +433,9 @@ fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
         /////////////////////////////////  CHART JS TABLEAU IP EN FONCTION DES HEURES ///////////
 
         /////////////////////FUNCTION POUR TRANSFORMER LA DATE EN DATE LISIBLE////////////////////
-         let ipDate = data.map(function (e) {
+        let ipDate = data.map(function (e) {
             return getLogDate(e.date);
         }); 
-       
         /////////////////////////// INIATILASATION ////////////////////////////////
         let tab = []
         ipDate.forEach(element => {
@@ -483,7 +481,6 @@ fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
                 },
             }
         };
-
         let threeChart = new Chart(three, threeConfig);
 
 }) // fin du fectch
@@ -614,7 +611,6 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
                 },
             }
         };
-
         let threeChart = new Chart(three, threeConfig);
 
 }) // fin du fectch

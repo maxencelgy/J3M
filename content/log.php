@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); 
 require_once "../config.php";
 require_once "../inc/fonction/pdo.php";
 require_once "../inc/fonction/toolbox.php";
@@ -38,10 +38,8 @@ if(isLogged() == true){
         </div>
 </section>
 
-
-<i id="crossPop" class="fas fa-times"></i>
 <div class="popup">
-
+<i id="crossPop" class="fas fa-times"></i>
     <div class="left">
         <h2 class="violet">Id</h2>
         <h2>Date</h2>
@@ -72,9 +70,6 @@ if(isLogged() == true){
 
 <section id="tableau">
 
-
-
-
 <div class="tab">
     <table class="rwd-table">
         <tr>
@@ -88,6 +83,9 @@ if(isLogged() == true){
           <th>Ip destination</th>
         </tr> 
     </table>
+
+
+    
     <div class="formfirst">        
     </div>
 </div>

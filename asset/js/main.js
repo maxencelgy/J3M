@@ -137,49 +137,21 @@ function getRandomInt( $n )
 //Utilisation de Intersection observer pour changer le style transparent de la barre de
 //navigation au scroll
 const navReveal = document.querySelector("nav");
-
-let navOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 1.25
-};
+const flecheHaut = document.querySelector("#flecheHaut");
 
 let observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if(entry.isIntersecting == true){
             navReveal.style.background = "transparent";
+            flecheHaut.style.display = "none";
         }else{
             navReveal.style.background = "#242A2E";
+            flecheHaut.style.animation = "opacityAnim 2s";
+            flecheHaut.style.display = "block";
         }
     })
 });
 
 let idTarget = document.querySelector("#acceuil");
 observer.observe(idTarget);
-
-//Appartition du carrousel
-
-
-// const carrouselReveal = document.getElementById("contentContainer");
-
-// let carrouselOptions = {
-//     root: document.querySelector("#infos"),
-//     rootMargin: '0px',
-//     threshold: 0.25   
-// };
-
-// let bobserver = new IntersectionObserver((entries) => {
-//     entries.forEach((entry) => {
-//         if(entry.isIntersecting == true){
-//             carrouselReveal.style.display = "none";
-//         }else{
-//             carrouselReveal.style.display = "block";
-//         }
-//     })
-// });
-
-// let idTarget2 = document.querySelector("#infos");
-// bobserver.observe(idTarget);
-
-// partie AJAX
 

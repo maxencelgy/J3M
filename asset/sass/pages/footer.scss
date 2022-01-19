@@ -1,9 +1,4 @@
 footer {
-    @include breakpoints(laptop) {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -12,6 +7,12 @@ footer {
     padding: 3.5rem 2rem 2rem 2rem;
     gap: 2.5rem;
     .footer {
+        @include breakpoints(litleLaptop) {
+            display: flex;
+            flex-flow: column wrap;
+            text-align: center;
+        }
+        padding: 0 3rem;
         max-width: 100%;
         margin: 0 auto;
         display: flex;

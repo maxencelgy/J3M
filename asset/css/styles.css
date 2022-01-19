@@ -24,6 +24,10 @@
   *zoom: 1;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
   font-size: 2vw;
@@ -161,6 +165,7 @@ input {
 .btn-1 input[type=submit]:hover {
   color: white;
   transition: 0.2s 0.1s;
+  cursor: pointer;
 }
 
 .btn.hover-filled-slide-down::before {
@@ -173,6 +178,35 @@ input {
 
 .btn.hover-filled-slide-down:hover::before {
   height: 0;
+}
+
+.cadre_right {
+  width: 80%;
+}
+.cadre_right h1 {
+  text-align: center;
+  background-color: #050B4F;
+  color: white;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.cadre_right form {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1rem 1rem;
+  width: 50%;
+  margin: 0 auto;
+  gap: 0.5rem;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 1.4rem;
+}
+.cadre_right form label {
+  width: 15rem;
 }
 
 #header nav {
@@ -188,10 +222,16 @@ input {
 }
 #header nav .burger {
   position: absolute;
-  top: 5%;
-  right: 5%;
+  top: 1rem;
+  right: 2rem;
   width: 50px;
   height: 50px;
+  display: none;
+}
+@media (max-width: 950px) {
+  #header nav .burger {
+    display: block;
+  }
 }
 #header nav .burger #croix {
   display: none;
@@ -199,7 +239,7 @@ input {
 #header nav .burger #burger {
   display: none;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #header nav .burger #burger {
     display: block;
   }
@@ -208,6 +248,7 @@ input {
   font-size: 2rem;
   padding: 0.5rem 1rem;
   border: solid 1px #FB9D2C;
+  border-radius: 0.3rem;
   color: #818080;
   text-align: center;
   cursor: pointer;
@@ -217,15 +258,16 @@ input {
   font-size: 2rem;
   padding: 0.5rem 1rem;
   border: solid 1px #FB9D2C;
+  border-radius: 0.3rem;
   color: white;
   text-align: center;
   cursor: pointer;
   z-index: 99;
 }
-#header nav .btn-a {
-  padding: 0.5rem;
-  border: solid 1px #FB9D2C;
-  border-radius: 0.4rem;
+@media (max-width: 350px) {
+  #header nav .logo_nav {
+    display: none;
+  }
 }
 #header nav .logo_nav img {
   width: 8rem;
@@ -235,7 +277,7 @@ input {
   align-items: center;
   font-size: 1.2rem;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #header nav .header_btn {
     display: none;
     background-color: #232222;
@@ -267,6 +309,22 @@ input {
 #header nav .header_btn a:hover:after {
   width: 90%;
 }
+#header nav .header_btn .btn-a {
+  padding: 0.5rem;
+  border: solid 1px #FB9D2C;
+  border-radius: 0.4rem;
+}
+#header nav .header_btn .btn-a:hover {
+  background-color: #FB9D2C;
+  color: black;
+  transition: 0.3s;
+}
+#header nav .header_btn .btn-a::before {
+  display: none;
+}
+#header nav .header_btn .btn-a::after {
+  display: none;
+}
 
 #header.second nav {
   position: inherit;
@@ -284,7 +342,7 @@ input {
     width: 145%;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #acceuil img {
     width: 50%;
   }
@@ -305,7 +363,7 @@ input {
   color: white;
   padding: 10rem 0;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #acceuil .main {
     zoom: 1;
   }
@@ -329,46 +387,55 @@ input {
   transition: 0.5s;
 }
 
-#inscription {
+#flecheHaut {
+  font-size: 5rem;
+  position: fixed;
+  right: 5rem;
+  bottom: 5rem;
+  color: #FB9D2C;
+  opacity: 0.8;
+}
+
+.flecheHaut:hover {
+  cursor: pointer;
+}
+
+@keyframes opacityAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+#formulaire {
   padding: 5.1rem 0;
   background-color: #F1F1F1;
 }
-#inscription .wrap2 {
+#formulaire .wrap2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-#inscription .wrap2 .cadre_left {
+#formulaire .wrap2 .cadre_left {
   width: 20%;
 }
-#inscription .wrap2 .cadre_left img {
+#formulaire .wrap2 .cadre_left img {
   width: 150%;
 }
-#inscription .wrap2 .cadre_right {
-  width: 80%;
-}
-#inscription .wrap2 .cadre_right h1 {
+#formulaire .wrap2 #missing_password {
+  margin-top: 0.7rem;
   text-align: center;
-  background-color: #050B4F;
-  color: white;
-  width: 50%;
-  margin: 0 auto;
-  padding: 0.5rem 0;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
 }
-#inscription .wrap2 .cadre_right form {
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 1rem 1rem;
-  width: 50%;
-  margin: 0 auto;
-  background-color: white;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  font-size: 1.4rem;
+#formulaire .wrap2 #missing_password a {
+  font-size: 1.1rem;
+  color: #FB9D2C;
+  text-decoration: underline;
 }
-#inscription .wrap2 .cadre_right form .cgu {
+#formulaire .wrap2 #missing_password a:hover {
+  color: #050B4F;
+}
+#formulaire .wrap2 .cgu {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -376,63 +443,22 @@ input {
   font-size: 1.2rem;
   padding-top: 1.5rem;
 }
-#inscription .wrap2 .cadre_right form .cgu input {
+#formulaire .wrap2 .cgu input {
   flex: 0.2;
   margin-bottom: inherit;
 }
-#inscription .wrap2 .cadre_right form .cgu a {
+#formulaire .wrap2 .cgu a {
   flex: 3;
   text-decoration: underline;
   color: #FB9D2C;
 }
-#inscription .wrap2 .cadre_right form label {
+#formulaire .wrap2 .cgu a:hover {
+  color: #050B4F;
+}
+#formulaire .wrap2 label {
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 0.8rem;
-}
-
-#connexion {
-  padding: 5rem 0;
-  background-color: #F1F1F1;
-}
-#connexion .wrap2 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-#connexion .wrap2 .cadre_left {
-  width: 20%;
-}
-#connexion .wrap2 .cadre_left img {
-  width: 150%;
-}
-#connexion .wrap2 .cadre_right {
-  width: 80%;
-}
-#connexion .wrap2 .cadre_right h1 {
-  text-align: center;
-  background-color: #050B4F;
-  color: white;
-  width: 50%;
-  margin: 0 auto;
-  padding: 0.5rem 0;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-}
-#connexion .wrap2 .cadre_right form {
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 1rem 1rem;
-  width: 50%;
-  margin: 0 auto;
-  gap: 0.5rem;
-  background-color: white;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  font-size: 1.4rem;
-}
-#connexion .wrap2 .cadre_right form label {
-  width: 15rem;
 }
 
 footer {
@@ -444,18 +470,19 @@ footer {
   padding: 3.5rem 2rem 2rem 2rem;
   gap: 2.5rem;
 }
-@media (max-width: 1200px) {
-  footer {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-}
 footer .footer {
+  padding: 0 3rem;
   max-width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 950px) {
+  footer .footer {
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+  }
 }
 footer .footer a {
   font-size: 1.2rem;
@@ -583,7 +610,7 @@ footer #copyright {
   background-color: white;
   padding: 3rem;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #where {
     padding: 1rem;
   }
@@ -593,7 +620,7 @@ footer #copyright {
   margin-bottom: 2rem;
   font-weight: 400;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #where h2 {
     font-size: 2.6rem;
   }
@@ -628,11 +655,23 @@ footer #copyright {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #where .container {
-    flex-direction: column-reverse;
+    padding: 0 3rem;
     gap: 0;
     font-size: 0.9rem;
+  }
+}
+@media (max-width: 700px) {
+  #where .container {
+    flex-flow: column-reverse nowrap;
+    gap: 2rem;
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 500px) {
+  #where .container {
+    font-size: 1rem;
   }
 }
 #where .container .contact {
@@ -641,7 +680,7 @@ footer #copyright {
   flex-flow: column nowrap;
   gap: 2rem;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #where .container .contact {
     text-align: left;
     width: 90%;
@@ -652,13 +691,28 @@ footer #copyright {
   flex-flow: row nowrap;
   gap: 3rem;
 }
+@media (max-width: 500px) {
+  #where .container .contact .box {
+    flex-flow: column wrap;
+    margin: 0 auto;
+    align-items: center;
+  }
+  #where .container .contact .box i {
+    font-size: 3rem;
+  }
+}
 #where .container .maps {
   width: 60%;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #where .container .maps {
     width: 100%;
     margin-bottom: 0.5rem;
+  }
+}
+@media (max-width: 350px) {
+  #where .container .maps {
+    display: none;
   }
 }
 

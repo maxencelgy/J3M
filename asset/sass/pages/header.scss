@@ -13,10 +13,12 @@
 
     .burger {
       position: absolute;
-      top: 5%;
-      right: 5%;
+      top: 1rem;
+      right: 2rem;
       width: 50px;
       height: 50px;
+      display: none;
+      @include breakpoints(litleLaptop){display: block;}
 
       #croix{
         display: none;
@@ -31,6 +33,7 @@
         font-size: 2rem;
         padding: .5rem 1rem;
         border: solid 1px $orange;
+        border-radius: .3rem;
         color: #818080;
         text-align: center;
         cursor: pointer;
@@ -41,6 +44,7 @@
         font-size: 2rem;
         padding: .5rem 1rem;
         border: solid 1px $orange;
+        border-radius: .3rem;
         color: white;
         text-align: center;
         cursor: pointer;
@@ -48,20 +52,14 @@
       }
     }
 
-
-    .btn-a{
-      padding: .5rem;
-      border: solid 1px $orange ;
-      border-radius: .4rem;
-    }
     .logo_nav{
+      @include breakpoints(Phone){
+        display: none;
+      }
       img{
         width: 8rem;
       }
     }
-
-
-
 
     .header_btn{
       @include breakpoints(litleLaptop){
@@ -88,7 +86,6 @@
         text-align: center;
         @include breakpoints(litleLaptop){
 
-
         }
       }
       a:after{
@@ -104,6 +101,23 @@
       }
       a:hover:after{
         width: 90%;
+      }
+
+      .btn-a{
+        padding: .5rem;
+        border: solid 1px $orange ;
+        border-radius: .4rem;
+      }
+      .btn-a:hover{
+        background-color: $orange;
+        color: black;
+        transition: .3s;
+      }
+      .btn-a::before{
+        display: none;
+      }
+      .btn-a::after{
+        display: none;
       }
     }
   }

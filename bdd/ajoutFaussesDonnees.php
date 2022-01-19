@@ -30,7 +30,7 @@ $dateMax = 1606906653;
 // ICMP protolcol status 95% good autre 10%
 // si good headerCheckSum & protocol-checksum = '0x(random)(random)(random)(random)
 
-for($i=0; $i<150 ;$i++){
+for($i=0; $i<80 ;$i++){
     //   generedate
     $date =  $dateMax-(random_int(1,10000000)); 
     //ttl

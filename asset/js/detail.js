@@ -1,8 +1,25 @@
 function pourcentage(val1,val2) {return Math.round(val1/(val1+val2)*100)}
-// ICMP
+function getLogDate(logDate){
+    logDate *= 1000
+    let date = new Date(logDate)
+    let day      = date.getDate().toString()
+    day = (day.toString().length === 1) ? '0'+day : day  
+    let month    = date.getMonth()
+    month = (month.toString().length === 1) ? '0'+month : month  
+    let year     = date.getFullYear()
+    let hours    = date.getHours()
+    hours = (hours.toString().length === 1) ? '0'+hours : hours  
+    let minutes  = date.getMinutes()
+    minutes = (minutes.toString().length === 1) ? '0'+minutes : minutes  
+    let seconde  = date.getSeconds()
+    seconde = (seconde.toString().length === 1) ? '0'+seconde : seconde  
+    let dateClean= day+'/'+month+'/'+year+' '+hours+':'+minutes+':'+seconde
+  return dateClean
+  }
+
+///////////////////////////////////////////////////////// ICMP //////////////////////////////////////
 fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
-    .then (function(response){
-        
+    .then (function(response){  
         return response.json()
     }).then(function (data){
         console.log(data)
@@ -32,7 +49,7 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
             data: {
                 labels: ['ipV4 : '+pourcentageIpv4+'%','ipv6 : '+pourcentageIpv6+'%'],
                 datasets: [{
-                    data: [nbIpv4,nbIpv6],
+                    data: [nbIpv4, nbIpv6],
                     backgroundColor: [
                         '#050B4F',
                         '#FB9D2C',                        
@@ -85,9 +102,19 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
                     backgroundColor: [
                         'rgba(75, 192, 192, 0.2)',                                              
                         'rgba(255, 99, 132, 0.2)',                                              
-                    ],
-                }]
-            },
+                    ], },{
+                        type: 'line',
+                        label: 'Ping KO',
+                        data: [pingKO],
+                        backgroundColor:'rgba(255, 99, 132, 0.2)', 
+                    },{
+                        type: 'line',
+                        label: 'Ping OK',
+                        data: [pingOK],
+                        backgroundColor:'rgba(255, 99, 132, 0.2)', 
+                    }               
+            
+                ]},
             options: {
                 responsive: false,
                 title: {
@@ -97,11 +124,83 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
                     text: 'Taux de ping valide',
                 },
                 legend: {
-                    display: 'none',
+                    display: false,
+                
                 }
             }
         };
         let protocolNameChart = new Chart(protocolName, protocolNameConfig);
+         let ipDate = data.map(function (e) {
+            return getLogDate(e.date);
+        }); 
+       
+        /////////////////////////// INIATILASATION ////////////////////////////////
+        let tab = []
+        ipDate.forEach(element => {
+            // console.log(element.substr(10, 3));
+            const nbrDate = parseInt(element.substr(10, 3));
+            tab.push(nbrDate)
+        });   
+        // ///////////////////////////TABLEAU ASSOCIATIF//////////////////////////
+        let count = new Object();
+
+        for (let i = 0; i< 24; i++){
+            count[i] = 0
+        }
+        tab.forEach(element => {
+
+        for (let i = 0; i< 24; i++ ){
+           
+               if(element == i){
+                   count[i]++
+               }
+        }
+    })
+        // console.log(count);
+
+        // console.log(count[16]);
+       
+
+
+        // //////////////////////////////////////// Nombre De ping Ip selon L'heure /////////////////////
+
+       
+        threeCanvas = document.getElementById('canvasIcmp3');
+        let three = threeCanvas.getContext('2d');
+        three.canvas.width = 1000;
+        let threeConfig = {
+            type: 'bar',
+            data: {
+                labels: ["0h", "1h", "2h", "3h", "4h", "5h", "6h","7h","8h","9h","10h","11h","12h","13h","14h","15h","16h","17h","18h","19h","20h","21h","22h","23h"],
+                datasets: [{
+                    label: 'Moyenne des heures influentes de la réception des trames',
+                    data: [count[0], count[1], count[2], count[3], count[4], count[5], count[6],count[7],count[8],count[9],count[10],count[11],count[12],count[13],count[14],count[15],count[16],count[17],count[18],count[16],count[17],count[18],count[19],count[20],count[21],count[22],count[23]],
+                    backgroundColor: "#FB9D2C",
+                    borderColor: "#FB9D2C",
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    }
+                },
+                responsive: false,
+                title: {
+                    display: true,
+                    fontSize: 30,
+                    position: 'top',
+                    text: 'Moyenne des trames reçu chaques heures',
+                },
+                legend: {
+                    position: 'right',
+                },
+            }
+        };
+
+        let threeChart = new Chart(three, threeConfig);
+
         
 
 
@@ -113,157 +212,19 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
 
 
 
+///////////////////////////////////////////////////////// TCP //////////////////////////////////////
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
+fetch('http://localhost/J3M/ajax/TCP/getDataTcp.php')
     .then (function(response){
         return response.json()
     }).then(function (data){
         console.log(data)
-        // jeu avec les données
+        // GRAPH IP
+        // calcul DATA
         let ipVersion = data.map(function (e) {
             return e.version;
-        });
+        });     
         let nbIpv4 = 0
         let nbIpv6 = 0
         ipVersion.forEach(element => {
@@ -273,23 +234,22 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
                 nbIpv6++;
             }
         });
-        console.log(nbIpv4)
-        console.log(nbIpv6)
-
-        protocolNameCanvas = document.getElementById('canvasUdp1');
-        let protocolName = protocolNameCanvas.getContext('2d');
-        protocolName.canvas.width = 400;
-        
-        let protocolNameConfig = {
+        let pourcentageIpv6 = pourcentage(nbIpv6,nbIpv4)
+        let pourcentageIpv4 = pourcentage(nbIpv4,nbIpv6)        
+   
+        // Graphique 
+        protocolNameCanvas = document.getElementById('canvasTcp1');
+        let protocolNameIp   = protocolNameCanvas.getContext('2d');
+        protocolNameIp.canvas.width = 400;        
+        let protocolNameConfigIp = {
             type: 'pie',
             data: {
-                labels: ["ipV4","ipv6"],
+                labels: ['ipV4 : '+pourcentageIpv4+'%','ipv6 : '+pourcentageIpv6+'%'],
                 datasets: [{
                     data: [nbIpv4,nbIpv6],
                     backgroundColor: [
                         '#050B4F',
-                        '#FB9D2C',
-                        
+                        '#FB9D2C',                        
                     ],
                 }]
             },
@@ -306,12 +266,388 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
                 }
             }
         };
-        let protocolNameChart = new Chart(protocolName, protocolNameConfig);
+        // appel du graphique
+        let protocolNameChartGraphIp = new Chart(protocolNameIp, protocolNameConfigIp);
+        // graph PING
+        // calcul DATA
+        let pingOK = 0
+        let pingKO = 0
+        // taux de ping à l'état good        
+        data.forEach(element => {
+            if(element.protocol_type == 8){
+                if(element.protocol_checksum__status == 'good'){
+                    pingOK++;
+                }else{
+                    pingKO++;
+                }
+            }
+            
+        });        
+        /////////////////////////////////  CHART JS TABLEAU IP EN FONCTION DES HEURES ///////////
+
+        /////////////////////FUNCTION POUR TRANSFORMER LA DATE EN DATE LISIBLE////////////////////
+         let ipDate = data.map(function (e) {
+            return getLogDate(e.date);
+        }); 
+       
+        /////////////////////////// INIATILASATION ////////////////////////////////
+        let tab = []
+        ipDate.forEach(element => {
+            // console.log(element.substr(10, 3));
+            const nbrDate = parseInt(element.substr(10, 3));
+            tab.push(nbrDate)
+        });   
+
+    
+        // ///////////////////////////TABLEAU ASSOCIATIF//////////////////////////
+        let count = new Object();
+
+        for (let i = 0; i< 24; i++){
+            count[i] = 0
+        }
+        tab.forEach(element => {
+
+        for (let i = 0; i< 24; i++ ){
+           
+               if(element == i){
+                   count[i]++
+               }
+        }
+        })
+        // console.log(count);
+
+        // console.log(count[16]);
+       
+
+
+        // //////////////////////////////////////// Nombre De ping Ip selon L'heure /////////////////////
+
+       
+        threeCanvas = document.getElementById('canvasTcp3');
+        let three = threeCanvas.getContext('2d');
+        three.canvas.width = 1000;
+        let threeConfig = {
+            type: 'bar',
+            data: {
+                labels: ["0h", "1h", "2h", "3h", "4h", "5h", "6h","7h","8h","9h","10h","11h","12h","13h","14h","15h","16h","17h","18h","19h","20h","21h","22h","23h"],
+                datasets: [{
+                    label: 'Moyenne des heures influentes de la réception des trames',
+                    data: [count[0], count[1], count[2], count[3], count[4], count[5], count[6],count[7],count[8],count[9],count[10],count[11],count[12],count[13],count[14],count[15],count[16],count[17],count[18],count[16],count[17],count[18],count[19],count[20],count[21],count[22],count[23]],
+                    backgroundColor: "#FB9D2C",
+                    borderColor: "#FB9D2C",
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    }
+                },
+                responsive: false,
+                title: {
+                    display: true,
+                    fontSize: 30,
+                    position: 'top',
+                    text: 'Moyenne des trames reçu chaques heures',
+                },
+                legend: {
+                    position: 'right',
+                },
+            }
+        };
+
+        let threeChart = new Chart(three, threeConfig);
 
 }) // fin du fectch
 
 
+///////////////////////////////////////////////////////// TLS //////////////////////////////////////
+fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
+    .then (function(response){
+        return response.json()
+    }).then(function (data){
+        console.log(data)
+        // GRAPH IP
+        // calcul DATA
+        let ipVersion = data.map(function (e) {
+            return e.version;
+        });     
+        let nbIpv4 = 0
+        let nbIpv6 = 0
+        ipVersion.forEach(element => {
+            if(element== 4){
+                nbIpv4++;
+            }else{
+                nbIpv6++;
+            }
+        });
+        let pourcentageIpv6 = pourcentage(nbIpv6,nbIpv4)
+        let pourcentageIpv4 = pourcentage(nbIpv4,nbIpv6)        
+   
+        // Graphique 
+        protocolNameCanvas = document.getElementById('canvasTls1');
+        let protocolNameIp   = protocolNameCanvas.getContext('2d');
+        protocolNameIp.canvas.width = 400;        
+        let protocolNameConfigIp = {
+            type: 'pie',
+            data: {
+                labels: ['ipV4 : '+pourcentageIpv4+'%','ipv6 : '+pourcentageIpv6+'%'],
+                datasets: [{
+                    data: [nbIpv4,nbIpv6],
+                    backgroundColor: [
+                        '#050B4F',
+                        '#FB9D2C',                        
+                    ],
+                }]
+            },
+            options: {
+                responsive: false,
+                title: {
+                    display: true,
+                    fontSize: 30,
+                    position: 'top',
+                    text: 'Proportion Ipv4 et Ipv6',
+                },
+                legend: {
+                    position: 'right',
+                }
+            }
+        };
+        // appel du graphique
+        let protocolNameChartGraphIp = new Chart(protocolNameIp, protocolNameConfigIp);
+        // graph PING
+        // calcul DATA
+        let pingOK = 0
+        let pingKO = 0
+        // taux de ping à l'état good        
+        data.forEach(element => {
+            if(element.protocol_type == 8){
+                if(element.protocol_checksum__status == 'good'){
+                    pingOK++;
+                }else{
+                    pingKO++;
+                }
+            }
+            
+        });        
+        /////////////////////////////////  CHART JS TABLEAU IP EN FONCTION DES HEURES ///////////
 
+        /////////////////////FUNCTION POUR TRANSFORMER LA DATE EN DATE LISIBLE////////////////////
+         let ipDate = data.map(function (e) {
+            return getLogDate(e.date);
+        }); 
+       
+        /////////////////////////// INIATILASATION ////////////////////////////////
+        let tab = []
+        ipDate.forEach(element => {
+            // console.log(element.substr(10, 3));
+            const nbrDate = parseInt(element.substr(10, 3));
+            tab.push(nbrDate)
+        });   
+
+    
+        // ///////////////////////////TABLEAU ASSOCIATIF//////////////////////////
+        let count = new Object();
+
+        for (let i = 0; i< 24; i++){
+            count[i] = 0
+        }
+        tab.forEach(element => {
+
+        for (let i = 0; i< 24; i++ ){
+           
+               if(element == i){
+                   count[i]++
+               }
+        }
+        })
+        // console.log(count);
+
+        // console.log(count[16]);
+       
+        // //////////////////////////////////////// Nombre De ping Ip selon L'heure /////////////////////
+
+       
+        threeCanvas = document.getElementById('canvasTls3');
+        let three = threeCanvas.getContext('2d');
+        three.canvas.width = 1000;
+        let threeConfig = {
+            type: 'bar',
+            data: {
+                labels: ["0h", "1h", "2h", "3h", "4h", "5h", "6h","7h","8h","9h","10h","11h","12h","13h","14h","15h","16h","17h","18h","19h","20h","21h","22h","23h"],
+                datasets: [{
+                    label: 'Moyenne des heures influentes de la réception des trames',
+                    data: [count[0], count[1], count[2], count[3], count[4], count[5], count[6],count[7],count[8],count[9],count[10],count[11],count[12],count[13],count[14],count[15],count[16],count[17],count[18],count[16],count[17],count[18],count[19],count[20],count[21],count[22],count[23]],
+                    backgroundColor: "#FB9D2C",
+                    borderColor: "#FB9D2C",
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    }
+                },
+                responsive: false,
+                title: {
+                    display: true,
+                    fontSize: 30,
+                    position: 'top',
+                    text: 'Moyenne des trames reçu chaques heures',
+                },
+                legend: {
+                    position: 'right',
+                },
+            }
+        };
+
+        let threeChart = new Chart(three, threeConfig);
+
+}) // fin du fectch
+
+
+///////////////////////////////////////////////////////// UDP //////////////////////////////////////
+
+fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
+    .then (function(response){
+        return response.json()
+    }).then(function (data){
+        console.log(data)
+        // GRAPH IP
+        // calcul DATA
+        let ipVersion = data.map(function (e) {
+            return e.version;
+        });     
+        let nbIpv4 = 0
+        let nbIpv6 = 0
+        ipVersion.forEach(element => {
+            if(element== 4){
+                nbIpv4++;
+            }else{
+                nbIpv6++;
+            }
+        });
+        let pourcentageIpv6 = pourcentage(nbIpv6,nbIpv4)
+        let pourcentageIpv4 = pourcentage(nbIpv4,nbIpv6)        
+   
+        // Graphique 
+        protocolNameCanvas = document.getElementById('canvasUdp1');
+        let protocolNameIp   = protocolNameCanvas.getContext('2d');
+        protocolNameIp.canvas.width = 400;        
+        let protocolNameConfigIp = {
+            type: 'pie',
+            data: {
+                labels: ['ipV4 : '+pourcentageIpv4+'%','ipv6 : '+pourcentageIpv6+'%'],
+                datasets: [{
+                    data: [nbIpv4,nbIpv6],
+                    backgroundColor: [
+                        '#050B4F',
+                        '#FB9D2C',                        
+                    ],
+                }]
+            },
+            options: {
+                responsive: false,
+                title: {
+                    display: true,
+                    fontSize: 30,
+                    position: 'top',
+                    text: 'Proportion Ipv4 et Ipv6',
+                },
+                legend: {
+                    position: 'right',
+                }
+            }
+        };
+        // appel du graphique
+        let protocolNameChartGraphIp = new Chart(protocolNameIp, protocolNameConfigIp);
+        // graph PING
+        // calcul DATA
+        let pingOK = 0
+        let pingKO = 0
+        // taux de ping à l'état good        
+        data.forEach(element => {
+            if(element.protocol_type == 8){
+                if(element.protocol_checksum__status == 'good'){
+                    pingOK++;
+                }else{
+                    pingKO++;
+                }
+            }
+            
+        });        
+    /////////////////////////////////  CHART JS TABLEAU IP EN FONCTION DES HEURES ///////////
+
+    /////////////////////FUNCTION POUR TRANSFORMER LA DATE EN DATE LISIBLE////////////////////
+      
+         let ipDate = data.map(function (e) {
+            return getLogDate(e.date);
+        }); 
+        /////////////////////////// INIATILASATION ////////////////////////////////
+        let tab = []
+        ipDate.forEach(element => {
+            // console.log(element.substr(10, 3));
+            const nbrDate = parseInt(element.substr(10, 3));
+            tab.push(nbrDate)
+        });   
+
+    
+    // ///////////////////////////TABLEAU ASSOCIATIF//////////////////////////
+        let count = new Object();
+
+        for (let i = 0; i< 24; i++){
+            count[i] = 0
+        }
+        tab.forEach(element => {
+
+        for (let i = 0; i< 24; i++ ){
+           
+               if(element == i){
+                   count[i]++
+               }
+        }
+    })
+       
+        // //////////////////////////////////////// Nombre De ping Ip selon L'heure /////////////////////
+        threeCanvas = document.getElementById('canvasUdp3');
+        let three = threeCanvas.getContext('2d');
+        three.canvas.width = 1000;
+        let threeConfig = {
+            type: 'bar',
+            data: {
+                labels: ["0h", "1h", "2h", "3h", "4h", "5h", "6h","7h","8h","9h","10h","11h","12h","13h","14h","15h","16h","17h","18h","19h","20h","21h","22h","23h"],
+                datasets: [{
+                    label: 'Moyenne des heures influentes de la réception des trames',
+                    data: [count[0], count[1], count[2], count[3], count[4], count[5], count[6],count[7],count[8],count[9],count[10],count[11],count[12],count[13],count[14],count[15],count[16],count[17],count[18],count[16],count[17],count[18],count[19],count[20],count[21],count[22],count[23]],
+                    backgroundColor: "#FB9D2C",
+                    borderColor: "#FB9D2C",
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    }
+                },
+                responsive: false,
+                title: {
+                    display: true,
+                    fontSize: 30,
+                    position: 'top',
+                    text: 'Moyenne des trames reçu chaques heures',
+                },
+                legend: {
+                    position: 'right',
+                },
+            }
+        };
+
+        let threeChart = new Chart(three, threeConfig);
+
+}) // fin du fectch
 
 
 

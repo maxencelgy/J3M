@@ -47,5 +47,25 @@
   }
 }
 
+#flecheHaut{
+  font-size: 5rem;
+  position: fixed;
+  right: 5rem;
+  bottom: 5rem;
+  color: $orange;
+  opacity: .8;
+}
+.flecheHaut:hover{
+  cursor: pointer;
+}
+@keyframes opacityAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .8;
+  }
+}
+
 
 

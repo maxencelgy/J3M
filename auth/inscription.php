@@ -72,7 +72,7 @@ include('../inc/header.php');
 ?>
 
 <?php if($success==false){ ?>
-<section id="inscription">
+<section id="formulaire">
     <div class="wrap2">
     <div class="cadre_left">
     <img src="../asset/img/wing.png" alt="illustration éclair bleu">
@@ -101,7 +101,7 @@ include('../inc/header.php');
             </button>
 
             <div class="cgu">
-                <input type="checkbox" id="cgu" name="cgu" class="cgu_check"><a href="../inc/cgu.php">J'accepte les condition d'utilisation</a>
+                <input type="checkbox" id="cgu" name="cgu" class="cgu_check"><a href="../inc/cgu.php">J'accepte les conditions d'utilisation</a>
             </div>
             <span class="error"><?= viewError($errors,'cgu'); ?></span>
         </form>

@@ -334,7 +334,7 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
                             display: true,
                             fontSize: 30,
                             position: 'top',
-                            text: 'Status ping ICMP',
+                            text: 'Status trames ICMP',
                         },
                         legend: {
                             position: 'right',

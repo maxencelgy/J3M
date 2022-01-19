@@ -8,12 +8,12 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    align-items: center;
+    //align-items: center;
     text-align: center;
 
     .burger {
       position: absolute;
-      top: 10%;
+      top: 5%;
       right: 5%;
       width: 50px;
       height: 50px;
@@ -31,7 +31,7 @@
         font-size: 2rem;
         padding: .5rem 1rem;
         border: solid 1px $orange;
-        color: white;
+        color: #818080;
         text-align: center;
         cursor: pointer;
         z-index: 999;

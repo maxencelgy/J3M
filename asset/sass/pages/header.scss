@@ -55,6 +55,9 @@
 
 
     .logo_nav{
+      @include breakpoints(Phone){
+        display: none;
+      }
       img{
         width: 8rem;
       }

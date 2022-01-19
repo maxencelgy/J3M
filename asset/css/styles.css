@@ -263,6 +263,11 @@ input {
   cursor: pointer;
   z-index: 99;
 }
+@media (max-width: 350px) {
+  #header nav .logo_nav {
+    display: none;
+  }
+}
 #header nav .logo_nav img {
   width: 8rem;
 }
@@ -701,6 +706,11 @@ footer #copyright {
   #where .container .maps {
     width: 100%;
     margin-bottom: 0.5rem;
+  }
+}
+@media (max-width: 350px) {
+  #where .container .maps {
+    display: none;
   }
 }
 

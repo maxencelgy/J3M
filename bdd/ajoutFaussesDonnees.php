@@ -5,9 +5,9 @@ require'../config.php'; // integre le toolbox
 require'../inc/fonction/pdo.php';
 require'../inc/fonction/request.php';
 
-echo substr(sha1(mt_rand()),17,4); //To Generate Random Numbers with Letters.
-echo substr(sha1(mt_rand()),17,5); //titre
-
+// echo substr(sha1(mt_rand()),17,4); //To Generate Random Numbers with Letters.
+// echo substr(sha1(mt_rand()),17,5); //titre
+$nombredata = 100;
 $IpDest = ['3470ff25','343111a8','acd913e3','c0a8014a','d83ac6ce','c0a8c99f','acd90734','acd9efed','0d85c1c6','0d8523b1'];
 // randomBitintoHexa
 echo '<br>';
@@ -30,7 +30,7 @@ $dateMax = 1606906653;
 // ICMP protolcol status 95% good autre 10%
 // si good headerCheckSum & protocol-checksum = '0x(random)(random)(random)(random)
 
-for($i=0; $i<100 ;$i++){
+for($i=0; $i<$nombredata ;$i++){
     //   generedate
     $date =  $dateMax-(random_int(1,10000000)); 
     //ttl

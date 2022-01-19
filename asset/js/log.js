@@ -17,7 +17,6 @@ fetch('http://localhost/J3M/ajax/getDataJson.php')
             let ipFrom                      = getIpNumber(element.ip_from)
             let ipDest                      = getIpNumber(element.ip_dest)
             form.innerHTML += `
-            <tr class="trame">
             <tr class="tra">
                 <td data-th="id" class="selectTd">${element.identification}</td>
                 <td data-th="date" class="selectTd">${date}</td>  

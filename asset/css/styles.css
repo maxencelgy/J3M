@@ -225,7 +225,7 @@ input {
   height: 50px;
   display: none;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #header nav .burger {
     display: block;
   }
@@ -236,7 +236,7 @@ input {
 #header nav .burger #burger {
   display: none;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #header nav .burger #burger {
     display: block;
   }
@@ -267,7 +267,7 @@ input {
   align-items: center;
   font-size: 1.2rem;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #header nav .header_btn {
     display: none;
     background-color: #232222;
@@ -331,7 +331,7 @@ input {
     width: 145%;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #acceuil img {
     width: 50%;
   }
@@ -352,7 +352,7 @@ input {
   color: white;
   padding: 10rem 0;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #acceuil .main {
     zoom: 1;
   }
@@ -475,18 +475,19 @@ footer {
   padding: 3.5rem 2rem 2rem 2rem;
   gap: 2.5rem;
 }
-@media (max-width: 1200px) {
-  footer {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-}
 footer .footer {
+  padding: 0 3rem;
   max-width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 950px) {
+  footer .footer {
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+  }
 }
 footer .footer a {
   font-size: 1.2rem;
@@ -614,7 +615,7 @@ footer #copyright {
   background-color: white;
   padding: 3rem;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #where {
     padding: 1rem;
   }
@@ -624,7 +625,7 @@ footer #copyright {
   margin-bottom: 2rem;
   font-weight: 400;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #where h2 {
     font-size: 2.6rem;
   }
@@ -659,11 +660,23 @@ footer #copyright {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #where .container {
-    flex-direction: column-reverse;
+    padding: 0 3rem;
     gap: 0;
     font-size: 0.9rem;
+  }
+}
+@media (max-width: 700px) {
+  #where .container {
+    flex-flow: column-reverse nowrap;
+    gap: 2rem;
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 500px) {
+  #where .container {
+    font-size: 1rem;
   }
 }
 #where .container .contact {
@@ -672,7 +685,7 @@ footer #copyright {
   flex-flow: column nowrap;
   gap: 2rem;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #where .container .contact {
     text-align: left;
     width: 90%;
@@ -683,10 +696,20 @@ footer #copyright {
   flex-flow: row nowrap;
   gap: 3rem;
 }
+@media (max-width: 500px) {
+  #where .container .contact .box {
+    flex-flow: column wrap;
+    margin: 0 auto;
+    align-items: center;
+  }
+  #where .container .contact .box i {
+    font-size: 3rem;
+  }
+}
 #where .container .maps {
   width: 60%;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #where .container .maps {
     width: 100%;
     margin-bottom: 0.5rem;

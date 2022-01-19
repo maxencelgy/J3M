@@ -37,9 +37,17 @@
     margin: 0 auto;
     .container{
       @include breakpoints(litleLaptop){
-        flex-direction: column-reverse;
+        padding: 0 3rem;
         gap: 0;
         font-size: .9rem;
+      }
+      @include breakpoints(tablette){
+        flex-flow: column-reverse nowrap;
+        gap: 2rem;
+        font-size: 1.5rem;
+      }
+      @include breakpoints(bigPhone2){
+        font-size: 1rem;
       }
       display: flex;
       flex-flow: row nowrap;
@@ -56,6 +64,14 @@
         flex-flow: column nowrap;
         gap: 2rem;
         .box{
+          @include breakpoints(bigPhone2){
+            flex-flow: column wrap;
+            margin: 0 auto;
+            align-items: center;
+            i{
+              font-size: 3rem;
+            }
+          }
           display: flex;
           flex-flow: row nowrap;
           gap: 3rem;

@@ -70,9 +70,6 @@ if(isLogged() == true){
 
 <section id="tableau">
 
-
-
-
 <div class="tab">
     <table class="rwd-table">
         <tr>
@@ -86,6 +83,9 @@ if(isLogged() == true){
           <th>Ip destination</th>
         </tr> 
     </table>
+
+
+    
     <div class="formfirst">        
     </div>
 </div>

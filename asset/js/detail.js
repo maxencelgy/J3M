@@ -183,7 +183,6 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
         }
     })
         // console.log(count);
-
         // console.log(count[16]);
        
         const infosICMP = document.querySelector('#infosICMP');
@@ -220,7 +219,7 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
                     text: 'Moyenne des trames reçu chaques heures',
                 },
                 legend: {
-                    position: 'right',
+                    position: 'bottom'
                 },
             }
         };
@@ -383,7 +382,7 @@ fetch('http://localhost/J3M/ajax/TCP/getDataTcp.php')
                     text: 'Moyenne des trames reçu chaques heures',
                 },
                 legend: {
-                    position: 'right',
+                    position: 'bottom'
                 },
             }
         };
@@ -467,6 +466,7 @@ fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
         const infosTLS = document.querySelector('#infosTLS');
         infosTLS.innerHTML = `Il y a ${data.length} trames ${data[0].protocol_name} depuis le ${getLogDate(data.pop().date).substr(0, 10)}`; 
 
+        console.log(data);
         /////////////////////////////////  CHART JS TABLEAU IP EN FONCTION DES HEURES ///////////
 
         /////////////////////FUNCTION POUR TRANSFORMER LA DATE EN DATE LISIBLE////////////////////
@@ -534,7 +534,7 @@ fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
                     text: 'Moyenne des trames reçu chaques heures',
                 },
                 legend: {
-                    position: 'right',
+                    position: 'bottom',
                 },
             }
         };
@@ -682,7 +682,7 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
                     text: 'Moyenne des trames reçu chaques heures',
                 },
                 legend: {
-                    position: 'right',
+                    position: 'bottom',
                 },
             }
         };

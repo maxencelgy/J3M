@@ -250,6 +250,11 @@ input {
   justify-content: space-between;
   text-align: center;
 }
+@media (max-width: 950px) {
+  #header nav {
+    padding: 0;
+  }
+}
 #header nav .burger {
   position: absolute;
   top: 1rem;
@@ -313,6 +318,17 @@ input {
     background-color: #232222;
     width: 100%;
     flex-direction: column;
+    padding: 4rem 0 2rem 0;
+  }
+}
+@media (max-width: 700px) {
+  #header nav .header_btn {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 350px) {
+  #header nav .header_btn {
+    font-size: 0.8rem;
   }
 }
 #header nav .header_btn a {
@@ -343,6 +359,12 @@ input {
   padding: 0.5rem;
   border: solid 1px #FB9D2C;
   border-radius: 0.4rem;
+}
+@media (max-width: 950px) {
+  #header nav .header_btn .btn-a {
+    width: 35%;
+    margin: 0 auto;
+  }
 }
 #header nav .header_btn .btn-a:hover {
   background-color: #FB9D2C;

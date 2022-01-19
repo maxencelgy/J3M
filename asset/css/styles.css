@@ -223,8 +223,8 @@ input {
 }
 #header nav .burger {
   position: absolute;
-  top: 10%;
-  right: 5%;
+  top: 2rem;
+  right: 2rem;
   width: 50px;
   height: 50px;
   display: none;
@@ -401,22 +401,34 @@ input {
     opacity: 0.8;
   }
 }
-#inscription {
+#formulaire {
   padding: 5.1rem 0;
   background-color: #F1F1F1;
 }
-#inscription .wrap2 {
+#formulaire .wrap2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-#inscription .wrap2 .cadre_left {
+#formulaire .wrap2 .cadre_left {
   width: 20%;
 }
-#inscription .wrap2 .cadre_left img {
+#formulaire .wrap2 .cadre_left img {
   width: 150%;
 }
-#inscription .wrap2 .cgu {
+#formulaire .wrap2 #missing_password {
+  margin-top: 0.7rem;
+  text-align: center;
+}
+#formulaire .wrap2 #missing_password a {
+  font-size: 1.1rem;
+  color: #FB9D2C;
+  text-decoration: underline;
+}
+#formulaire .wrap2 #missing_password a:hover {
+  color: #050B4F;
+}
+#formulaire .wrap2 .cgu {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -424,50 +436,22 @@ input {
   font-size: 1.2rem;
   padding-top: 1.5rem;
 }
-#inscription .wrap2 .cgu input {
+#formulaire .wrap2 .cgu input {
   flex: 0.2;
   margin-bottom: inherit;
 }
-#inscription .wrap2 .cgu a {
+#formulaire .wrap2 .cgu a {
   flex: 3;
   text-decoration: underline;
   color: #FB9D2C;
 }
-#inscription .wrap2 .cgu a:hover {
+#formulaire .wrap2 .cgu a:hover {
   color: #050B4F;
 }
-#inscription .wrap2 label {
+#formulaire .wrap2 label {
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 0.8rem;
-}
-
-#connexion {
-  padding: 5rem 0;
-  background-color: #F1F1F1;
-}
-#connexion .wrap2 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-#connexion .wrap2 .cadre_left {
-  width: 20%;
-}
-#connexion .wrap2 .cadre_left img {
-  width: 150%;
-}
-#connexion .wrap2 #missing_password {
-  margin-top: 0.7rem;
-  text-align: center;
-}
-#connexion .wrap2 #missing_password a {
-  font-size: 1.1rem;
-  color: #FB9D2C;
-  text-decoration: underline;
-}
-#connexion .wrap2 #missing_password a:hover {
-  color: #050B4F;
 }
 
 footer {

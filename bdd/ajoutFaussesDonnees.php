@@ -30,7 +30,7 @@ $dateMax = 1606906653;
 // ICMP protolcol status 95% good autre 10%
 // si good headerCheckSum & protocol-checksum = '0x(random)(random)(random)(random)
 
-for($i=0; $i<80 ;$i++){
+for($i=0; $i<100 ;$i++){
     //   generedate
     $date =  $dateMax-(random_int(1,10000000)); 
     //ttl
@@ -46,14 +46,7 @@ for($i=0; $i<80 ;$i++){
     // genereID  
     $identification = 'x0'.substr(sha1(mt_rand()),17,5);     
     // Version 
-    $randomIpType = random_int(0,100);
-        if($randomIpType>40){
-            $version = '4'; //60%
-            $service = '0x00';
-        }else{
-            $version = '6'; //40%
-            $service = '0x20';
-        }
+    
     // nomProtocol
     $randomProtocol = random_int(0,100);
     $protocolPortsDest  = '443';
@@ -61,8 +54,21 @@ for($i=0; $i<80 ;$i++){
     $flagsCode = '0x00';
     $status ='';
     $protocolType = '';
+    $randomIpType = random_int(0,100);
     if($randomIpType<50){
         $protocolName = 'ICMP';
+        // version
+        $randomVersion = random_int(0,100);
+        if($randomVersion>62){
+            $version = '4'; //60%
+            $service = '0x00';
+        }else{
+            $version = '6'; //40%
+            $service = '0x20';
+        }
+
+
+        // 
         $protocolPortsFrom = '51062';
         $randomGood = random_int(0,100);
         $protocolFlagsCode  = '0x01'.rand(1, 9);
@@ -82,6 +88,16 @@ for($i=0; $i<80 ;$i++){
         }
     }elseif($randomIpType<60){
         $protocolName  = 'TLSv1.2';
+        // version 
+        $randomVersion = random_int(0,100);
+        if($randomVersion>4){
+            $version = '4'; //60%
+            $service = '0x00';
+        }else{
+            $version = '6'; //40%
+            $service = '0x20';
+        }
+        // 
         $protocolPortsFrom = '50046';
         $protocolFlagsCode = '0x01'.rand(1, 9);
         $randomGood = random_int(0,100);
@@ -93,6 +109,16 @@ for($i=0; $i<80 ;$i++){
         }
     }elseif($randomIpType<70){
         $protocolName  = 'TCP';
+        // version 
+        $randomVersion = random_int(0,100);
+        if($randomVersion>76){
+            $version = '4'; //60%
+            $service = '0x00';
+        }else{
+            $version = '6'; //40%
+            $service = '0x20';
+        }
+        
         $protocolPortsFrom = '51062';
         $protocolFlagsCode = '0x01'.rand(1, 9);
         $randomGood = random_int(0,100);
@@ -103,6 +129,15 @@ for($i=0; $i<80 ;$i++){
         }
     }else{
         $protocolName = 'UDP';
+
+        $randomVersion = random_int(0,100);
+        if($randomVersion>21){
+            $version = '4'; //60%
+            $service = '0x00';
+        }else{
+            $version = '6'; //40%
+            $service = '0x20';
+        }
         $protocolPortsFrom = '50046';
         $protocolFlagsCode = '';
         $protocolePortsDest = '3481';

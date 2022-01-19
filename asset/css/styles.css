@@ -248,12 +248,11 @@ input {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: center;
   text-align: center;
 }
 #header nav .burger {
   position: absolute;
-  top: 2rem;
+  top: 1rem;
   right: 2rem;
   width: 50px;
   height: 50px;
@@ -279,7 +278,8 @@ input {
   font-size: 2rem;
   padding: 0.5rem 1rem;
   border: solid 1px #FB9D2C;
-  color: #FB9D2C;
+  border-radius: 0.3rem;
+  color: #818080;
   text-align: center;
   cursor: pointer;
   z-index: 999;
@@ -288,12 +288,13 @@ input {
   font-size: 2rem;
   padding: 0.5rem 1rem;
   border: solid 1px #FB9D2C;
+  border-radius: 0.3rem;
   color: white;
   text-align: center;
   cursor: pointer;
   z-index: 99;
 }
-@media (max-width: 350px) {
+@media (max-width: 950px) {
   #header nav .logo_nav {
     display: none;
   }
@@ -346,6 +347,7 @@ input {
 #header nav .header_btn .btn-a:hover {
   background-color: #FB9D2C;
   color: black;
+  transition: 0.3s;
 }
 #header nav .header_btn .btn-a::before {
   display: none;
@@ -919,6 +921,12 @@ footer #copyright {
   justify-content: space-between;
   padding: 1rem;
 }
+@media (max-width: 700px) {
+  #log .search {
+    flex-flow: column nowrap;
+    gap: 2rem;
+  }
+}
 #log .search h2 {
   font-weight: 400;
   font-size: 1.4rem;
@@ -927,6 +935,12 @@ footer #copyright {
   display: flex;
   align-items: center;
 }
+@media (max-width: 700px) {
+  #log .search .tram {
+    flex-flow: column nowrap;
+    gap: 1.5rem;
+  }
+}
 #log .search .tram .type_tram {
   display: flex;
   align-items: center;
@@ -934,6 +948,11 @@ footer #copyright {
 #log .search .tram label {
   font-size: 1.3rem;
   margin-left: 1rem;
+}
+@media (max-width: 700px) {
+  #log .search .tram label {
+    font-size: 1rem;
+  }
 }
 #log .search .tram select {
   background-color: #43485A;
@@ -1023,6 +1042,11 @@ footer #copyright {
   #tableau .rwd-table th:last-child {
     padding-right: 0;
   }
+}
+
+i {
+  font-size: 3rem;
+  color: black;
 }
 
 .popup {

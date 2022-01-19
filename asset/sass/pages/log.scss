@@ -11,6 +11,10 @@
         margin-bottom: 1rem;
     }
     .search{
+      @include breakpoints(tablette){
+        flex-flow: column nowrap;
+        gap: 2rem;
+      }
         background-color: $violet;
         display: flex;
         color: white;
@@ -22,6 +26,10 @@
         font-size: 1.4rem;
       }
       .tram{
+        @include breakpoints(tablette){
+          flex-flow: column nowrap;
+          gap: 1.5rem;
+        }
           display: flex;
           align-items: center;
           .type_tram{
@@ -29,6 +37,9 @@
               align-items: center;
           }
           label{
+            @include breakpoints(tablette){
+              font-size: 1rem;
+            }
               font-size: 1.3rem;
               margin-left: 1rem;
           }
@@ -125,6 +136,14 @@
     }
   } 
 }       
+}
+
+
+i{
+  font-size: 3rem;
+  color: black;
+  //visibility: hidden;
+  //z-index: 99;
 }
 
 

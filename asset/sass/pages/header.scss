@@ -8,12 +8,12 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    align-items: center;
+    //align-items: center;
     text-align: center;
 
     .burger {
       position: absolute;
-      top: 2rem;
+      top: 1rem;
       right: 2rem;
       width: 50px;
       height: 50px;
@@ -33,7 +33,8 @@
         font-size: 2rem;
         padding: .5rem 1rem;
         border: solid 1px $orange;
-        color: $orange;
+        border-radius: .3rem;
+        color: #818080;
         text-align: center;
         cursor: pointer;
         z-index: 999;
@@ -43,6 +44,7 @@
         font-size: 2rem;
         padding: .5rem 1rem;
         border: solid 1px $orange;
+        border-radius: .3rem;
         color: white;
         text-align: center;
         cursor: pointer;
@@ -50,21 +52,14 @@
       }
     }
 
-
-
-
-
     .logo_nav{
-      @include breakpoints(Phone){
+      @include breakpoints(litleLaptop){
         display: none;
       }
       img{
         width: 8rem;
       }
     }
-
-
-
 
     .header_btn{
       @include breakpoints(litleLaptop){
@@ -91,7 +86,6 @@
         text-align: center;
         @include breakpoints(litleLaptop){
 
-
         }
       }
       a:after{
@@ -117,6 +111,7 @@
       .btn-a:hover{
         background-color: $orange;
         color: black;
+        transition: .3s;
       }
       .btn-a::before{
         display: none;

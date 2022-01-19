@@ -42,7 +42,7 @@ if(!empty($_POST['submitted'])){
 include('../inc/header.php');
 ?>
 
-<section id="connexion">
+<section id="formulaire">
 <div class="wrap2">
     <div class="cadre_left">
     <img src="<?php echo ROOTDIR; ?>asset/img/wing.png" alt="illustration éclair bleu">

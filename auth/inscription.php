@@ -72,7 +72,7 @@ include('../inc/header.php');
 ?>
 
 <?php if($success==false){ ?>
-<section id="inscription">
+<section id="formulaire">
     <div class="wrap2">
     <div class="cadre_left">
     <img src="../asset/img/wing.png" alt="illustration éclair bleu">

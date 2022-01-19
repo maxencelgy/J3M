@@ -376,6 +376,27 @@ input {
   transition: 0.5s;
 }
 
+#flecheHaut {
+  font-size: 5rem;
+  position: fixed;
+  right: 5rem;
+  bottom: 5rem;
+  color: #FB9D2C;
+  opacity: 0.8;
+}
+
+.flecheHaut:hover {
+  cursor: pointer;
+}
+
+@keyframes opacityAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
 #inscription {
   padding: 5.1rem 0;
   background-color: #F1F1F1;

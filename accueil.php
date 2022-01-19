@@ -14,6 +14,7 @@ include_once('inc/header.php');
         </div>
 </section>
 
+
 <section id="infos">
 	<h2> <i>Ils nous ont fait confiance</i>  </h2>
 	<div id="contentContainer" class="trans3d"> 	
@@ -34,6 +35,7 @@ include_once('inc/header.php');
         <img src="asset/img/supveto.jpg" alt="">
     </div>
 
+    <a href="#acceuil"><i id="flecheHaut" class="fas fa-arrow-circle-up"></i></a>
 </section>
 
 <section id="where">

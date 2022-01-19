@@ -180,18 +180,24 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
                if(element == i){
                    count[i]++
                }
+             
         }
     })
+
         // console.log(count);
         // console.log(count[16]);
-       
-        const infosICMP = document.querySelector('#infosICMP');
-        infosICMP.innerHTML = `Il y a ${data.length} trames ${data[0].protocol_name} depuis le ${getLogDate(data.pop().date).substr(0, 10)}`; 
-    
 
+        console.log(data);
+       
+        let data2 = Array.from(data);
+        
+        const infosICMP = document.querySelector('#infosICMP');
+        infosICMP.innerHTML = `Il y a ${data.length} trames ${data[0].protocol_name} depuis le ${getLogDate(data2.pop().date).substr(0, 10)}`; 
+        
         // //////////////////////////////////////// Nombre De ping Ip selon L'heure /////////////////////
         threeCanvas = document.getElementById('canvasIcmp3');
         let three = threeCanvas.getContext('2d');
+       
         three.canvas.width = 1000;
         let threeConfig = {
             type: 'bar',
@@ -199,7 +205,7 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
                 labels: ["0h", "1h", "2h", "3h", "4h", "5h", "6h","7h","8h","9h","10h","11h","12h","13h","14h","15h","16h","17h","18h","19h","20h","21h","22h","23h"],
                 datasets: [{
                     label: 'Moyenne des heures influentes de la réception des trames',
-                    data: [count[0], count[1], count[2], count[3], count[4], count[5], count[6],count[7],count[8],count[9],count[10],count[11],count[12],count[13],count[14],count[15],count[16],count[17],count[18],count[16],count[17],count[18],count[19],count[20],count[21],count[22],count[23]],
+                    data: [count[0], count[1], count[2], count[3], count[4], count[5], count[6],count[7],count[8],count[9],count[10],count[11],count[12],count[13],count[14],count[15],count[16],count[17],count[18],count[19],count[20],count[21],count[22],count[23]],
                     backgroundColor: "#FB9D2C",
                     borderColor: "#FB9D2C",
                     borderWidth: 1
@@ -308,10 +314,14 @@ fetch('http://localhost/J3M/ajax/TCP/getDataTcp.php')
             }
             
         });   
+
+        // POUR LE BUG DE POP
+        let data2 = Array.from(data);
         
         const infosTCP = document.querySelector('#infosTCP');
-        infosTCP.innerHTML = `Il y a ${data.length} trames ${data[0].protocol_name} depuis le ${getLogDate(data.pop().date).substr(0, 10)}`; 
-    
+        infosTCP.innerHTML = `Il y a ${data.length} trames ${data[0].protocol_name} depuis le ${getLogDate(data2.pop().date).substr(0, 10)}`; 
+        
+        
 
 
         /////////////////////////////////  CHART JS TABLEAU IP EN FONCTION DES HEURES ///////////
@@ -362,7 +372,7 @@ fetch('http://localhost/J3M/ajax/TCP/getDataTcp.php')
                 labels: ["0h", "1h", "2h", "3h", "4h", "5h", "6h","7h","8h","9h","10h","11h","12h","13h","14h","15h","16h","17h","18h","19h","20h","21h","22h","23h"],
                 datasets: [{
                     label: 'Moyenne des heures influentes de la réception des trames',
-                    data: [count[0], count[1], count[2], count[3], count[4], count[5], count[6],count[7],count[8],count[9],count[10],count[11],count[12],count[13],count[14],count[15],count[16],count[17],count[18],count[16],count[17],count[18],count[19],count[20],count[21],count[22],count[23]],
+                    data: [count[0], count[1], count[2], count[3], count[4], count[5], count[6],count[7],count[8],count[9],count[10],count[11],count[12],count[13],count[14],count[15],count[16],count[17],count[18],count[19],count[20],count[21],count[22],count[23]],
                     backgroundColor: "#FB9D2C",
                     borderColor: "#FB9D2C",
                     borderWidth: 1
@@ -386,11 +396,8 @@ fetch('http://localhost/J3M/ajax/TCP/getDataTcp.php')
                 },
             }
         };
-
         let threeChart = new Chart(three, threeConfig);
-
 }) // fin du fectch
-
 
 ///////////////////////////////////////////////////////// TLS //////////////////////////////////////
 fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
@@ -463,10 +470,12 @@ fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
         });        
 
 
+        let data2 = Array.from(data);
+        
         const infosTLS = document.querySelector('#infosTLS');
-        infosTLS.innerHTML = `Il y a ${data.length} trames ${data[0].protocol_name} depuis le ${getLogDate(data.pop().date).substr(0, 10)}`; 
+        infosTLS.innerHTML = `Il y a ${data.length} trames ${data[0].protocol_name} depuis le ${getLogDate(data2.pop().date).substr(0, 10)}`; 
 
-        console.log(data);
+        
         /////////////////////////////////  CHART JS TABLEAU IP EN FONCTION DES HEURES ///////////
 
         /////////////////////FUNCTION POUR TRANSFORMER LA DATE EN DATE LISIBLE////////////////////
@@ -514,7 +523,7 @@ fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
                 labels: ["0h", "1h", "2h", "3h", "4h", "5h", "6h","7h","8h","9h","10h","11h","12h","13h","14h","15h","16h","17h","18h","19h","20h","21h","22h","23h"],
                 datasets: [{
                     label: 'Moyenne des heures influentes de la réception des trames',
-                    data: [count[0], count[1], count[2], count[3], count[4], count[5], count[6],count[7],count[8],count[9],count[10],count[11],count[12],count[13],count[14],count[15],count[16],count[17],count[18],count[16],count[17],count[18],count[19],count[20],count[21],count[22],count[23]],
+                    data: [count[0], count[1], count[2], count[3], count[4], count[5], count[6],count[7],count[8],count[9],count[10],count[11],count[12],count[13],count[14],count[15],count[16],count[17],count[18],count[19],count[20],count[21],count[22],count[23]],
                     backgroundColor: "#FB9D2C",
                     borderColor: "#FB9D2C",
                     borderWidth: 1
@@ -615,9 +624,10 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
             
         });    
         
+        let data2 = Array.from(data);
+        
         const infosUDP = document.querySelector('#infosUDP');
-        infosUDP.innerHTML = `Il y a ${data.length} trames ${data[0].protocol_name} depuis le ${getLogDate(data.pop().date).substr(0, 10)}`; 
-
+        infosUDP.innerHTML = `Il y a ${data.length} trames ${data[0].protocol_name} depuis le ${getLogDate(data2.pop().date).substr(0, 10)}`; 
 
 
     /////////////////////////////////  CHART JS TABLEAU IP EN FONCTION DES HEURES ///////////
@@ -662,7 +672,7 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
                 labels: ["0h", "1h", "2h", "3h", "4h", "5h", "6h","7h","8h","9h","10h","11h","12h","13h","14h","15h","16h","17h","18h","19h","20h","21h","22h","23h"],
                 datasets: [{
                     label: 'Moyenne des heures influentes de la réception des trames',
-                    data: [count[0], count[1], count[2], count[3], count[4], count[5], count[6],count[7],count[8],count[9],count[10],count[11],count[12],count[13],count[14],count[15],count[16],count[17],count[18],count[16],count[17],count[18],count[19],count[20],count[21],count[22],count[23]],
+                    data: [count[0], count[1], count[2], count[3], count[4], count[5], count[6],count[7],count[8],count[9],count[10],count[11],count[12],count[13],count[14],count[15],count[16],count[17],count[18],count[19],count[20],count[21],count[22],count[23]],
                     backgroundColor: "#FB9D2C",
                     borderColor: "#FB9D2C",
                     borderWidth: 1

@@ -1,5 +1,8 @@
 #header{
   nav{
+    @include breakpoints(litleLaptop){
+      padding: 0;
+    }
     padding: 0 1rem;
     width: 100%;
     position: fixed;
@@ -24,7 +27,9 @@
       }
       #burger{
         display: none;
-        @include breakpoints(litleLaptop){display: block;}
+        @include breakpoints(litleLaptop){
+          display: block;
+        }
       }
 
       .fa-bars::before{
@@ -65,8 +70,13 @@
         background-color: #232222;
         width: 100%;
         flex-direction: column;
-        //justify-content: left;
-        // background-color: red;
+        padding: 4rem 0 2rem 0;
+      }
+      @include breakpoints(tablette){
+        font-size: 1rem;
+      }
+      @include breakpoints(Phone){
+        font-size: .8rem;
       }
 
       display: flex;
@@ -82,9 +92,6 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        @include breakpoints(litleLaptop){
-
-        }
       }
       a:after{
         content: '';
@@ -102,6 +109,10 @@
       }
 
       .btn-a{
+        @include breakpoints(litleLaptop){
+          width: 35%;
+          margin: 0 auto;
+        }
         padding: .5rem;
         border: solid 1px $orange ;
         border-radius: .4rem;

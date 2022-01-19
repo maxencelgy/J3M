@@ -147,6 +147,18 @@
   align-items: center;
   justify-content: space-between;
 
+  #crossPop{
+    position: absolute;
+    cursor: pointer;
+    top: 3%;
+    right: 5%;
+    font-size: 3rem;
+  }
+  #crossPop:hover{
+   color: $orange;
+   transition: .5s;
+  }
+
   h2{
     font-size: 1.5rem;
     font-weight: 400;

@@ -62,9 +62,6 @@ if(isLogged() == true){
     <div class="right">
         
     </div>
-
-
-
 </div>
 
 

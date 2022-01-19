@@ -111,6 +111,7 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
         
         let protocolNameConfig = {
             type: 'bar',
+            
             data: {
                 labels: ['Ping OK : '+pourcentagePingOK+'%','Ping KO : '+pourcentagePingKO+'%'],
                 datasets: [{
@@ -130,8 +131,16 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
                         backgroundColor:'rgba(255, 99, 132, 0.2)', 
                     }               
             
-                ]},
-            options: {
+                ]},                
+            options: { 
+                scales: {
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },                
                 responsive: false,
                 title: {
                     display: true,
@@ -140,9 +149,10 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
                     text: 'Taux de ping valide',
                 },
                 legend: {
-                    display: false,
+                    display: false,                
+                },
+                       
                 
-                }
             }
         };
         let protocolNameChart = new Chart(protocolName, protocolNameConfig);

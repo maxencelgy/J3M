@@ -19,7 +19,6 @@
       height: 50px;
       display: none;
       @include breakpoints(litleLaptop){display: block;}
-
       #croix{
         display: none;
       }
@@ -27,7 +26,6 @@
         display: none;
         @include breakpoints(litleLaptop){display: block;}
       }
-
 
       .fa-bars::before{
         font-size: 2rem;

@@ -15,8 +15,7 @@ var addX = 0;
 
 $(document).ready(init)
 
-// Menu BURGER /////////////////////////////////////////////
-
+////////////////////// Menu BURGER /////////////////////////////////////////////
     const burger = $('#burger');
     const croix = $('#croix');
     const nav = $('nav');

@@ -146,9 +146,9 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
             }
         };
         let protocolNameChart = new Chart(protocolName, protocolNameConfig);
-         let ipDate = data.map(function (e) {
-            return getLogDate(e.date);
-        }); 
+        let ipDate = data.map(function (e) {
+                return getLogDate(e.date);
+            }); 
        
         /////////////////////////// INIATILASATION ////////////////////////////////
         let tab = []

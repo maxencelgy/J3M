@@ -6,11 +6,15 @@
     align-items: center;
     justify-content: space-between;
     .cadre_left {
+      @include  breakpoints(tablette){
+        display: none;
+      }
       width: 20%;
       img {
         width: 150%;
       }
     }
+
     #missing_password{
       margin-top: .7rem;
       text-align: center;
@@ -24,17 +28,37 @@
       }
     }
     .cgu{
+      @include breakpoints(tablette){
+        gap: 2rem;
+        input[type=checkbox]{
+          width: 70px;
+          height: 70px;
+        }
+      }
+      @include breakpoints(bigPhone2){
+        gap: .7rem;
+      }
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
       justify-content: center;
       font-size: 1.2rem;
       padding-top: 1.5rem;
-      input{
+      gap: 2rem;
+      input[type=checkbox]{
         flex: .2;
         margin-bottom: inherit;
+        width: 50px;
+        height: 50px;
       }
       a{
+        @include breakpoints(bigPhone2){
+          font-size: .7rem;
+          input[type=checkbox]{
+            width: 50px;
+            height: 50px;
+          }
+        }
         flex: 3;
         text-decoration: underline;
         color: $orange;
@@ -44,6 +68,10 @@
       }
     }
     label{
+      @include breakpoints(bigPhones){
+        font-size: 1rem;
+        width: 80%;
+      }
       font-size: 1.5rem;
       font-weight: 400;
       margin-bottom: .8rem;

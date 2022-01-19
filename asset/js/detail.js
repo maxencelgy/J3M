@@ -17,7 +17,7 @@ function getLogDate(logDate){
   return dateClean
   }
 
-// ICMP
+///////////////////////////////////////////////////////// ICMP //////////////////////////////////////
 fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
     .then (function(response){  
         return response.json()
@@ -212,7 +212,7 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
 
 
 
-
+///////////////////////////////////////////////////////// TCP //////////////////////////////////////
 
 
 fetch('http://localhost/J3M/ajax/TCP/getDataTcp.php')
@@ -362,7 +362,7 @@ fetch('http://localhost/J3M/ajax/TCP/getDataTcp.php')
 }) // fin du fectch
 
 
-
+///////////////////////////////////////////////////////// TLS //////////////////////////////////////
 fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
     .then (function(response){
         return response.json()
@@ -466,8 +466,6 @@ fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
 
         // console.log(count[16]);
        
-
-
         // //////////////////////////////////////// Nombre De ping Ip selon L'heure /////////////////////
 
        
@@ -509,6 +507,8 @@ fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
 
 }) // fin du fectch
 
+
+///////////////////////////////////////////////////////// UDP //////////////////////////////////////
 
 fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
     .then (function(response){
@@ -578,9 +578,9 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
             }
             
         });        
-        /////////////////////////////////  CHART JS TABLEAU IP EN FONCTION DES HEURES ///////////
+    /////////////////////////////////  CHART JS TABLEAU IP EN FONCTION DES HEURES ///////////
 
-        /////////////////////FUNCTION POUR TRANSFORMER LA DATE EN DATE LISIBLE////////////////////
+    /////////////////////FUNCTION POUR TRANSFORMER LA DATE EN DATE LISIBLE////////////////////
       
          let ipDate = data.map(function (e) {
             return getLogDate(e.date);
@@ -594,7 +594,7 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
         });   
 
     
-        // ///////////////////////////TABLEAU ASSOCIATIF//////////////////////////
+    // ///////////////////////////TABLEAU ASSOCIATIF//////////////////////////
         let count = new Object();
 
         for (let i = 0; i< 24; i++){
@@ -609,11 +609,7 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
                }
         }
     })
-        // console.log(count);
-
-        // console.log(count[16]);
        
-
         // //////////////////////////////////////// Nombre De ping Ip selon L'heure /////////////////////
         threeCanvas = document.getElementById('canvasUdp3');
         let three = threeCanvas.getContext('2d');

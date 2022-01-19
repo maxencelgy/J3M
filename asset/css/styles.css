@@ -919,6 +919,12 @@ footer #copyright {
   justify-content: space-between;
   padding: 1rem;
 }
+@media (max-width: 700px) {
+  #log .search {
+    flex-flow: column nowrap;
+    gap: 2rem;
+  }
+}
 #log .search h2 {
   font-weight: 400;
   font-size: 1.4rem;
@@ -927,6 +933,12 @@ footer #copyright {
   display: flex;
   align-items: center;
 }
+@media (max-width: 700px) {
+  #log .search .tram {
+    flex-flow: column nowrap;
+    gap: 1.5rem;
+  }
+}
 #log .search .tram .type_tram {
   display: flex;
   align-items: center;
@@ -934,6 +946,11 @@ footer #copyright {
 #log .search .tram label {
   font-size: 1.3rem;
   margin-left: 1rem;
+}
+@media (max-width: 700px) {
+  #log .search .tram label {
+    font-size: 1rem;
+  }
 }
 #log .search .tram select {
   background-color: #43485A;

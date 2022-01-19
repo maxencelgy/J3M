@@ -109,6 +109,11 @@ input {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
+@media (max-width: 480px) {
+  input {
+    font-size: 0.7rem;
+  }
+}
 
 .info_box_success {
   text-align: center;
@@ -141,6 +146,17 @@ input {
   transition: 0.3s;
   background-color: transparent;
   border-radius: 15px;
+}
+@media (max-width: 550px) {
+  .btn input[type=submit] {
+    padding: 0.7rem 1.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .btn input[type=submit] {
+    padding: 0.5rem 0.7rem;
+    font-size: 9px;
+  }
 }
 
 .btn-1::before,
@@ -182,6 +198,20 @@ input {
 
 .cadre_right {
   width: 80%;
+}
+@media (max-width: 700px) {
+  .cadre_right {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .cadre_right h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .cadre_right h1 {
+    font-size: 1rem;
+  }
 }
 .cadre_right h1 {
   text-align: center;
@@ -420,6 +450,11 @@ input {
 #formulaire .wrap2 .cadre_left {
   width: 20%;
 }
+@media (max-width: 700px) {
+  #formulaire .wrap2 .cadre_left {
+    display: none;
+  }
+}
 #formulaire .wrap2 .cadre_left img {
   width: 150%;
 }
@@ -442,15 +477,41 @@ input {
   justify-content: center;
   font-size: 1.2rem;
   padding-top: 1.5rem;
+  gap: 2rem;
 }
-#formulaire .wrap2 .cgu input {
+@media (max-width: 700px) {
+  #formulaire .wrap2 .cgu {
+    gap: 2rem;
+  }
+  #formulaire .wrap2 .cgu input[type=checkbox] {
+    width: 70px;
+    height: 70px;
+  }
+}
+@media (max-width: 500px) {
+  #formulaire .wrap2 .cgu {
+    gap: 0.7rem;
+  }
+}
+#formulaire .wrap2 .cgu input[type=checkbox] {
   flex: 0.2;
   margin-bottom: inherit;
+  width: 50px;
+  height: 50px;
 }
 #formulaire .wrap2 .cgu a {
   flex: 3;
   text-decoration: underline;
   color: #FB9D2C;
+}
+@media (max-width: 500px) {
+  #formulaire .wrap2 .cgu a {
+    font-size: 0.7rem;
+  }
+  #formulaire .wrap2 .cgu a input[type=checkbox] {
+    width: 50px;
+    height: 50px;
+  }
 }
 #formulaire .wrap2 .cgu a:hover {
   color: #050B4F;
@@ -459,6 +520,12 @@ input {
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 0.8rem;
+}
+@media (max-width: 550px) {
+  #formulaire .wrap2 label {
+    font-size: 1rem;
+    width: 80%;
+  }
 }
 
 footer {
@@ -502,6 +569,11 @@ footer .footer h2 {
 }
 footer .footer p {
   font-size: 1rem;
+}
+@media (max-width: 480px) {
+  footer .footer p {
+    font-size: 0.7rem;
+  }
 }
 footer .footer .div_foot {
   width: 19%;
@@ -801,6 +873,13 @@ footer #copyright {
 .detail h2 {
   color: white;
   text-align: center;
+  margin-bottom: 2rem;
+}
+.detail .infos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
 }
 
 .secNone {
@@ -842,6 +921,12 @@ footer #copyright {
   justify-content: space-between;
   padding: 1rem;
 }
+@media (max-width: 700px) {
+  #log .search {
+    flex-flow: column nowrap;
+    gap: 2rem;
+  }
+}
 #log .search h2 {
   font-weight: 400;
   font-size: 1.4rem;
@@ -850,6 +935,12 @@ footer #copyright {
   display: flex;
   align-items: center;
 }
+@media (max-width: 700px) {
+  #log .search .tram {
+    flex-flow: column nowrap;
+    gap: 1.5rem;
+  }
+}
 #log .search .tram .type_tram {
   display: flex;
   align-items: center;
@@ -857,6 +948,11 @@ footer #copyright {
 #log .search .tram label {
   font-size: 1.3rem;
   margin-left: 1rem;
+}
+@media (max-width: 700px) {
+  #log .search .tram label {
+    font-size: 1rem;
+  }
 }
 #log .search .tram select {
   background-color: #43485A;
@@ -972,6 +1068,17 @@ i {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.popup #crossPop {
+  position: absolute;
+  cursor: pointer;
+  top: 3%;
+  right: 5%;
+  font-size: 3rem;
+}
+.popup #crossPop:hover {
+  color: #FB9D2C;
+  transition: 0.5s;
 }
 .popup h2 {
   font-size: 1.5rem;

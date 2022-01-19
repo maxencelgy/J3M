@@ -30,9 +30,11 @@ if(isLogged() == true){
 <!-- TCP -->
 <section class="detail " id="graphiqueTCP">
 <h2 class="title">TCP</h2>
-<div class="double_box">
+    <div class="single_box">
+        <div class="infos" id="infosTCP"></div>
+    </div> 
+<div class="single_box">
         <canvas id="canvasTcp1" class="canvas"></canvas>
-        <canvas id="canvasTcp2" class="canvas"></canvas>
     </div>
     <div class="single_box">
         <canvas id="canvasTcp3" class="canvas"></canvas>
@@ -43,9 +45,11 @@ if(isLogged() == true){
 
 <section class="detail secNone" id="graphiqueUDP">
 <h2 class="title">UDP</h2>
-<div class="double_box">
+<div class="single_box">
+     <div class="infos" id="infosUDP"></div>
+</div>  
+<div class="single_box">
         <canvas id="canvasUdp1" class="canvas"></canvas>
-        <canvas id="canvasUdp2" class="canvas"></canvas>
     </div>
     <div class="single_box">
         <canvas id="canvasUdp3" class="canvas"></canvas>
@@ -56,9 +60,14 @@ if(isLogged() == true){
 
 <section class="detail secNone" id="graphiqueTLS">
 <h2 class="title">TLS</h2>
-<div class="double_box">
+
+<div class="single_box">
+    <div class="infos" id="infosTLS"></div>
+</div>  
+
+<div class="single_box">
         <canvas id="canvasTls1" class="canvas"></canvas>
-        <canvas id="canvasTls2" class="canvas"></canvas>
+    
     </div>
     <div class="single_box">
         <canvas id="canvasTls3" class="canvas"></canvas>
@@ -69,10 +78,16 @@ if(isLogged() == true){
 <section class="detail secNone" id="graphiqueICMP">
 
 <h2 class="title">ICMP</h2>
+<div class="single_box">
+        <div class="infos" id="infosICMP"></div>
+    </div>
 <div class="double_box">
         <canvas id="canvasIcmp1" class="canvas"></canvas>
         <canvas id="canvasIcmp2" class="canvas"></canvas>
     </div>
+
+    
+
     <div class="single_box">
         <canvas id="canvasIcmp3" class="canvas"></canvas>
     </div>  

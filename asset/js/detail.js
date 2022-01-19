@@ -17,12 +17,28 @@ function getLogDate(logDate){
   return dateClean
   }
 
+
+// function tramNumberTextDate(index, data){
+//     if(index == 0){
+//         let tram = "Il n'y a pas de trame" + data[0].protocol_name;
+//     }else if (index == 1){
+//         let tram = "Il y a une trame " + data[0].protocol_name + " depuis" + getLogDate(data.pop().date).substr(0, 10)
+//     }else{
+//         let tram = "Il y a" + data.length + " trames " + data[0].protocol_name + "depuis le" + getLogDate(data.pop().date).substr(0, 10)
+//     }
+//     return tram;
+// } 
+
+
+
+
+
 ///////////////////////////////////////////////////////// ICMP //////////////////////////////////////
 fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
     .then (function(response){  
         return response.json()
     }).then(function (data){
-        console.log(data)
+        // console.log(data)
         // GRAPH IP
         // calcul DATA
         let ipVersion = data.map(function (e) {
@@ -95,6 +111,7 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
         
         let protocolNameConfig = {
             type: 'bar',
+            
             data: {
                 labels: ['Ping OK : '+pourcentagePingOK+'%','Ping KO : '+pourcentagePingKO+'%'],
                 datasets: [{
@@ -114,8 +131,16 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
                         backgroundColor:'rgba(255, 99, 132, 0.2)', 
                     }               
             
-                ]},
-            options: {
+                ]},                
+            options: { 
+                scales: {
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },                
                 responsive: false,
                 title: {
                     display: true,
@@ -124,15 +149,16 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
                     text: 'Taux de ping valide',
                 },
                 legend: {
-                    display: false,
+                    display: false,                
+                },
+                       
                 
-                }
             }
         };
         let protocolNameChart = new Chart(protocolName, protocolNameConfig);
-         let ipDate = data.map(function (e) {
-            return getLogDate(e.date);
-        }); 
+        let ipDate = data.map(function (e) {
+                return getLogDate(e.date);
+            }); 
        
         /////////////////////////// INIATILASATION ////////////////////////////////
         let tab = []
@@ -157,14 +183,13 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
         }
     })
         // console.log(count);
-
         // console.log(count[16]);
        
-
+        const infosICMP = document.querySelector('#infosICMP');
+        infosICMP.innerHTML = `Il y a ${data.length} trames ${data[0].protocol_name} depuis le ${getLogDate(data.pop().date).substr(0, 10)}`; 
+    
 
         // //////////////////////////////////////// Nombre De ping Ip selon L'heure /////////////////////
-
-       
         threeCanvas = document.getElementById('canvasIcmp3');
         let three = threeCanvas.getContext('2d');
         three.canvas.width = 1000;
@@ -194,7 +219,7 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
                     text: 'Moyenne des trames reçu chaques heures',
                 },
                 legend: {
-                    position: 'right',
+                    position: 'bottom'
                 },
             }
         };
@@ -219,7 +244,7 @@ fetch('http://localhost/J3M/ajax/TCP/getDataTcp.php')
     .then (function(response){
         return response.json()
     }).then(function (data){
-        console.log(data)
+        // console.log(data)
         // GRAPH IP
         // calcul DATA
         let ipVersion = data.map(function (e) {
@@ -282,10 +307,15 @@ fetch('http://localhost/J3M/ajax/TCP/getDataTcp.php')
                 }
             }
             
-        });        
+        });   
+        
+        const infosTCP = document.querySelector('#infosTCP');
+        infosTCP.innerHTML = `Il y a ${data.length} trames ${data[0].protocol_name} depuis le ${getLogDate(data.pop().date).substr(0, 10)}`; 
+    
+
+
         /////////////////////////////////  CHART JS TABLEAU IP EN FONCTION DES HEURES ///////////
 
-        /////////////////////FUNCTION POUR TRANSFORMER LA DATE EN DATE LISIBLE////////////////////
          let ipDate = data.map(function (e) {
             return getLogDate(e.date);
         }); 
@@ -352,7 +382,7 @@ fetch('http://localhost/J3M/ajax/TCP/getDataTcp.php')
                     text: 'Moyenne des trames reçu chaques heures',
                 },
                 legend: {
-                    position: 'right',
+                    position: 'bottom'
                 },
             }
         };
@@ -367,7 +397,7 @@ fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
     .then (function(response){
         return response.json()
     }).then(function (data){
-        console.log(data)
+        // console.log(data)
         // GRAPH IP
         // calcul DATA
         let ipVersion = data.map(function (e) {
@@ -431,6 +461,12 @@ fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
             }
             
         });        
+
+
+        const infosTLS = document.querySelector('#infosTLS');
+        infosTLS.innerHTML = `Il y a ${data.length} trames ${data[0].protocol_name} depuis le ${getLogDate(data.pop().date).substr(0, 10)}`; 
+
+        console.log(data);
         /////////////////////////////////  CHART JS TABLEAU IP EN FONCTION DES HEURES ///////////
 
         /////////////////////FUNCTION POUR TRANSFORMER LA DATE EN DATE LISIBLE////////////////////
@@ -498,7 +534,7 @@ fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
                     text: 'Moyenne des trames reçu chaques heures',
                 },
                 legend: {
-                    position: 'right',
+                    position: 'bottom',
                 },
             }
         };
@@ -514,7 +550,7 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
     .then (function(response){
         return response.json()
     }).then(function (data){
-        console.log(data)
+        // console.log(data)
         // GRAPH IP
         // calcul DATA
         let ipVersion = data.map(function (e) {
@@ -577,7 +613,13 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
                 }
             }
             
-        });        
+        });    
+        
+        const infosUDP = document.querySelector('#infosUDP');
+        infosUDP.innerHTML = `Il y a ${data.length} trames ${data[0].protocol_name} depuis le ${getLogDate(data.pop().date).substr(0, 10)}`; 
+
+
+
     /////////////////////////////////  CHART JS TABLEAU IP EN FONCTION DES HEURES ///////////
 
     /////////////////////FUNCTION POUR TRANSFORMER LA DATE EN DATE LISIBLE////////////////////
@@ -640,7 +682,7 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
                     text: 'Moyenne des trames reçu chaques heures',
                 },
                 legend: {
-                    position: 'right',
+                    position: 'bottom',
                 },
             }
         };

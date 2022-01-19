@@ -56,6 +56,22 @@ function getJsonDataUdp()
     $query->execute();    
     return json_encode($query->fetchAll());
 }
+function getJsonDataTls()
+{
+    global $pdo;
+    $sql = "SELECT * FROM `jsondata` WHERE `protocol_name` = 'TLSv1.2'";
+    $query = $pdo->prepare($sql);
+    $query->execute();    
+    return json_encode($query->fetchAll());
+}
+function getJsonDataTcp()
+{
+    global $pdo;
+    $sql = "SELECT * FROM `jsondata` WHERE `protocol_name` = 'TCP'";
+    $query = $pdo->prepare($sql);
+    $query->execute();    
+    return json_encode($query->fetchAll());
+}
 
 //Requete pour recuper//Function pour recuperer user après clique sur lien du mail changement de mdp
 function getUserResetPassword($email,$token){

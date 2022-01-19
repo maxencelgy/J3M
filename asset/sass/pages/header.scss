@@ -55,7 +55,7 @@
 
 
     .logo_nav{
-      @include breakpoints(Phone){
+      @include breakpoints(litleLaptop){
         display: none;
       }
       img{

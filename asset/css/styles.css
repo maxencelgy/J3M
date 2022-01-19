@@ -293,7 +293,7 @@ input {
   cursor: pointer;
   z-index: 99;
 }
-@media (max-width: 350px) {
+@media (max-width: 950px) {
   #header nav .logo_nav {
     display: none;
   }

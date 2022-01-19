@@ -248,12 +248,11 @@ input {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: center;
   text-align: center;
 }
 #header nav .burger {
   position: absolute;
-  top: 2rem;
+  top: 1rem;
   right: 2rem;
   width: 50px;
   height: 50px;
@@ -279,7 +278,8 @@ input {
   font-size: 2rem;
   padding: 0.5rem 1rem;
   border: solid 1px #FB9D2C;
-  color: #FB9D2C;
+  border-radius: 0.3rem;
+  color: #818080;
   text-align: center;
   cursor: pointer;
   z-index: 999;
@@ -288,6 +288,7 @@ input {
   font-size: 2rem;
   padding: 0.5rem 1rem;
   border: solid 1px #FB9D2C;
+  border-radius: 0.3rem;
   color: white;
   text-align: center;
   cursor: pointer;
@@ -346,6 +347,7 @@ input {
 #header nav .header_btn .btn-a:hover {
   background-color: #FB9D2C;
   color: black;
+  transition: 0.3s;
 }
 #header nav .header_btn .btn-a::before {
   display: none;
@@ -1040,6 +1042,11 @@ footer #copyright {
   #tableau .rwd-table th:last-child {
     padding-right: 0;
   }
+}
+
+i {
+  font-size: 3rem;
+  color: black;
 }
 
 .popup {

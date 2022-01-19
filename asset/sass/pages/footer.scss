@@ -33,8 +33,10 @@ footer {
         }
 
         p {
+            @include breakpoints(bigPhone){
+                font-size: .7rem;
+            }
             font-size: 1rem;
-
         }
 
         .div_foot {

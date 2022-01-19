@@ -24,6 +24,10 @@
   *zoom: 1;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
   font-size: 2vw;

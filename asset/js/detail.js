@@ -39,7 +39,7 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
     .then (function(response){  
         return response.json()
     }).then(function (data){
-        // console.log(data)
+
         // GRAPH IP
         // calcul DATA
         let ipVersion = data.map(function (e) {
@@ -160,20 +160,21 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
         /////////////////////////// INIATILASATION ////////////////////////////////
         let tab = []
         ipDate.forEach(element => {
-            // console.log(element.substr(10, 3));
-            const nbrDate = parseInt(element.substring(10, 3));
+            const nbrDate = parseInt(element.substring(11, 14))
             tab.push(nbrDate)
-        });   
+        });
+
         // ///////////////////////////TABLEAU Count//////////////////////////
         let count = getCount(tab);
+
         // array.pop modifie l'objet data, on en créer une copie pour ne pas aletéré l'original
         let data2 = Array.from(data);        
         const infosICMP = document.querySelector('#infosICMP');
         infosICMP.innerHTML = `Il y a ${data.length} trames ${data[0].protocol_name} depuis le ${getLogDate(data2.pop().date).substring(0, 10)}`; 
-        
+       
         // //////////////////////////////////////// Nombre De ping Ip selon L'heure /////////////////////
-        threeCanvas = document.getElementById('canvasIcmp3');
-        let three = threeCanvas.getContext('2d');
+        threeCanvas = document.getElementById('canvasIcmp3')
+        let three = threeCanvas.getContext('2d')
         three.canvas.width = 1000;
         let threeConfig = {
             type: 'bar',
@@ -189,9 +190,12 @@ fetch('http://localhost/J3M/ajax/ICMP/getDataIcmp.php')
             },
             options: {
                 scales: {
-                    y: {
-                        beginAtZero: true,
-                    }
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
                 },
                 responsive: false,
                 title: {
@@ -226,7 +230,6 @@ fetch('http://localhost/J3M/ajax/TCP/getDataTcp.php')
     .then (function(response){
         return response.json()
     }).then(function (data){
-        // console.log(data)
         // GRAPH IP
         // calcul DATA
         let ipVersion = data.map(function (e) {
@@ -309,8 +312,7 @@ fetch('http://localhost/J3M/ajax/TCP/getDataTcp.php')
         /////////////////////////// INIATILASATION ////////////////////////////////
         let tab = []
         ipDate.forEach(element => {
-            // console.log(element.substr(10, 3));
-            const nbrDate = parseInt(element.substring(10, 3));
+            const nbrDate = parseInt(element.substring(11, 14))
             tab.push(nbrDate)
         });   
 
@@ -359,7 +361,6 @@ fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
     .then (function(response){
         return response.json()
     }).then(function (data){
-        // console.log(data)
         // GRAPH IP
         // calcul DATA
         let ipVersion = data.map(function (e) {
@@ -440,8 +441,8 @@ fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
         /////////////////////////// INIATILASATION ////////////////////////////////
         let tab = []
         ipDate.forEach(element => {
-            // console.log(element.substr(10, 3));
-            const nbrDate = parseInt(element.substring(10, 3));
+
+            const nbrDate = parseInt(element.substring(11, 14))
             tab.push(nbrDate)
         });   
 
@@ -466,9 +467,12 @@ fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
             },
             options: {
                 scales: {
-                    y: {
-                        beginAtZero: true,
-                    }
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
                 },
                 responsive: true,
                 maintainAspectRatio: false,
@@ -494,7 +498,6 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
     .then (function(response){
         return response.json()
     }).then(function (data){
-        // console.log(data)
         // GRAPH IP
         // calcul DATA
         let ipVersion = data.map(function (e) {
@@ -573,8 +576,7 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
         /////////////////////////// INIATILASATION ////////////////////////////////
         let tab = []
         ipDate.forEach(element => {
-            // console.log(element.substr(10, 3));
-            const nbrDate = parseInt(element.substring(10, 3));
+            const nbrDate = parseInt(element.substring(11, 14))
             tab.push(nbrDate)
         });     
     // ///////////////////////////TABLEAU ASSOCIATIF//////////////////////////
@@ -597,9 +599,12 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
             },
             options: {
                 scales: {
-                    y: {
-                        beginAtZero: true,
-                    }
+                    yAxes: [{
+                        display: true,
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
                 },
                 responsive: true,
                 maintainAspectRatio: false,

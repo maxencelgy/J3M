@@ -48,7 +48,7 @@ function init()
   item = $( '.carouselItem' );
   itemLength = $( '.carouselItem' ).length;
   rY = 360 / itemLength;
-  radius = Math.round( (280) / Math.tan( Math.PI / itemLength ) );
+  radius = Math.round( (300) / Math.tan( Math.PI / itemLength ) );
   
   // modif container 3d props
   TweenMax.set(container, {perspective:700})

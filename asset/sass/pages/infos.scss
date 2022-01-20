@@ -3,13 +3,9 @@
     @include breakpoints(tablette){
         padding: 12rem 0 2rem 0;
       }
-      
     padding: 14rem 0 28rem 0;
     background-color: rgb(231, 225, 225);
     position: relative;
-
-   
-
     .confiance {
         @include breakpoints(tablette){
             display: block;

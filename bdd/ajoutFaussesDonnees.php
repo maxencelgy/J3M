@@ -8,18 +8,10 @@ require'../inc/fonction/request.php';
 // echo substr(sha1(mt_rand()),17,4); //To Generate Random Numbers with Letters.
 // echo substr(sha1(mt_rand()),17,5); //titre
 $nombredata = 100;
-$IpDest = ['3470ff25','343111a8','acd913e3','c0a8014a','d83ac6ce','c0a8c99f','acd90734','acd9efed','0d85c1c6','0d8523b1'];
-// randomBitintoHexa
-echo '<br>';
-echo $IpDest[9];
-echo '<br>';
-$bytes = random_bytes(2);
-echo '<br>';
-var_dump(bin2hex($bytes));
-echo '<br>';
+$IpDest = ['3470ff25','343111a8','acd913e3','c0a8014a','d83ac6ce','c0a8c99f','acd90734','acd9efed','0d85c1c6','0d8523b1'];// randomBitintoHexa
 
-echo random_int(1,100);
-echo '<br>';
+$bytes = random_bytes(2);
+
 // protocol code false
 $dateMax = 1606906653;
 // verssion iP V4 80% ipV6 20%
@@ -186,7 +178,7 @@ for($i=0; $i<$nombredata ;$i++){
 
     
     $headerLength = 20;
- 
+
     
     //echo $date,$version,$headerLength,$service,$identification,$status,$flagsCode,$ttl,$protocolName,$protocolFlagsCode,$protocolChecksumStatus,$protocolChecksumCode,$protocolPortsFrom,$protocolPortsDest,$protocolType,$protocolCode,$headerChecksum,$ipFrom,$ipDest;
     
@@ -195,6 +187,4 @@ for($i=0; $i<$nombredata ;$i++){
     
 }//fin for
 
-
-?>
-// */
+header('Location: ../content/log.php');

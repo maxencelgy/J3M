@@ -39,6 +39,14 @@ function getJsonData()
     $query->execute();    
     return json_encode($query->fetchAll());
 }
+function getJsonDataLog()
+{
+    global $pdo;
+    $sql = "SELECT * FROM `jsondata` ORDER BY `jsondata`.`date` DESC limit 50";
+    $query = $pdo->prepare($sql);
+    $query->execute();    
+    return json_encode($query->fetchAll());
+}
 
 function getJsonDataIcmp()
 {

@@ -233,7 +233,8 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
                                 beginAtZero: true,
                             }
                         },
-                        responsive: false,
+                        responsive: true,
+                        maintainAspectRatio: false,
                         title: {
                             display: true,
                             fontSize: 30,
@@ -241,7 +242,7 @@ let ajaxData = fetch('http://localhost/J3M/ajax/getDataJson.php')
                             text: 'Requêtes ip',
                         },
                         legend: {
-                            position: 'right',
+                            position: 'top',
                         },
                     }
                 };

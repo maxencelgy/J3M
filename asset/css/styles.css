@@ -383,7 +383,12 @@ input {
   background-color: white;
 }
 #header.second nav .header_btn a {
-  color: white;
+  color: black;
+}
+@media (max-width: 950px) {
+  #header.second nav .header_btn a {
+    color: white;
+  }
 }
 
 #acceuil img {

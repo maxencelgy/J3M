@@ -39,6 +39,14 @@ function getJsonData()
     $query->execute();    
     return json_encode($query->fetchAll());
 }
+function getJsonDataLog()
+{
+    global $pdo;
+    $sql = "SELECT * FROM `jsondata` ORDER BY `jsondata`.`date` DESC limit 50";
+    $query = $pdo->prepare($sql);
+    $query->execute();    
+    return json_encode($query->fetchAll());
+}
 
 function getJsonDataIcmp()
 {
@@ -52,6 +60,22 @@ function getJsonDataUdp()
 {
     global $pdo;
     $sql = "SELECT * FROM `jsondata` WHERE `protocol_name` = 'UDP'";
+    $query = $pdo->prepare($sql);
+    $query->execute();    
+    return json_encode($query->fetchAll());
+}
+function getJsonDataTls()
+{
+    global $pdo;
+    $sql = "SELECT * FROM `jsondata` WHERE `protocol_name` = 'TLSv1.2'";
+    $query = $pdo->prepare($sql);
+    $query->execute();    
+    return json_encode($query->fetchAll());
+}
+function getJsonDataTcp()
+{
+    global $pdo;
+    $sql = "SELECT * FROM `jsondata` WHERE `protocol_name` = 'TCP'";
     $query = $pdo->prepare($sql);
     $query->execute();    
     return json_encode($query->fetchAll());

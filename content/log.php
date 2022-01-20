@@ -16,26 +16,31 @@ if(isLogged() == true){
     <div class="search">
         <h2>Journaux</h2>
         <div class="tram">
-        <div class="type_tram">
-        <label for="trame">Type de trame :</label>
-            <select name="list" id="select-list">
-                <option value="ALL">TOUTE</option>
-                <option value="TCP">TCP</option>
-                <option value="UDP">UDP</option>
-                <option value="TLSv1.2">TLSv1.2</option>
-                <option value="ICMP">ICMP</option>
-            </select>
+            <div class="type_tram">
+                <label for="trame">Type de trame :</label>
+                <select name="list" id="select-list">
+                    <option value="ALL">TOUTE</option>
+                    <option value="TCP">TCP</option>
+                    <option value="UDP">UDP</option>
+                    <option value="TLSv1.2">TLSv1.2</option>
+                    <option value="ICMP">ICMP</option>
+                </select>
+            </div>
+            <div class="type_tram">
+                <label for="trame">Status :</label>
+                <select name="listTwo" id="select-list2">
+                    <option value="Tous">TOUTE</option>
+                    <option value="Acceptée">Acceptée</option>
+                    <option value="Refusée">Refusée</option>
+                </select>
+            </div>
+            <div class="log_button">
+                <a href="../ajax/sendDataJson.php">Actualiser</a>
+                <a class="sendFakeData" href="#">Ajout fausses données</a>
+            </div>
         </div>
-        <div class="type_tram">
-        <label for="trame">Status :</label>
-            <select name="listTwo" id="select-list2">
-                <option value="Tous">TOUTE</option>
-                <option value="Acceptée">Acceptée</option>
-                <option value="Refusée">Refusée</option>
-            </select>
-        </div>
-        <a href="../ajax/sendDataJson.php">Actualiser</a>
-        </div>
+    </div>
+
 </section>
 
 <div class="popup">
@@ -62,16 +67,10 @@ if(isLogged() == true){
     <div class="right">
         
     </div>
-
-
-
 </div>
 
 
 <section id="tableau">
-
-
-
 
 <div class="tab">
     <table class="rwd-table">
@@ -86,6 +85,9 @@ if(isLogged() == true){
           <th>Ip destination</th>
         </tr> 
     </table>
+
+
+    
     <div class="formfirst">        
     </div>
 </div>

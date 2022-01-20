@@ -55,7 +55,7 @@ include('../inc/header.php');
 if($success==false){
 ?>
 
-    <section id="connexion">
+    <section id="formulaire">
         <div class="wrap2">
             <div class="cadre_left">
                 <img src="<?php echo ROOTDIR; ?>asset/img/wing.png" alt="illustration éclair bleu">

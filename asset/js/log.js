@@ -1,6 +1,14 @@
 
 import { getIpNumber , getLogDate } from './fonction.js';
-fetch('http://localhost/J3M/ajax/getDataJson.php')
+// Bouton envoie data
+const bouton = document.querySelector('.sendFakeData')
+bouton.addEventListener("click", e =>{    
+    let verify = confirm("Voulez vous envoyer 100 fausses données ?")
+    if(verify)window.location.replace("http://localhost/J3M/bdd/ajoutFaussesDonnees.php")
+})
+
+
+fetch('http://localhost/J3M/ajax/getDataJsonLog.php')
     .then (function(response){
         return response.json()
     }).then(function (data){     
@@ -17,7 +25,6 @@ fetch('http://localhost/J3M/ajax/getDataJson.php')
             let ipFrom                      = getIpNumber(element.ip_from)
             let ipDest                      = getIpNumber(element.ip_dest)
             form.innerHTML += `
-            <tr class="trame">
             <tr class="tra">
                 <td data-th="id" class="selectTd">${element.identification}</td>
                 <td data-th="date" class="selectTd">${date}</td>  
@@ -69,24 +76,24 @@ fetch('http://localhost/J3M/ajax/getDataJson.php')
 
                 popupRight.innerHTML = 
                 `
-                 <h2 class="violet">${elements.cells[0].innerText}</h2>
-                 <h2>${elements.cells[1].innerText}</h2>
-                 <h2 class="red">${elements.cells[2].innerText}</h2>
-                 <h2 class="vert">${elements.cells[3].innerText}</h2> 
-                 <h2 class="vert">${elements.cells[4].innerText}</h2>
-                 <h2 class="vert">${elements.cells[5].innerText}</h2> 
-                 <h2 class="orange">${elements.cells[6].innerText}</h2> 
-                 <h2 class="orange">${elements.cells[7].innerText}</h2>
-                 <h2 class="orange">v${elements.cells[8].innerText}</h2>
-                 <h2>${elements.cells[9].innerText}</h2>
-                 <h2>${elements.cells[10].innerText}</h2>
-                 <h2>${elements.cells[11].innerText}</h2>                        
-                 <h2 class="orange">${elements.cells[12].innerText}</h2>                        
-                 <h2 class="orange">${elements.cells[13].innerText}</h2>                        
-                 <h2>${elements.cells[14].innerText}</h2>                        
-                 <h2>${elements.cells[15].innerText}</h2>                                        
+                <h2 class="violet">${elements.cells[0].innerText}</h2>
+                <h2>${elements.cells[1].innerText}</h2>
+                <h2 class="red">${elements.cells[2].innerText}</h2>
+                <h2 class="vert">${elements.cells[3].innerText}</h2> 
+                <h2 class="vert">${elements.cells[4].innerText}</h2>
+                <h2 class="vert">${elements.cells[5].innerText}</h2> 
+                <h2 class="orange">${elements.cells[6].innerText}</h2> 
+                <h2 class="orange">${elements.cells[7].innerText}</h2>
+                <h2 class="orange">v${elements.cells[8].innerText}</h2>
+                <h2>${elements.cells[9].innerText}</h2>
+                <h2>${elements.cells[10].innerText}</h2>
+                <h2>${elements.cells[11].innerText}</h2>                        
+                <h2 class="orange">${elements.cells[12].innerText}</h2>                        
+                <h2 class="orange">${elements.cells[13].innerText}</h2>                        
+                <h2>${elements.cells[14].innerText}</h2>                        
+                <h2>${elements.cells[15].innerText}</h2>                                        
                 `
-              });
+            });
         })
 
         // SELECT LIST

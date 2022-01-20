@@ -11,6 +11,10 @@
         margin-bottom: 1rem;
     }
     .search{
+      @include breakpoints(tablette){
+        flex-flow: column nowrap;
+        gap: 2rem;
+      }
         background-color: $violet;
         display: flex;
         color: white;
@@ -22,6 +26,10 @@
         font-size: 1.4rem;
       }
       .tram{
+        @include breakpoints(tablette){
+          flex-flow: column nowrap;
+          gap: 1.5rem;
+        }
           display: flex;
           align-items: center;
           .type_tram{
@@ -29,23 +37,34 @@
               align-items: center;
           }
           label{
+            @include breakpoints(tablette){
+              font-size: 1rem;
+            }
               font-size: 1.3rem;
               margin-left: 1rem;
           }
-          select {
+          select{
               background-color: #43485A;
               color: white;
               padding: .5rem;
               border: none;
               margin-left: 1rem;
           }
+
+        .log_button{
+          display: flex;
+          flex-flow: column nowrap;
+          gap: 1rem;
+          text-align: center;
           a{
-              padding: .5rem;
-              font-size: 1rem;
-              border: solid 1px $orange;
-             
-              margin-left: 2rem;
+            padding: .5rem;
+            font-size: 1rem;
+            border: solid 1px $orange;
+            margin-left: 2rem;
           }
+        }
+
+
           a:hover{
             background-color: $orangeLog;
             transition: .5s;
@@ -128,6 +147,14 @@
 }
 
 
+i{
+  font-size: 3rem;
+  color: black;
+  //visibility: hidden;
+  //z-index: 99;
+}
+
+
 .popup{
   z-index: 3;
   color: whitesmoke;
@@ -146,6 +173,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  #crossPop{
+    position: absolute;
+    cursor: pointer;
+    top: 3%;
+    right: 5%;
+    font-size: 3rem;
+  }
+  #crossPop:hover{
+   color: $orange;
+   transition: .5s;
+  }
 
   h2{
     font-size: 1.5rem;

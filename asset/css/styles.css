@@ -24,6 +24,10 @@
   *zoom: 1;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
   font-size: 2vw;
@@ -105,6 +109,11 @@ input {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
+@media (max-width: 480px) {
+  input {
+    font-size: 0.7rem;
+  }
+}
 
 .info_box_success {
   text-align: center;
@@ -137,6 +146,17 @@ input {
   transition: 0.3s;
   background-color: transparent;
   border-radius: 15px;
+}
+@media (max-width: 550px) {
+  .btn input[type=submit] {
+    padding: 0.7rem 1.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .btn input[type=submit] {
+    padding: 0.5rem 0.7rem;
+    font-size: 9px;
+  }
 }
 
 .btn-1::before,
@@ -179,6 +199,20 @@ input {
 .cadre_right {
   width: 80%;
 }
+@media (max-width: 700px) {
+  .cadre_right {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .cadre_right h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .cadre_right h1 {
+    font-size: 1rem;
+  }
+}
 .cadre_right h1 {
   text-align: center;
   background-color: #050B4F;
@@ -214,15 +248,25 @@ input {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: center;
   text-align: center;
+}
+@media (max-width: 950px) {
+  #header nav {
+    padding: 0;
+  }
 }
 #header nav .burger {
   position: absolute;
-  top: 10%;
-  right: 5%;
+  top: 1rem;
+  right: 2rem;
   width: 50px;
   height: 50px;
+  display: none;
+}
+@media (max-width: 950px) {
+  #header nav .burger {
+    display: block;
+  }
 }
 #header nav .burger #croix {
   display: none;
@@ -230,7 +274,7 @@ input {
 #header nav .burger #burger {
   display: none;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #header nav .burger #burger {
     display: block;
   }
@@ -239,7 +283,8 @@ input {
   font-size: 2rem;
   padding: 0.5rem 1rem;
   border: solid 1px #FB9D2C;
-  color: white;
+  border-radius: 0.3rem;
+  color: #818080;
   text-align: center;
   cursor: pointer;
   z-index: 999;
@@ -248,10 +293,16 @@ input {
   font-size: 2rem;
   padding: 0.5rem 1rem;
   border: solid 1px #FB9D2C;
+  border-radius: 0.3rem;
   color: white;
   text-align: center;
   cursor: pointer;
   z-index: 99;
+}
+@media (max-width: 950px) {
+  #header nav .logo_nav {
+    display: none;
+  }
 }
 #header nav .logo_nav img {
   width: 8rem;
@@ -261,12 +312,23 @@ input {
   align-items: center;
   font-size: 1.2rem;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #header nav .header_btn {
     display: none;
     background-color: #232222;
     width: 100%;
     flex-direction: column;
+    padding: 4rem 0 2rem 0;
+  }
+}
+@media (max-width: 700px) {
+  #header nav .header_btn {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 350px) {
+  #header nav .header_btn {
+    font-size: 0.8rem;
   }
 }
 #header nav .header_btn a {
@@ -298,9 +360,16 @@ input {
   border: solid 1px #FB9D2C;
   border-radius: 0.4rem;
 }
+@media (max-width: 950px) {
+  #header nav .header_btn .btn-a {
+    width: 35%;
+    margin: 0 auto;
+  }
+}
 #header nav .header_btn .btn-a:hover {
   background-color: #FB9D2C;
   color: black;
+  transition: 0.3s;
 }
 #header nav .header_btn .btn-a::before {
   display: none;
@@ -316,6 +385,11 @@ input {
 #header.second nav .header_btn a {
   color: black;
 }
+@media (max-width: 950px) {
+  #header.second nav .header_btn a {
+    color: white;
+  }
+}
 
 #acceuil img {
   width: 25%;
@@ -325,7 +399,7 @@ input {
     width: 145%;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #acceuil img {
     width: 50%;
   }
@@ -346,7 +420,7 @@ input {
   color: white;
   padding: 10rem 0;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #acceuil .main {
     zoom: 1;
   }
@@ -370,73 +444,115 @@ input {
   transition: 0.5s;
 }
 
-#inscription {
+#flecheHaut {
+  font-size: 5rem;
+  position: fixed;
+  right: 5rem;
+  bottom: 5rem;
+  color: #FB9D2C;
+  opacity: 0.8;
+}
+
+.flecheHaut:hover {
+  cursor: pointer;
+}
+
+@keyframes opacityAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+#formulaire {
   padding: 5.1rem 0;
   background-color: #F1F1F1;
 }
-#inscription .wrap2 {
+#formulaire .wrap2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-#inscription .wrap2 .cadre_left {
+#formulaire .wrap2 .cadre_left {
   width: 20%;
 }
-#inscription .wrap2 .cadre_left img {
+@media (max-width: 700px) {
+  #formulaire .wrap2 .cadre_left {
+    display: none;
+  }
+}
+#formulaire .wrap2 .cadre_left img {
   width: 150%;
 }
-#inscription .wrap2 .cgu {
+#formulaire .wrap2 #missing_password {
+  margin-top: 0.7rem;
+  text-align: center;
+}
+#formulaire .wrap2 #missing_password a {
+  font-size: 1.1rem;
+  color: #FB9D2C;
+  text-decoration: underline;
+}
+#formulaire .wrap2 #missing_password a:hover {
+  color: #050B4F;
+}
+#formulaire .wrap2 .cgu {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
   padding-top: 1.5rem;
+  gap: 2rem;
 }
-#inscription .wrap2 .cgu input {
+@media (max-width: 700px) {
+  #formulaire .wrap2 .cgu {
+    gap: 2rem;
+  }
+  #formulaire .wrap2 .cgu input[type=checkbox] {
+    width: 70px;
+    height: 70px;
+  }
+}
+@media (max-width: 500px) {
+  #formulaire .wrap2 .cgu {
+    gap: 0.7rem;
+  }
+}
+#formulaire .wrap2 .cgu input[type=checkbox] {
   flex: 0.2;
   margin-bottom: inherit;
+  width: 50px;
+  height: 50px;
 }
-#inscription .wrap2 .cgu a {
+#formulaire .wrap2 .cgu a {
   flex: 3;
   text-decoration: underline;
   color: #FB9D2C;
 }
-#inscription .wrap2 .cgu a:hover {
+@media (max-width: 500px) {
+  #formulaire .wrap2 .cgu a {
+    font-size: 0.7rem;
+  }
+  #formulaire .wrap2 .cgu a input[type=checkbox] {
+    width: 50px;
+    height: 50px;
+  }
+}
+#formulaire .wrap2 .cgu a:hover {
   color: #050B4F;
 }
-#inscription .wrap2 label {
+#formulaire .wrap2 label {
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 0.8rem;
 }
-
-#connexion {
-  padding: 5rem 0;
-  background-color: #F1F1F1;
-}
-#connexion .wrap2 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-#connexion .wrap2 .cadre_left {
-  width: 20%;
-}
-#connexion .wrap2 .cadre_left img {
-  width: 150%;
-}
-#connexion .wrap2 #missing_password {
-  margin-top: 0.7rem;
-  text-align: center;
-}
-#connexion .wrap2 #missing_password a {
-  font-size: 1.1rem;
-  color: #FB9D2C;
-  text-decoration: underline;
-}
-#connexion .wrap2 #missing_password a:hover {
-  color: #050B4F;
+@media (max-width: 550px) {
+  #formulaire .wrap2 label {
+    font-size: 1rem;
+    width: 80%;
+  }
 }
 
 footer {
@@ -448,18 +564,19 @@ footer {
   padding: 3.5rem 2rem 2rem 2rem;
   gap: 2.5rem;
 }
-@media (max-width: 1200px) {
-  footer {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-}
 footer .footer {
+  padding: 0 3rem;
   max-width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 950px) {
+  footer .footer {
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+  }
 }
 footer .footer a {
   font-size: 1.2rem;
@@ -479,6 +596,11 @@ footer .footer h2 {
 }
 footer .footer p {
   font-size: 1rem;
+}
+@media (max-width: 480px) {
+  footer .footer p {
+    font-size: 0.7rem;
+  }
 }
 footer .footer .div_foot {
   width: 19%;
@@ -587,7 +709,7 @@ footer #copyright {
   background-color: white;
   padding: 3rem;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #where {
     padding: 1rem;
   }
@@ -597,7 +719,7 @@ footer #copyright {
   margin-bottom: 2rem;
   font-weight: 400;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #where h2 {
     font-size: 2.6rem;
   }
@@ -632,11 +754,23 @@ footer #copyright {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #where .container {
-    flex-direction: column-reverse;
+    padding: 0 3rem;
     gap: 0;
     font-size: 0.9rem;
+  }
+}
+@media (max-width: 700px) {
+  #where .container {
+    flex-flow: column-reverse nowrap;
+    gap: 2rem;
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 500px) {
+  #where .container {
+    font-size: 1rem;
   }
 }
 #where .container .contact {
@@ -645,7 +779,7 @@ footer #copyright {
   flex-flow: column nowrap;
   gap: 2rem;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #where .container .contact {
     text-align: left;
     width: 90%;
@@ -656,13 +790,28 @@ footer #copyright {
   flex-flow: row nowrap;
   gap: 3rem;
 }
+@media (max-width: 500px) {
+  #where .container .contact .box {
+    flex-flow: column wrap;
+    margin: 0 auto;
+    align-items: center;
+  }
+  #where .container .contact .box i {
+    font-size: 3rem;
+  }
+}
 #where .container .maps {
   width: 60%;
 }
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   #where .container .maps {
     width: 100%;
     margin-bottom: 0.5rem;
+  }
+}
+@media (max-width: 350px) {
+  #where .container .maps {
+    display: none;
   }
 }
 
@@ -740,6 +889,12 @@ footer #copyright {
   flex-flow: row nowrap;
   justify-content: space-between;
 }
+@media (max-width: 1200px) {
+  .detail .double_box {
+    align-items: center;
+    flex-flow: column nowrap;
+  }
+}
 .detail .single_box {
   background-color: white;
   padding: 1rem;
@@ -751,6 +906,13 @@ footer #copyright {
 .detail h2 {
   color: white;
   text-align: center;
+  margin-bottom: 2rem;
+}
+.detail .infos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
 }
 
 .secNone {
@@ -792,6 +954,12 @@ footer #copyright {
   justify-content: space-between;
   padding: 1rem;
 }
+@media (max-width: 700px) {
+  #log .search {
+    flex-flow: column nowrap;
+    gap: 2rem;
+  }
+}
 #log .search h2 {
   font-weight: 400;
   font-size: 1.4rem;
@@ -799,6 +967,12 @@ footer #copyright {
 #log .search .tram {
   display: flex;
   align-items: center;
+}
+@media (max-width: 700px) {
+  #log .search .tram {
+    flex-flow: column nowrap;
+    gap: 1.5rem;
+  }
 }
 #log .search .tram .type_tram {
   display: flex;
@@ -808,6 +982,11 @@ footer #copyright {
   font-size: 1.3rem;
   margin-left: 1rem;
 }
+@media (max-width: 700px) {
+  #log .search .tram label {
+    font-size: 1rem;
+  }
+}
 #log .search .tram select {
   background-color: #43485A;
   color: white;
@@ -815,7 +994,13 @@ footer #copyright {
   border: none;
   margin-left: 1rem;
 }
-#log .search .tram a {
+#log .search .tram .log_button {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  text-align: center;
+}
+#log .search .tram .log_button a {
   padding: 0.5rem;
   font-size: 1rem;
   border: solid 1px #FB9D2C;
@@ -898,6 +1083,11 @@ footer #copyright {
   }
 }
 
+i {
+  font-size: 3rem;
+  color: black;
+}
+
 .popup {
   z-index: 3;
   color: whitesmoke;
@@ -917,6 +1107,17 @@ footer #copyright {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.popup #crossPop {
+  position: absolute;
+  cursor: pointer;
+  top: 3%;
+  right: 5%;
+  font-size: 3rem;
+}
+.popup #crossPop:hover {
+  color: #FB9D2C;
+  transition: 0.5s;
 }
 .popup h2 {
   font-size: 1.5rem;

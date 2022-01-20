@@ -64,5 +64,5 @@ foreach($data as $trame)
         addTrame($date,$version,$headerLength,$service,$identification,$status,$flagsCode,$ttl,$protocolName,$protocolFlagsCode,$protocolChecksumStatus,$protocolChecksumCode,$protocolPortsFrom,$protocolPortsDest,$protocolType,$protocolCode,$headerChecksum,$ipFrom,$ipDest);
     }
 }
-    header('Location: ../content/dashboard.php');
+header('Location: ../content/dashboard.php');
 

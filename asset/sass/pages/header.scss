@@ -1,0 +1,150 @@
+#header{
+  nav{
+    @include breakpoints(litleLaptop){
+      padding: 0;
+    }
+    padding: 0 1rem;
+    width: 100%;
+    position: fixed;
+    background: transparent;
+    z-index: 2;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    //align-items: center;
+    text-align: center;
+
+    .burger {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      width: 50px;
+      height: 50px;
+      display: none;
+      @include breakpoints(litleLaptop){display: block;}
+      #croix{
+        display: none;
+      }
+      #burger{
+        display: none;
+        @include breakpoints(litleLaptop){
+          display: block;
+        }
+      }
+
+      .fa-bars::before{
+        font-size: 2rem;
+        padding: .5rem 1rem;
+        border: solid 1px $orange;
+        border-radius: .3rem;
+        color: #818080;
+        text-align: center;
+        cursor: pointer;
+        z-index: 999;
+      }
+
+      .fa-times::before{
+        font-size: 2rem;
+        padding: .5rem 1rem;
+        border: solid 1px $orange;
+        border-radius: .3rem;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        z-index: 99;
+      }
+    }
+
+    .logo_nav{
+      @include breakpoints(litleLaptop){
+        display: none;
+      }
+      img{
+        width: 8rem;
+      }
+    }
+
+    .header_btn{
+      @include breakpoints(litleLaptop){
+        display: none;
+        background-color: #232222;
+        width: 100%;
+        flex-direction: column;
+        padding: 4rem 0 2rem 0;
+      }
+      @include breakpoints(tablette){
+        font-size: 1rem;
+      }
+      @include breakpoints(Phone){
+        font-size: .8rem;
+      }
+
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+
+      a{
+        color: white;
+        position: relative;
+        text-transform: uppercase;
+        margin: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      a:after{
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -0.4rem;
+        width: 0;
+        left: 0;
+        height: 2px;
+        transition: 0.5s cubic-bezier(0.42, 0.0, 1.0, 1.0);
+        background: $orange;
+      }
+      a:hover:after{
+        width: 90%;
+      }
+
+      .btn-a{
+        @include breakpoints(litleLaptop){
+          width: 35%;
+          margin: 0 auto;
+        }
+        padding: .5rem;
+        border: solid 1px $orange ;
+        border-radius: .4rem;
+      }
+      .btn-a:hover{
+        background-color: $orange;
+        color: black;
+        transition: .3s;
+      }
+      .btn-a::before{
+        display: none;
+      }
+      .btn-a::after{
+        display: none;
+      }
+    }
+  }
+}
+
+// second header
+
+#header.second{
+  nav{
+    position: inherit;
+    background-color: white;
+    .header_btn{
+      a{
+        @include breakpoints(litleLaptop){
+          color: white;
+        }
+        color: black;
+      }
+    }
+  }
+}

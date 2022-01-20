@@ -9,7 +9,7 @@ include_once('inc/header.php');
 <section id="acceuil">
         <div class="main">
             <img class="imgwhite" src="asset/img/logo white.svg" alt="">
-            <h1>Les meilleurs analyste reseaux de Normandie</h1>
+            <h1>Outil de supervision de vos trames réseaux</h1>
             <a href="#infos" class="btn-b">Découvrir</a>
         </div>
 </section>

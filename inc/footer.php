@@ -14,7 +14,7 @@ $page = basename($_SERVER['PHP_SELF']);
             <p>Hébergement</p>
         </div>
         <div class="footer_contact div_foot">
-            <h2>Restons en contact</h2>
+            <h2>Contact</h2>
             <p>55-55-55-55-55</p>
             <p>supportclient@gmail.com</p>
             <p>30 Pl. Henri Gadeau de Kerville, 76100 Rouen</p>

@@ -1,14 +1,8 @@
-
-
 ////////////////////// Menu BURGER /////////////////////////////////////////////
     const burger = $('#burger');
     const croix = $('#croix');
     const nav = $('nav');
     const navigation = $('.header_btn');
-
-    console.log(burger);
-    console.log(croix);
-    console.log(navigation);
 
     burger.on('click',function (){
       navigation.fadeIn();
@@ -24,5 +18,3 @@
     });
 
 
-
-console.log('cc');

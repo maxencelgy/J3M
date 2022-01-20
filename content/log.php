@@ -34,6 +34,7 @@ if(isLogged() == true){
                     <option value="Refusée">Refusée</option>
                 </select>
                 <a href="../ajax/sendDataJson.php">Actualiser</a>
+                <a class="sendFakeData" href="#">Ajout fausses données</a>
             </div>
         </div>
 

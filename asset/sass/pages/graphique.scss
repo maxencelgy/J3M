@@ -4,6 +4,10 @@
     display: flex;
     flex-direction: column;
     .double_box{
+        @include breakpoints(laptop){
+            align-items: center;
+            flex-flow: column nowrap;
+        }
         background-color: white;
         padding: 2rem 8rem;
         margin-bottom: 1rem;

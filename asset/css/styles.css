@@ -889,6 +889,12 @@ footer #copyright {
   flex-flow: row nowrap;
   justify-content: space-between;
 }
+@media (max-width: 1200px) {
+  .detail .double_box {
+    align-items: center;
+    flex-flow: column nowrap;
+  }
+}
 .detail .single_box {
   background-color: white;
   padding: 1rem;
@@ -988,7 +994,13 @@ footer #copyright {
   border: none;
   margin-left: 1rem;
 }
-#log .search .tram a {
+#log .search .tram .log_button {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  text-align: center;
+}
+#log .search .tram .log_button a {
   padding: 0.5rem;
   font-size: 1rem;
   border: solid 1px #FB9D2C;

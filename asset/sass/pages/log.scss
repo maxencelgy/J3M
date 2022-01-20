@@ -43,20 +43,28 @@
               font-size: 1.3rem;
               margin-left: 1rem;
           }
-          select {
+          select{
               background-color: #43485A;
               color: white;
               padding: .5rem;
               border: none;
               margin-left: 1rem;
           }
+
+        .log_button{
+          display: flex;
+          flex-flow: column nowrap;
+          gap: 1rem;
+          text-align: center;
           a{
-              padding: .5rem;
-              font-size: 1rem;
-              border: solid 1px $orange;
-             
-              margin-left: 2rem;
+            padding: .5rem;
+            font-size: 1rem;
+            border: solid 1px $orange;
+            margin-left: 2rem;
           }
+        }
+
+
           a:hover{
             background-color: $orangeLog;
             transition: .5s;

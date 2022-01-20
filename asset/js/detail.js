@@ -338,7 +338,8 @@ fetch('http://localhost/J3M/ajax/TCP/getDataTcp.php')
                         beginAtZero: true,
                     }
                 },
-                responsive: false,
+                responsive: true,
+                maintainAspectRatio: false,
                 title: {
                     display: true,
                     fontSize: 30,
@@ -469,7 +470,8 @@ fetch('http://localhost/J3M/ajax/TLS/getDataTls.php')
                         beginAtZero: true,
                     }
                 },
-                responsive: false,
+                responsive: true,
+                maintainAspectRatio: false,
                 title: {
                     display: true,
                     fontSize: 30,
@@ -599,7 +601,8 @@ fetch('http://localhost/J3M/ajax/UDP/getDataUdp.php')
                         beginAtZero: true,
                     }
                 },
-                responsive: false,
+                responsive: true,
+                maintainAspectRatio: false,
                 title: {
                     display: true,
                     fontSize: 30,

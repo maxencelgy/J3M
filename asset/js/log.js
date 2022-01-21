@@ -3,7 +3,7 @@ import { getIpNumber , getLogDate } from './fonction.js';
 // Bouton envoie data
 const bouton = document.querySelector('.sendFakeData')
 bouton.addEventListener("click", e =>{    
-    let verify = confirm("Voulez vous envoyer 100 fausses données ?")
+    let verify = confirm("Voulez-vous envoyer 500 fausses données ?")
     if(verify)window.location.replace("http://localhost/J3M/bdd/ajoutFaussesDonnees.php")
 })
 

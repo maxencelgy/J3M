@@ -11,7 +11,7 @@ if(isLogged() == true){
 <section id="log">
     <div class="title_log">
         <h2>Bonjour <?= $_SESSION['user']['pseudo']?></h2>
-        <p>Voici les journaux</p>
+        <p>Voici les journaux, n'oubliez pas de cliquer sur le bouton actualiser</p>
     </div>
     <div class="search">
         <h2>Journaux</h2>
@@ -69,7 +69,6 @@ if(isLogged() == true){
     </div>
 </div>
 
-
 <section id="tableau">
 
 <div class="tab">
@@ -84,10 +83,7 @@ if(isLogged() == true){
           <th>Ip source</th>
           <th>Ip destination</th>
         </tr> 
-    </table>
-
-
-    
+    </table>    
     <div class="formfirst">        
     </div>
 </div>
